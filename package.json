@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "cd dist && http-server",
-    "build": "webpack"
+    "start": "http-server",
+    "build": "webpack && copy dist\\index.html C:\\rupak\\2021\\javascript-json-parser"
   },
   "repository": {
     "type": "git",

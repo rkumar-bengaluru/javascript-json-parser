@@ -59,7 +59,7 @@ module.exports = {
         }),
     ],
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
         library: 'RJsonParser',
