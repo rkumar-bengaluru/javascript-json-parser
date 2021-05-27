@@ -35,6 +35,8 @@
   },
   "homepage": "https://github.com/rkumar-bengaluru/javascript-json-parser#readme",
   "dependencies": {
+    "clipboard": "^2.0.8",
+    "extract-text-webpack-plugin": "^3.0.2",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0"
   }
