@@ -26,7 +26,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: 'itemp.html'
         }),
         new MiniCssExtractPlugin({
             filename: "[name].css",
@@ -34,7 +34,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: "src/icons", to: "icons" }
+                { from: "icons", to: "icons" }
             ],
             options: {
                 concurrency: 100,
