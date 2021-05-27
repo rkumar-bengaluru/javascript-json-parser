@@ -3,6 +3,9 @@ var path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     mode: 'development',
@@ -23,6 +26,12 @@ module.exports = {
                 },
             },
         },
+        minimize: true,
+        minimizer: [
+            new HtmlMinimizerPlugin(),
+            new CssMinimizerPlugin(),
+            new TerserPlugin(),
+        ],
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -59,6 +68,7 @@ module.exports = {
         libraryTarget: 'umd',
     },
     module: {
+       
         rules: [
             {
                 test: /\.css$/i,
