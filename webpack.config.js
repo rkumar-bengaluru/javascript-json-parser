@@ -34,7 +34,15 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: "src/assets", to: "assets" }
+                { from: "src/icons", to: "icons" }
+            ],
+            options: {
+                concurrency: 100,
+            },
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "lib", to: "lib" }
             ],
             options: {
                 concurrency: 100,
@@ -45,7 +53,7 @@ module.exports = {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
-        library: 'MyJson',
+        library: 'RJsonParser',
         globalObject: 'this',
         libraryExport: 'default',
         libraryTarget: 'umd',
@@ -53,7 +61,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.css$/i,
                 exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -64,7 +72,7 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
-            },
+            }
         ],
     },
     stats: {
