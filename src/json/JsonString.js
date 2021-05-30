@@ -23,7 +23,7 @@ export default class JsonString extends JsonObject {
         appendable.destination = destination;
     }
 
-    toHtml(appendable) {
+    toHtml(appendable, currentLevel) {
         let destination = "";
         if (this._isKey) {
             destination += "<span class=\"type-key\">\"";

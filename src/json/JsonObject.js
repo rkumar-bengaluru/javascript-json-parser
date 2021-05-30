@@ -66,7 +66,7 @@ export default class JsonObject {
         throw new TypeError("Do not call abstract method toString from child.");
     }
 
-    toHtml(appendable) {
+    toHtml(appendable, currentLevel) {
         throw new TypeError("Do not call abstract method toHtml from child.");
     }
 }
