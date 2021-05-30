@@ -1,8 +1,15 @@
 
+var winston = require('winston');
+
 import JsonObject from './JsonObject.js';
-
+var logger = winston.createLogger({
+    level: 'info',
+    transports: [
+      new winston.transports.Console()
+    ]
+});
 export default class JsonString extends JsonObject {
-
+    
     constructor(root, isKey, input) {
         super(root, isKey, input);
     }
@@ -24,6 +31,7 @@ export default class JsonString extends JsonObject {
     }
 
     toHtml(appendable, currentLevel) {
+        logger.info('Hello again distributed logs');
         let destination = "";
         if (this._isKey) {
             destination += "<span class=\"type-key\">\"";
