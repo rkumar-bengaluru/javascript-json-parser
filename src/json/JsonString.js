@@ -15,14 +15,9 @@ export default class JsonString extends JsonObject {
             tabs = tabs.concat("\t");
         //console.log('tabs->' + tabs);
         if (this._isKey) {
-            destination = destination.concat(tabs);
-            destination = destination.concat("\"");
-            destination = destination.concat(this._input);
-            destination = destination.concat("\"");
+            destination += tabs + "\"" + this._input + "\"";
         } else {
-            destination = destination.concat("\"");
-            destination = destination.concat(this._input);
-            destination = destination.concat("\"");
+            destination += "\"" + this._input + "\"";
         }
         //console.log('destination->' + destination);
         appendable.destination = destination;
@@ -31,13 +26,11 @@ export default class JsonString extends JsonObject {
     toHtml(appendable) {
         let destination = "";
         if (this._isKey) {
-            destination = destination.concat("<span class=\"type-key\">\"");
+            destination += "<span class=\"type-key\">\"";
         }else  {
-            destination = destination.concat("<span class=\"type-string\">\"");
+            destination += "<span class=\"type-string\">\"";
         }
-        
-        destination = destination.concat(this._input);
-        destination = destination.concat("\"</span>");
+        destination += this._input + "\"</span>";
         appendable.destination = destination;
     }
 }

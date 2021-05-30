@@ -1,6 +1,7 @@
 import  JsonString  from '../src/json/JsonString.js';
 
 const instance = new JsonString(false,false,"name");
+
 var appendable = {
     destination : ""
 }
