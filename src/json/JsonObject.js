@@ -14,39 +14,24 @@ export default class JsonObject {
             // Error Type 4. Child has not implemented this abstract method.
             throw new TypeError("Please implement abstract method toHtml.");
         }
-
-        if (typeof root === 'undefined') {
-            this._root = false;
-        } else {
-            this._root = root;
-        }
-
-        if (typeof isKey === 'undefined') {
-            this._isKey = false;
-        } else {
-            this._isKey = root;
-        }
-
-        if (typeof input === 'undefined') {
-            this._input = input;
-        } else {
-            this._input = input;
-        }
+        this._root = root;
+        this._isKey = isKey;
+        this._input = input;
     }
 
     get root() {
-        return this_root;
+        return this._root;
     }
 
     set root(newRoot) {
         this._root = newRoot;
     }
 
-    get key() {
-        return this_root;
+    get isKey() {
+        return this._isKey;
     }
 
-    set key(newKey) {
+    set isKey(newKey) {
         this._isKey = newKey;
     }
 
@@ -56,10 +41,6 @@ export default class JsonObject {
 
     set input(newInput) {
         this._input = newInput;
-    }
-
-    getInput() {
-        return this._input;
     }
 
     toString(appendable, currentLevel) {

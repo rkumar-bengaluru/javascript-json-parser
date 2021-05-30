@@ -18,21 +18,22 @@ test('toString(\'\', 0)', () => {
 })
 
 test('toString(\'\', 1)', () => {
-    instance.key = true;
+    instance.isKey = true;
     instance.toString(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("\t\"name\"");
 })
 
 test('toHtml(\'isKey=false\')', () => {
-    instance.key = false;
+    instance.isKey = false;
+    expect(instance.isKey).toBe(false);
     instance.toHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-string\">\"name\"</span>");
 })
 
 test('toHtml(\'isKey=true\')', () => {
-    instance.key = true;
+    instance.isKey = true;
     instance.toHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-key\">\"name\"</span>");
