@@ -1,0 +1,43 @@
+
+import JsonObject from './JsonObject.js';
+
+export default class JsonString extends JsonObject {
+
+    constructor(root, isKey, input) {
+        super(root, isKey, input);
+    }
+
+    toString(appendable, currentLevel) {
+        let destination = "";
+        let tabs = '';
+        let i;
+        for (i = 0; i <= currentLevel; i++)
+            tabs = tabs.concat("\t");
+        //console.log('tabs->' + tabs);
+        if (this._isKey) {
+            destination = destination.concat(tabs);
+            destination = destination.concat("\"");
+            destination = destination.concat(this._input);
+            destination = destination.concat("\"");
+        } else {
+            destination = destination.concat("\"");
+            destination = destination.concat(this._input);
+            destination = destination.concat("\"");
+        }
+        //console.log('destination->' + destination);
+        appendable.destination = destination;
+    }
+
+    toHtml(appendable) {
+        let destination = "";
+        if (this._isKey) {
+            destination = destination.concat("<span class=\"type-key\">\"");
+        }else  {
+            destination = destination.concat("<span class=\"type-string\">\"");
+        }
+        
+        destination = destination.concat(this._input);
+        destination = destination.concat("\"</span>");
+        appendable.destination = destination;
+    }
+}

@@ -1,6 +1,6 @@
-import  JsonObject  from '../src/json/JsonObject.js';
+import  JsonString  from '../src/json/JsonString.js';
 
-const instance = new JsonObject(false,false,"{\"name\"=\"rupak\"}");
+const instance = new JsonString(false,false,"{\"name\"=\"rupak\"}");
 
 test('getInput()', () => {
     expect(instance.getInput()).toBe("{\"name\"=\"rupak\"}");
