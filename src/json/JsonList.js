@@ -23,14 +23,14 @@ export default class JsonList extends JsonObject {
         j = 0;
         let size = this._input.length;
         this._input.forEach(element => {
-            j++;
             var cAppendable = {
                 destination : 0
             }
-            element.toString(cAppendable,currentLevel);
+            element.formatJsonToString(cAppendable,currentLevel);
             destination += cAppendable.destination;
             if(j != (size-1))
                 destination += ",";
+            j++;
         });
         destination += "\n" + tabs + "]";
         appendable.destination += destination;
@@ -56,7 +56,7 @@ export default class JsonList extends JsonObject {
             var cAppendable = {
                 destination : 0
             }
-            element.toHtml(cAppendable,currentLevel);
+            element.formatJsonToHtml(cAppendable,currentLevel);
             destination += cAppendable.destination;
             if(j != (size-1))
                 destination += "<span class=\"type-comma\">" + "," + "</span>";

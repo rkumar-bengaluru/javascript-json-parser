@@ -53,7 +53,7 @@ export default class JsonMap extends JsonObject {
             destination += "<div class=\"json-viewer\"><code class=\"js\" id=\"js\">";
         }
         let destination = "";
-        let size = data.length;
+        let size = this._input.size;
         destination += "<a class=\"list-link\" href=\"javascript:void(0)\">{";
         destination += "<span style=\"color: #1d57d4;\"><i onClick=\"spanClicked(event);\" class=\"far fa-minus-square\"></i></span>";
         destination += "<span style=\"color: #1d57d4;\" class=\"hide\"><i onClick=\"spanClicked(event);\" class=\"fas fa-plus-square\"></i></span>";
@@ -64,15 +64,15 @@ export default class JsonMap extends JsonObject {
         this._input.forEach(function(value, key) {
             destination += "<li>";
             var keyAppendable = {
-                destination : 0
+                destination : ""
             }
-            key.toHtml(keyAppendable,currentLevel);
+            key.formatJsonToHtml(keyAppendable,currentLevel);
             destination += keyAppendable.destination;
             destination += "<span class=\"type-colon\">:</span>";
 			var valueAppendable = {
-                destination : 0
+                destination : ""
             }
-            value.toString(valueAppendable,currentLevel);
+            value.formatJsonToHtml(valueAppendable,currentLevel);
             destination += valueAppendable.destination;
            
             if(j != (size-1))
