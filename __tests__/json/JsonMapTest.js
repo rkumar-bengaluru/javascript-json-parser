@@ -35,4 +35,15 @@ test('formatJsonToString()', () => {
     expect(appendable.destination).toBe("\n{\n\t\"name\" : \"rupak\"\n}");
 })
 
+test('formatJsonToString()', () => {
+    appendable.destination = "";
+    instance.input = new Map();
+    instance.put(new JsonString(false,true,"name"),new JsonString(false,false,"rupak"));
+    instance.put(new JsonString(false,true,"age"),new JsonString(false,false,"43"));
+    logger.info('calling map formatJsonToString()');
+    instance.formatJsonToString(appendable,-1);
+    logger.info(appendable.destination);
+    expect(appendable.destination).toBe("\n{\n\t\"name\" : \"rupak\",\n\t\"age\" : \"43\"\n}");
+})
+
 

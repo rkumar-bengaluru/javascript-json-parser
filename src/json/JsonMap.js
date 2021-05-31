@@ -41,12 +41,11 @@ export default class JsonMap extends JsonObject {
             value.formatJsonToString(valueAppendable,currentLevel);
             destination += valueAppendable.destination;
             if(j != (size-1))
-                destination += ",";
+                destination += ",\n";
             j++;  
         });
         destination += "\n" + tabs + "}";
         appendable.destination += destination;
-        //console.log('destination->' + destination);
     }
 
     formatJsonToHtml(appendable, currentLevel) {
