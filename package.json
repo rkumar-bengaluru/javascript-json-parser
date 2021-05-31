@@ -9,7 +9,7 @@
   "scripts": {
     "start": "http-server",
     "build": "webpack && copy dist\\index.html .",
-    "test": "jest --verbose"
+    "test": "jest --verbose MapTest"
   },
   "repository": {
     "type": "git",

@@ -34,12 +34,25 @@ test('add test', () => {
 })
 
 test('formatJsonToString()', () => {
-    instance.add(new JsonString(false,true,"name"));
-    instance.add(new JsonString(false,false,"rupak"));
+    instance.add(new JsonString(false,false,"fivesstar"));
+    instance.add(new JsonString(false,false,"ratings"));
     instance.formatJsonToString(appendable,-1);
     logger.info(appendable.destination);
-    expect(appendable.destination).toBe("\n[\n\t\"name\",\"rupak\"\n]");
+    expect(appendable.destination).toBe("\n[\n\"fivesstar\",\"ratings\"\n]");
+    //expect(appendable.destination).toBe("\n[\n\t\"name\",\"rupak\"\n]");
 })
+
+test('formatJsonToString()', () => {
+    instance.add(new JsonString(false,false,"Material: High Modulus Graphite"));
+    instance.add(new JsonString(false,false,"Power Frame Series"));
+    instance.formatJsonToString(appendable,-1);
+    logger.info("actual->" + appendable.destination);
+    var expectedList = "\n[\n\"Material: High Modulus Graphite\",\"Power Frame Series\"\n]";
+    logger.info("expected->" + expectedList);
+    expect(appendable.destination).toBe(expectedList);
+    //expect(appendable.destination).toBe("\n[\n\t\"name\",\"rupak\"\n]");
+})
+
 
 afterEach(() => {
     // do nothing for this test cases.
