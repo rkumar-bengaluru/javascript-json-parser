@@ -10,31 +10,31 @@ test('input', () => {
     expect(instance.input).toBe("name");
 })
 
-test('toString(\'\', 0)', () => {
+test('formatJsonToString(\'\', 0)', () => {
     
-    instance.toString(appendable,0);
+    instance.formatJsonToString(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("\"name\"");
 })
 
-test('toString(\'\', 1)', () => {
+test('formatJsonToString(\'\', 1)', () => {
     instance.isKey = true;
-    instance.toString(appendable,0);
+    instance.formatJsonToString(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("\t\"name\"");
 })
 
-test('toHtml(\'isKey=false\')', () => {
+test('formatJsonToHtml(\'isKey=false\')', () => {
     instance.isKey = false;
     expect(instance.isKey).toBe(false);
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-string\">\"name\"</span>");
 })
 
-test('toHtml(\'isKey=true\')', () => {
+test('formatJsonToHtml(\'isKey=true\')', () => {
     instance.isKey = true;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-key\">\"name\"</span>");
 })

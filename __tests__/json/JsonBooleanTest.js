@@ -11,25 +11,25 @@ test('input=true', () => {
     expect(instance.input).toBe(true);
 })
 
-test('toString(\'\', 0)::input=true', () => {
+test('formatJsonToString(\'\', 0)::input=true', () => {
     instance.input = true;
-    instance.toString(appendable,0);
+    instance.formatJsonToString(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe(true);
 })
 
-test('toHtml(\'isKey=false\')::input=true', () => {
+test('formatJsonToHtml(\'isKey=false\')::input=true', () => {
     instance.input = true;
     instance.key = false;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-boolean\">true</span>");
 })
 
-test('toHtml(\'isKey=true\')::input=true', () => {
+test('formatJsonToHtml(\'isKey=true\')::input=true', () => {
     instance.input = true;
     instance.key = true;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-boolean\">true</span>");
 })
@@ -39,17 +39,17 @@ test('input=false', () => {
     expect(instance.input).toBe(false);
 })
 
-test('toString(\'\', 0)::input=true', () => {
+test('formatJsonToString(\'\', 0)::input=true', () => {
     instance.input = false;
-    instance.toString(appendable,0);
+    instance.formatJsonToString(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe(false);
 })
 
-test('toHtml(\'isKey=false\')::input=true', () => {
+test('formatJsonToHtml(\'isKey=false\')::input=true', () => {
     instance.input = false;
     instance.key = false;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-boolean\">false</span>");
 })
@@ -57,7 +57,7 @@ test('toHtml(\'isKey=false\')::input=true', () => {
 test('toHtml(\'isKey=true\')::input=false', () => {
     instance.input = false;
     instance.key = true;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-boolean\">false</span>");
 })

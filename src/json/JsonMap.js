@@ -1,3 +1,4 @@
+var logger = require('../logger/logger');
 
 import JsonObject from './JsonObject.js';
 
@@ -8,42 +9,47 @@ export default class JsonMap extends JsonObject {
     }
 
     put(jsonObjectKey,jsonObjectValue) {
-        this._input.set(jsonObjectKey,jsonObjectValue);
+        this._input.set(jsonObjectKey, jsonObjectValue);
+        logger.debug('map size ->' + this._input.size);
         return this;
     }
-
-    toString(appendable, currentLevel) {
+    
+    formatJsonToString(appendable, currentLevel) {
         ++currentLevel;
         let tabs = '';
         let i,j;
-        for (i = 0; i <= currentLevel; i++)
+        for (i = 0; i < currentLevel; i++)
             tabs += "\t";
         let destination = "";
         destination += "\n" + tabs + "{\n";
         j = 0;
         let size = this._input.size;
+        logger.info('size of the map ' + this._input.size);
+
         this._input.forEach(function(value, key) {
-            j++;
             var keyAppendable = {
-                destination : 0
+                destination : ""
             }
-            key.toString(keyAppendable,currentLevel);
+            var valueAppendable = {
+                destination : ""
+            }
+         
+            key.formatJsonToString(keyAppendable,currentLevel);
             destination += keyAppendable.destination;
             destination += " : ";
-            var valueAppendable = {
-                destination : 0
-            }
-            value.toString(valueAppendable,currentLevel);
+           
+            value.formatJsonToString(valueAppendable,currentLevel);
             destination += valueAppendable.destination;
             if(j != (size-1))
                 destination += ",";
+            j++;  
         });
         destination += "\n" + tabs + "}";
         appendable.destination += destination;
         //console.log('destination->' + destination);
     }
 
-    toHtml(appendable, currentLevel) {
+    formatJsonToHtml(appendable, currentLevel) {
         if(this._root) {
             destination += "<div class=\"json-viewer\"><code class=\"js\" id=\"js\">";
         }
@@ -57,7 +63,6 @@ export default class JsonMap extends JsonObject {
         let i,j;
         destination += "<ul data-level=\"" + ++currentLevel + "\" class=\"type-array\">";
         this._input.forEach(function(value, key) {
-            j++;
             destination += "<li>";
             var keyAppendable = {
                 destination : 0
@@ -74,6 +79,7 @@ export default class JsonMap extends JsonObject {
             if(j != (size-1))
                 destination += "<span class=\"type-comma\">" + "," + "</span>";
             destination += "</li>";
+            j++;  
         });
         destination += "</ul>";
         destination += "<span class=\"type-symbol\">}</span>";

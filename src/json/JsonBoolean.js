@@ -7,7 +7,7 @@ export default class JsonBoolean extends JsonObject {
         super(root, isKey, input);
     }
 
-    toString(appendable, currentLevel) {
+    formatJsonToString(appendable, currentLevel) {
         //console.log('destination->' + destination);
         if(this._input)
             appendable.destination = true;
@@ -15,7 +15,7 @@ export default class JsonBoolean extends JsonObject {
             appendable.destination = false;
     }
 
-    toHtml(appendable, currentLevel) {
+    formatJsonToHtml(appendable, currentLevel) {
         let destination = "";
         destination += "<span class=\"type-boolean\">";
         destination += this._input + "</span>";

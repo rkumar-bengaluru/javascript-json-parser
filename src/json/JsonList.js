@@ -12,11 +12,11 @@ export default class JsonList extends JsonObject {
         return this;
     }
 
-    toString(appendable, currentLevel) {
+    formatJsonToString(appendable, currentLevel) {
         ++currentLevel;
         let tabs = '';
         let i,j;
-        for (i = 0; i <= currentLevel; i++)
+        for (i = 0; i < currentLevel; i++)
             tabs += "\t";
         let destination = "";
         destination += "\n" + tabs + "[\n";
@@ -37,7 +37,7 @@ export default class JsonList extends JsonObject {
         //console.log('destination->' + destination);
     }
 
-    toHtml(appendable, currentLevel) {
+    formatJsonToHtml(appendable, currentLevel) {
         if(this._root) {
             destination += "<div class=\"json-viewer\"><code class=\"js\" id=\"js\">";
         }

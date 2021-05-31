@@ -7,12 +7,12 @@ export default class JsonBoolean extends JsonObject {
         super(root, isKey, input);
     }
 
-    toString(appendable, currentLevel) {
+    formatJsonToString(appendable, currentLevel) {
         //console.log('destination->' + destination);
         appendable.destination = null;
     }
 
-    toHtml(appendable, currentLevel) {
+    formatJsonToHtml(appendable, currentLevel) {
         let destination = "";
         destination += "<span class=\"type-null\">";
         destination += this._input + "</span>";

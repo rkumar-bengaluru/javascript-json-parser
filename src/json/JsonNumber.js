@@ -7,12 +7,12 @@ export default class JsonNumber extends JsonObject {
         super(root, isKey, input);
     }
 
-    toString(appendable, currentLevel) {
+    formatJsonToString(appendable, currentLevel) {
         //console.log('destination->' + destination);
         appendable.destination += this._input;
     }
 
-    toHtml(appendable, currentLevel) {
+    formatJsonToHtml(appendable, currentLevel) {
         let destination = "";
         destination += "<span class=\"type-number\">";
         destination += this._input + "</span>";

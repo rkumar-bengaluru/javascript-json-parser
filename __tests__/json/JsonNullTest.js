@@ -10,15 +10,15 @@ test('input=true', () => {
     expect(instance.input).toBe(null);
 })
 
-test('toString(\'\', 0)::null', () => {
-    instance.toString(appendable,0);
+test('formatJsonToString(\'\', 0)::null', () => {
+    instance.formatJsonToString(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe(null);
 })
 
-test('toHtml(\'isKey=false\')::null', () => {
+test('formatJsonToHtml(\'isKey=false\')::null', () => {
     instance.key = false;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-null\">null</span>");
 })

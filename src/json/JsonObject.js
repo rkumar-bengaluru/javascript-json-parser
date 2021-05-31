@@ -5,14 +5,14 @@ export default class JsonObject {
             throw new TypeError("Can not construct abstract class.");
         }
 
-        if (this.toString === JsonObject.prototype.toString) {
+        if (this.formatJsonToString === JsonObject.prototype.formatJsonToString) {
             // Error Type 4. Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method toString.");
+            throw new TypeError("Please implement abstract method formatJsonToString.");
         }
 
-        if (this.toHtml === JsonObject.prototype.toHtml) {
+        if (this.formatJsonToHtml === JsonObject.prototype.formatJsonToHtml) {
             // Error Type 4. Child has not implemented this abstract method.
-            throw new TypeError("Please implement abstract method toHtml.");
+            throw new TypeError("Please implement abstract method formatJsonToHtml.");
         }
         this._root = root;
         this._isKey = isKey;
@@ -43,11 +43,11 @@ export default class JsonObject {
         this._input = newInput;
     }
 
-    toString(appendable, currentLevel) {
+    formatJsonToString(appendable, currentLevel) {
         throw new TypeError("Do not call abstract method toString from child.");
     }
 
-    toHtml(appendable, currentLevel) {
+    formatJsonToHtml(appendable, currentLevel) {
         throw new TypeError("Do not call abstract method toHtml from child.");
     }
 }

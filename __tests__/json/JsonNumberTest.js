@@ -10,23 +10,23 @@ test('input', () => {
     expect(instance.input).toBe(12);
 })
 
-test('toString(\'\', 0)', () => {
+test('formatJsonToString(\'\', 0)', () => {
     
-    instance.toString(appendable,0);
+    instance.formatJsonToString(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe(12);
 })
 
-test('toHtml(\'isKey=false\')', () => {
+test('formatJsonToHtml(\'isKey=false\')', () => {
     instance.key = false;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-number\">12</span>");
 })
 
-test('toHtml(\'isKey=true\')', () => {
+test('formatJsonToHtml(\'isKey=true\')', () => {
     instance.key = true;
-    instance.toHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,0);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-number\">12</span>");
 })
