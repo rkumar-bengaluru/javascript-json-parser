@@ -1,4 +1,4 @@
-import  JsonString  from '../src/json/JsonString.js';
+import  JsonString  from '../../src/json/JsonString.js';
 
 const instance = new JsonString(false,false,"name");
 

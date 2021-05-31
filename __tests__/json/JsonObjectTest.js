@@ -1,5 +1,5 @@
-import  JsonString  from '../src/json/JsonString.js';
-import  JsonObject  from '../src/json/JsonObject.js';
+import  JsonString  from '../../src/json/JsonString.js';
+import  JsonObject  from '../../src/json/JsonObject.js';
 
 const instance = new JsonString(false,false,"{\"name\"=\"rupak\"}");
 

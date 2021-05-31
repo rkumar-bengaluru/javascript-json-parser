@@ -1,4 +1,4 @@
-import  JsonNumber  from '../src/json/JsonNumber.js';
+import  JsonNumber  from '../../src/json/JsonNumber.js';
 
 const instance = new JsonNumber(false,false,12);
 

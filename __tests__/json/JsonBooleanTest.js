@@ -1,4 +1,4 @@
-import  JsonBoolean  from '../src/json/JsonBoolean.js';
+import  JsonBoolean  from '../../src/json/JsonBoolean.js';
 
 const instance = new JsonBoolean(false,false,true);
 

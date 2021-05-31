@@ -1,4 +1,4 @@
-import  JsonNull  from '../src/json/JsonNull.js';
+import  JsonNull  from '../../src/json/JsonNull.js';
 
 const instance = new JsonNull(false,false,null);
 
