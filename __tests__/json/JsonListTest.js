@@ -34,23 +34,23 @@ test('add test', () => {
 })
 
 test('formatJsonToString()', () => {
+    var expected = "\n[\n\t\"fivesstar\",\n\t\"ratings\"\n]";
     instance.add(new JsonString(false,false,"fivesstar"));
     instance.add(new JsonString(false,false,"ratings"));
     instance.formatJsonToString(appendable,-1);
-    logger.info(appendable.destination);
-    expect(appendable.destination).toBe("\n[\n\"fivesstar\",\"ratings\"\n]");
-    //expect(appendable.destination).toBe("\n[\n\t\"name\",\"rupak\"\n]");
+    logger.info("actual->" + appendable.destination);
+    logger.info("expected->" + expected);
+    expect(appendable.destination).toBe(expected);
 })
 
 test('formatJsonToString()', () => {
+    var expected = "\n[\n\t\"Material: High Modulus Graphite\",\n\t\"Power Frame Series\"\n]";
     instance.add(new JsonString(false,false,"Material: High Modulus Graphite"));
     instance.add(new JsonString(false,false,"Power Frame Series"));
     instance.formatJsonToString(appendable,-1);
     logger.info("actual->" + appendable.destination);
-    var expectedList = "\n[\n\"Material: High Modulus Graphite\",\"Power Frame Series\"\n]";
-    logger.info("expected->" + expectedList);
-    expect(appendable.destination).toBe(expectedList);
-    //expect(appendable.destination).toBe("\n[\n\t\"name\",\"rupak\"\n]");
+    logger.info("expected->" + expected);
+    expect(appendable.destination).toBe(expected);
 })
 
 

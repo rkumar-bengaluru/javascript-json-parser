@@ -17,6 +17,7 @@ export default class JsonObject {
         this._root = root;
         this._isKey = isKey;
         this._input = input;
+        this._keyValue = false;
     }
 
     get root() {
@@ -41,6 +42,10 @@ export default class JsonObject {
 
     set input(newInput) {
         this._input = newInput;
+    }
+
+    set keyValue(newValue) {
+        this._keyValue = newValue;
     }
 
     formatJsonToString(appendable, currentLevel) {

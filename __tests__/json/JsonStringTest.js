@@ -1,5 +1,7 @@
 import  JsonString  from '../../src/json/JsonString.js';
 
+var logger = require('../../src/logger/logger');
+
 const instance = new JsonString(false,false,"name");
 
 var appendable = {
@@ -11,30 +13,33 @@ test('input', () => {
 })
 
 test('formatJsonToString(\'\', 0)', () => {
-    
-    instance.formatJsonToString(appendable,0);
-    //console.log('destination->' + appendable.destination);
-    expect(appendable.destination).toBe("\"name\"");
+    var expected = "\"name\"";
+    instance.formatJsonToString(appendable,-1);
+    logger.info("actual->" + appendable.destination);
+    logger.info("expected->" + expected);
+    expect(appendable.destination).toBe(expected);
 })
 
 test('formatJsonToString(\'\', 1)', () => {
+    var expected = "\"name\"";
     instance.isKey = true;
-    instance.formatJsonToString(appendable,0);
-    //console.log('destination->' + appendable.destination);
-    expect(appendable.destination).toBe("\t\"name\"");
+    instance.formatJsonToString(appendable,-1);
+    logger.info("actual->" + appendable.destination);
+    logger.info("expected->" + expected);
+    expect(appendable.destination).toBe(expected);
 })
 
 test('formatJsonToHtml(\'isKey=false\')', () => {
     instance.isKey = false;
     expect(instance.isKey).toBe(false);
-    instance.formatJsonToHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,-1);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-string\">\"name\"</span>");
 })
 
 test('formatJsonToHtml(\'isKey=true\')', () => {
     instance.isKey = true;
-    instance.formatJsonToHtml(appendable,0);
+    instance.formatJsonToHtml(appendable,-1);
     //console.log('destination->' + appendable.destination);
     expect(appendable.destination).toBe("<span class=\"type-key\">\"name\"</span>");
 })

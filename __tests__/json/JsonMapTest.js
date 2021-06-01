@@ -33,22 +33,25 @@ test('put test', () => {
 })
 
 test('formatJsonToString()', () => {
+    var expected = "\n{\n\t\"name\" : \"rupak\"\n}"; 
     instance.input = new Map();
     instance.put(new JsonString(false,true,"name"),new JsonString(false,false,"rupak"));
     logger.info('calling map formatJsonToString()');
     instance.formatJsonToString(appendable,-1);
-    logger.info(appendable.destination);
-    expect(appendable.destination).toBe("\n{\n\t\"name\" : \"rupak\"\n}");
+    logger.info("actual->" + appendable.destination);
+    logger.info("expected->" + expected);
+    expect(appendable.destination).toBe(expected);
 })
 
 test('formatJsonToString()', () => {
-    
+    var expected = "\n{\n\t\"name\" : \"rupak\",\n\t\"age\" : \"43\"\n}"; 
     instance.put(new JsonString(false,true,"name"),new JsonString(false,false,"rupak"));
     instance.put(new JsonString(false,true,"age"),new JsonString(false,false,"43"));
     logger.info('calling map formatJsonToString()');
     instance.formatJsonToString(appendable,-1);
-    logger.info(appendable.destination);
-    expect(appendable.destination).toBe("\n{\n\t\"name\" : \"rupak\",\n\t\"age\" : \"43\"\n}");
+    logger.info("actual->" + appendable.destination);
+    logger.info("expected->" + expected);
+    expect(appendable.destination).toBe(expected);
 })
 
 test('formatJsonToString()->mapWithList', () => {
@@ -62,7 +65,7 @@ test('formatJsonToString()->mapWithList', () => {
     instance.put(listKey,list);
     logger.info('calling map formatJsonToString()');
     instance.formatJsonToString(appendable,-1);
-    var expectedList = "\n\t[\n\"Material: High Modulus Graphite\",\"Power Frame Series\"\n\t]";
+    var expectedList = "\n\t[\n\t\t\"Material: High Modulus Graphite\",\n\t\t\"Power Frame Series\"\n\t]";
     var keyValues = "\n\t\"productId\" : \"0ENJMZAXX2\",\n\t\"Title\" : \"APACS Finapi 262 Unstrung Badminton Racquet\",\n\t";
     var expected = "\n{" + keyValues + "\"keyFeatures\"" + " : " + expectedList + "\n}"; 
     logger.info("actual->" + appendable.destination);

@@ -37,7 +37,8 @@ export default class JsonMap extends JsonObject {
             key.formatJsonToString(keyAppendable,currentLevel);
             destination += keyAppendable.destination;
             destination += " : ";
-           
+            
+            value.keyValue = true;
             value.formatJsonToString(valueAppendable,currentLevel);
             destination += valueAppendable.destination;
             if(j != (size-1))

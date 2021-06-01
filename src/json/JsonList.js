@@ -29,7 +29,7 @@ export default class JsonList extends JsonObject {
             element.formatJsonToString(cAppendable,currentLevel);
             destination += cAppendable.destination;
             if(j != (size-1))
-                destination += ",";
+                destination += ",\n";
             j++;
         });
         destination += "\n" + tabs + "]";
