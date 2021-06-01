@@ -24,7 +24,7 @@ export default class JsonList extends JsonObject {
         let size = this._input.length;
         this._input.forEach(element => {
             var cAppendable = {
-                destination : 0
+                destination : ""
             }
             element.formatJsonToString(cAppendable,currentLevel);
             destination += cAppendable.destination;

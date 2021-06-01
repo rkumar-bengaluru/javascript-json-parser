@@ -21,7 +21,7 @@ export default class JsonMap extends JsonObject {
         for (i = 0; i < currentLevel; i++)
             tabs += "\t";
         let destination = "";
-        destination += "\n" + tabs + "{\n";
+        destination += "" + tabs + "{\n";
         j = 0;
         let size = this._input.size;
         logger.info('size of the map ' + this._input.size);
