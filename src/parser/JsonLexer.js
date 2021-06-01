@@ -1,5 +1,7 @@
 import JsonToken from "./JsonToken";
-import StringReader from "../io/StringReader"
+import StringReader from "../io/CharStream"
+
+var logger = require('../logger/logger');
 
 export default class JsonLexer {
 
