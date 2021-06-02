@@ -5,9 +5,9 @@ test('toString()', () => {
     try {
         var testStr = "Rupak Kumar"
         var instance = new String(testStr.split(''),0,4);
-        logger.debug("string value->" + instance.toString());
+        logger.debug("string value->" + instance.stringify());
         
-        expect(instance.toString()).toBe("Rupak");
+        expect(instance.stringify()).toBe("Rupak");
     } catch (e) {
         throw e;
     }

@@ -1,3 +1,5 @@
+import String from '../io/String.js';
+
 var logger = require('../logger/logger');
 
 export default class CharStream {
@@ -45,10 +47,8 @@ export default class CharStream {
         if (++this.bufpos === this.available)
             this.adjustBuffSize();
 
-        let c = this.readByte();
-        this.buffer.push(c);
-
-        if (this.buffer[this.bufpos] === '\\') {
+        let c;
+        if ((this.buffer[this.bufpos] = c = this.readByte()) == '\\') {
             return this.checkSpecial(c);
         } else {
             this.updateLineColumn(c);
@@ -57,7 +57,7 @@ export default class CharStream {
     }
 
     readByte() {
-        
+
         if (++this.nextCharInd >= this.maxNextCharInd)
             this.fillBuff();
         logger.debug("nextCharInd=" + (this.nextCharInd) + ",nextChar=" + this.nextCharBuf[this.nextCharInd]);
@@ -109,7 +109,7 @@ export default class CharStream {
             }
         } else if (this.available > this.tokenBegin) {
             this.available = this.bufsize;
-        }  else if ((this.tokenBegin - this.available) < 2048) {
+        } else if ((this.tokenBegin - this.available) < 2048) {
             this.expandBuff(true);
         } else {
             this.available = this.tokenBegin;
@@ -139,22 +139,22 @@ export default class CharStream {
         }
 
         switch (c) {
-            case '\r' :
+            case '\r':
                 this.tokenBegin++;
                 this.prevCharIsCR = true;
                 break;
-            case '\n' :
+            case '\n':
                 this.tokenBegin++;
                 this.prevCharIsLF = true;
                 break;
-            case '\t' :
+            case '\t':
                 this.tokenBegin++;
                 this.column--;
                 this.column += (this.tabSize - (this.column % this.tabSize));
                 break;
             case 32:
                 break;
-            default :
+            default:
                 break;
         }
 
@@ -168,13 +168,16 @@ export default class CharStream {
 
     getImage() {
         var response;
-        logger.debug("bufpos=" + this.bufpos + ",tokenBegin="+ this.tokenBegin);
-        if (this.bufpos >= this.tokenBegin)
+        logger.debug("bufpos=" + this.bufpos + ",tokenBegin=" + this.tokenBegin);
+        //logger.debug("buffer=" + this.buffer[0] + "," + this.buffer[1] + "," + this.buffer[2] + "," + this.buffer[3] + "," + this.buffer[4]);
+        if (this.bufpos >= this.tokenBegin) {
             response = new String(this.buffer, this.tokenBegin, this.bufpos - this.tokenBegin + 1);
-        else 
-            response = new String(this.buffer, this.tokenBegin, this.bufsize - this.tokenBegin).toString() + new String(buffer, 0, bufpos + 1).toString();
-        logger.debug("response=" + response );
-        return response.toString();
+            logger.debug("response=" + response.toString());
+        } else {
+            response = new String(this.buffer, this.tokenBegin, this.bufsize - this.tokenBegin).toString() + new String(this.buffer, 0, this.bufpos + 1).toString();
+            logger.debug("response=" + response.toString());
+        }
+        return response.stringify();
     }
 
     get getColumn() {

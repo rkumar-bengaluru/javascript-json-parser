@@ -9,11 +9,17 @@ export default class String {
         let i;
         this.value = [];
         for (i = offset; i <= (offset + count); i++) {
-            this.value.push(chars[i]);
+            //this.value.push(chars[i]);
+            if(chars[i] != '\"')
+                this.value[i] = chars[i];
         }
     }
 
     toString() {
+        return this.value.join("");
+    }
+
+    stringify() {
         return this.value.join("");
     }
 }
