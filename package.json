@@ -9,7 +9,8 @@
   "scripts": {
     "start": "http-server",
     "build": "webpack && copy dist\\index.html .",
-    "test": "jest --verbose "
+    "test": "jest --verbose ",
+    "char": "jest --verbose CharStream"
   },
   "repository": {
     "type": "git",

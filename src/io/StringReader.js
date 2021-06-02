@@ -45,4 +45,8 @@ export default class StringReader extends Reader {
             dstBegin++;
         }
     }
+
+    close() {
+        this.input = null;
+    }
 }

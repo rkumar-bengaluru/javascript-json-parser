@@ -14,6 +14,11 @@ export default class Reader {
             // Error Type 4. Child has not implemented this abstract method.
             throw new TypeError("Please implement abstract method getChars.");
         }
+
+        if (this.close === Reader.prototype.close) {
+            // Error Type 4. Child has not implemented this abstract method.
+            throw new TypeError("Please implement abstract close getChars.");
+        }
         
         this.input = newInput;
         this.length = this.input.length;
@@ -27,6 +32,10 @@ export default class Reader {
 
     getChars(srcBegin, srcEnd, dst, dstBegin) {
         throw new TypeError("Do not call abstract method getChars from child.");
+    }
+
+    close() {
+        throw new TypeError("Do not call abstract method close from child.");
     }
 
     ensureOpen() {
