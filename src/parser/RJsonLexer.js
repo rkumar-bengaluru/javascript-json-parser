@@ -185,7 +185,7 @@ export default class RJsonLexer extends RJsonConstants {
     }
 
     findStringLiteral(curPos, active0) {
-        logger.debug("finding string literal");
+        //logger.debug("finding string literal");
         var kind = 0x7fffffff;
         try {
             this.curChar = this.input_stream.readChar();
@@ -194,7 +194,7 @@ export default class RJsonLexer extends RJsonConstants {
         }
         for (; ;) {
             let code = this.curChar.charCodeAt();
-            logger.debug("findStringLiteral() = " + code);
+            //logger.debug("findStringLiteral() = " + code);
             switch (code) {
                 case 34: // '"'
                     kind = this.STRING_DOUBLE_NONEMPTY;
@@ -206,7 +206,7 @@ export default class RJsonLexer extends RJsonConstants {
             if (kind != 0x7fffffff) {
                 this.matchedKind = kind;
                 this.matchedPos = curPos;
-                logger.debug("returning curPos = " + curPos);
+                //logger.debug("returning curPos = " + curPos);
                 return curPos;
             }
             try {

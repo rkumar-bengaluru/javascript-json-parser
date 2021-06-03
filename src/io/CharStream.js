@@ -60,7 +60,7 @@ export default class CharStream {
 
         if (++this.nextCharInd >= this.maxNextCharInd)
             this.fillBuff();
-        logger.debug("nextCharInd=" + (this.nextCharInd) + ",nextChar=" + this.nextCharBuf[this.nextCharInd]);
+        //logger.debug("nextCharInd=" + (this.nextCharInd) + ",nextChar=" + this.nextCharBuf[this.nextCharInd]);
         return this.nextCharBuf[this.nextCharInd];
     }
 
@@ -88,16 +88,16 @@ export default class CharStream {
     }
 
     backup(amount) {
-        logger.debug('inBuf-' + this.inBuf + ",bufPos-" + this.bufpos);
+        //logger.debug('inBuf-' + this.inBuf + ",bufPos-" + this.bufpos);
         this.inBuf += amount;
         if ((this.bufpos -= amount) < 0)
             this.bufpos += this.bufsize;
         //this.tokenBegin = amount;
-        logger.debug('inBuf-' + this.inBuf + ",bufPos-" + this.bufpos);
+        //logger.debug('inBuf-' + this.inBuf + ",bufPos-" + this.bufpos);
     }
 
     readFromBuffer() {
-        logger.debug('reading from inBuf-' + this.inBuf);
+        //logger.debug('reading from inBuf-' + this.inBuf);
         --this.inBuf;
         if (++this.bufpos == this.bufsize)
             this.bufpos = 0;
@@ -172,14 +172,14 @@ export default class CharStream {
 
     getImage() {
         var response;
-        logger.debug("bufpos=" + this.bufpos + ",tokenBegin=" + this.tokenBegin);
+        //logger.debug("bufpos=" + this.bufpos + ",tokenBegin=" + this.tokenBegin);
         //logger.debug("buffer=" + this.buffer[0] + "," + this.buffer[1] + "," + this.buffer[2] + "," + this.buffer[3] + "," + this.buffer[4]);
         if (this.bufpos >= this.tokenBegin) {
             response = new String(this.buffer, this.tokenBegin, this.bufpos - this.tokenBegin + 1);
-            logger.debug("response=" + response.toString());
+            //logger.debug("response=" + response.toString());
         } else {
             response = new String(this.buffer, this.tokenBegin, this.bufsize - this.tokenBegin).toString() + new String(this.buffer, 0, this.bufpos + 1).toString();
-            logger.debug("response=" + response.toString());
+            //logger.debug("response=" + response.toString());
         }
         return response.stringify();
     }

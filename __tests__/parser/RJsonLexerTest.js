@@ -11,6 +11,24 @@ beforeEach(() => {
     instance = new RJsonLexer(reader);
 });
 
+test('mapTest()', () => {
+    var jsonStr = "[\"one\",\"two\",\"three\"]";
+    var reader = new StringReader(jsonStr);
+    instance = new RJsonLexer(reader);
+    var token = instance.getNextToken();
+    expect(token.image).toBe("[");
+    token = instance.getNextToken();
+    expect(token.image).toBe("one");
+    token = instance.getNextToken();
+    expect(token.image).toBe(",");
+    token = instance.getNextToken();
+    expect(token.image).toBe("two");
+    token = instance.getNextToken();
+    expect(token.image).toBe(",");
+    token = instance.getNextToken();
+    expect(token.image).toBe("three");
+});
+
 test('getNextToken()-01', () => {
     try {
         var token = instance.getNextToken();
