@@ -31,7 +31,7 @@ export default class RJsonToken {
     }
 
     get image() {
-        logger.debug('returning from token->' + this._image.length);
+        logger.debug('returning from token image length ->' + this._image.length);
         return this._image;
     }
 

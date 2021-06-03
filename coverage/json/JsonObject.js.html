@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.63% </span>
+                <span class="strong">78.95% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/19</span>
+                <span class='fraction'>15/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
+                <span class='fraction'>4/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/10</span>
+                <span class='fraction'>8/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.63% </span>
+                <span class="strong">78.95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/19</span>
+                <span class='fraction'>15/19</span>
             </div>
         
             
@@ -117,35 +117,23 @@
 <a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">125x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-yes">124x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,11 +145,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -174,8 +174,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default class JsonObject {
 &nbsp;
     constructor(root, isKey, input) {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.constructor === JsonObject) {
-<span class="cstat-no" title="statement not covered" >            throw new TypeError("Can not construct abstract class.");</span>
+        if (this.constructor === JsonObject) {
+            throw new TypeError("Can not construct abstract class.");
         }
 &nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (this.formatJsonToString === JsonObject.prototype.formatJsonToString) {
@@ -193,12 +193,12 @@
         this._keyValue = false;
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    ge</span>t root() {
-<span class="cstat-no" title="statement not covered" >        return this._root;</span>
+    get root() {
+        return this._root;
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    se</span>t root(newRoot) {
-<span class="cstat-no" title="statement not covered" >        this._root = newRoot;</span>
+    set root(newRoot) {
+        this._root = newRoot;
     }
 &nbsp;
     get isKey() {
@@ -213,12 +213,12 @@
         return this._input;
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    se</span>t input(newInput) {
-<span class="cstat-no" title="statement not covered" >        this._input = newInput;</span>
+    set input(newInput) {
+        this._input = newInput;
     }
 &nbsp;
-<span class="fstat-no" title="function not covered" >    se</span>t keyValue(newValue) {
-<span class="cstat-no" title="statement not covered" >        this._keyValue = newValue;</span>
+    set keyValue(newValue) {
+        this._keyValue = newValue;
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    fo</span>rmatJsonToString(appendable, currentLevel) {
@@ -235,7 +235,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 02 2021 17:46:12 GMT+0530 (India Standard Time)
+                at Thu Jun 03 2021 11:33:28 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

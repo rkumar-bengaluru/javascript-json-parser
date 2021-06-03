@@ -15,6 +15,14 @@ export default class RJsonLexer extends RJsonConstants {
         this.matchedPos = 0;
         this.toToken = [0x1ccf8fc1,];
         this.curLexState = 0;
+        // this.strLiteralImages = [
+        //     "", null, null, null, null, 'null', '0o54', 0o173, 0o175, 0o072, 0o133, 
+        //     0o135, null, null, null, null, null, null, null, null, null, null, "\'", 
+        //     "\"", null, null, null, null, null, ];
+        this.strLiteralImages = [
+            "", null, null, null, null, 'null', '.', '{', '}', ':', '[',
+            ']', null, null, null, null, null, null, null, null, null, null, "\'",
+            "\"", null, null, null, null, null,];
     }
 
     getNextToken() {
@@ -35,7 +43,7 @@ export default class RJsonLexer extends RJsonConstants {
             this.matchedKind = 0x7fffffff;
             this.matchedPos = 0;
             curPos = this.analyzeCurrentCharacter();
-            logger.debug("matchedKind()->" + this.matchedKind +",curPos->" + curPos);
+            logger.debug("matchedKind()->" + this.matchedKind + ",curPos->" + curPos);
             if (this.matchedKind != 0x7fffffff) {
                 if (this.matchedPos + 1 < curPos) {
                     this.input_stream.backup(curPos - this.matchedPos - 1); // possible backtracking.
@@ -47,7 +55,8 @@ export default class RJsonLexer extends RJsonConstants {
                     logger.debug("getNextToken()::Matched" + matchedToken);
                     return matchedToken;
                 }
-                if (this.matchedKind == this.BRACE_OPEN ) {
+                if (this.matchedKind == this.BRACE_OPEN || this.matchedKind == this.TRUE
+                    || this.matchedKind == this.NUMBER_INTEGER) {
                     matchedToken = this.fillToken();
                     logger.debug("getNextToken()::Matched->" + matchedToken);
                     return matchedToken;
@@ -134,7 +143,7 @@ export default class RJsonLexer extends RJsonConstants {
     }
 
     isDigit() {
-        logger.debug("\"" + curChar + "\"");
+        logger.debug("\"" + this.curChar + "\"");
         let code = this.curChar.charCodeAt();
 
         if (code == 46) { // '.'
@@ -148,8 +157,8 @@ export default class RJsonLexer extends RJsonConstants {
     }
 
     findNumber(startState, curPos) {
-        logger.debug("\"" + curChar + "\"");
-        while (isDigit()) {
+        logger.debug("\"" + this.curChar + "\"");
+        while (this.isDigit()) {
             ++curPos;
             try {
                 this.curChar = this.input_stream.readChar();
@@ -158,12 +167,12 @@ export default class RJsonLexer extends RJsonConstants {
             }
         }
         let code = this.curChar.charCodeAt();
-        logger.debug("\"" + curChar + "\"");
+        logger.debug("\"" + this.curChar + "\"");
         if (code == 44 || code == 125
             || this.curChar == '\r' || this.curChar == '\n' || this.curChar == ' '
             || this.curChar == '\t') {
             --curPos;
-            logger.debug("\"" + curChar + "\"");
+            logger.debug("\"" + this.curChar + "\"");
             this.matchedKind = this.NUMBER_INTEGER;
             this.matchedPos = curPos;
             this.input_stream.backup(1);
@@ -262,27 +271,34 @@ export default class RJsonLexer extends RJsonConstants {
             case 34: // '"'
                 if ((active0 & 8) != 0)
                     return this.stopAtPos(1, this.STRING_DOUBLE_EMPTY);
+                break;
             case 39: // '\''
                 if ((active0 & 4) != 0)
                     return this.stopAtPos(1, this.STRING_SINGLE_EMPTY);
+                break;
             case 65: // 'A'
             case 97: // 'a'
                 if ((active0 & 4) != 0)
                     return this.moveChar02(active0, 4);
+                break;
             case 82: // 'R'
             case 114: // 'r'
                 if ((active0 & 2) != 0)
                     return this.moveChar02(active0, 4);
+                break;
             case 85: // 'U'
             case 117: // 'u'
                 if ((active0 & 8) != 0)
                     return this.moveChar02(active0, 8);
+                break;
             case 47: // '/' - C_SINGLE_COMMENT
                 if ((active0 & 6) != 0)
                     return this.moveChar(0, '\n');
+                break;
             case 42: // '*' - C_MULTILINE_COMMENT
                 if ((active0 & 6) != 0)
                     return this.moveChar(0, '*');
+                break;
             default:
                 break;
 
@@ -297,14 +313,14 @@ export default class RJsonLexer extends RJsonConstants {
             return 2;
         }
         let code = this.curChar.charCodeAt();
-        logger.debug("moveChar01::curChar=" + this.curChar + ",code=" + code);
+        logger.debug("moveChar02::curChar=" + this.curChar + ",code=" + code);
         switch (code) {
             case 76: // L
             case 108:// l
-                return moveChar03(active0, 0xc0000);
+                return this.moveChar03(active0, 0xc0000);
             case 85:// U
             case 117:// u
-                return moveChar03(active0, 2);
+                return this.moveChar03(active0, 2);
             default:
                 break;
         }
@@ -319,20 +335,21 @@ export default class RJsonLexer extends RJsonConstants {
         }
         let code = this.curChar.charCodeAt();
         logger.debug("moveChar03::curChar=" + this.curChar + ",code=" + code);
-        switch (curChar) {
+        switch (code) {
             case 69: // E
             case 101: // e
                 if ((active0 & 2) != 0)
-                    return stopAtPos(3, this.TRUE);
+                    return this.stopAtPos(3, this.TRUE);
                 break;
             case 76: // L
             case 108:// l
+                logger.debug('moveChar03->foundNull');
                 if ((active0 & 8) != 0)
-                    return stopAtPos(3, this.NULL);
+                    return this.stopAtPos(3, this.NULL);
                 break;
             case 83: // S
             case 115:// s
-                return moveChar04(active0, 4);
+                return this.moveChar04(active0, 4);
             default:
                 break;
         }
@@ -347,11 +364,11 @@ export default class RJsonLexer extends RJsonConstants {
         }
         let code = this.curChar.charCodeAt();
         logger.debug("moveChar04::curChar=" + this.curChar + ",code=" + code);
-        switch (curChar) {
+        switch (code) {
             case 69: // E
             case 101:// e
                 if ((active0 & 4) != 0)
-                    return stopAtPos(4, this.FALSE);
+                    return this.stopAtPos(4, this.FALSE);
                 break;
             default:
                 break;
@@ -383,11 +400,13 @@ export default class RJsonLexer extends RJsonConstants {
     }
 
     fillToken() {
-        let tokenImage = this.input_stream.getImage();
         let beginLine = this.input_stream.getBeginLine;
         let beginColumn = this.input_stream.getBeginColumn;
         let endLine = this.input_stream.getEndLine;
         let endColumn = this.input_stream.getEndColumn;
+        var im = this.strLiteralImages[this.matchedKind];
+        let tokenImage = (im == null) ? this.input_stream.getImage() : im;
+        //let tokenImage = this.input_stream.getImage();
         let token = RJsonToken.newToken(this.matchedKind, tokenImage);
         logger.debug('generated new token ->' + token.toString());
         token.beginLine = beginLine;

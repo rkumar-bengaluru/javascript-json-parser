@@ -88,12 +88,16 @@ export default class CharStream {
     }
 
     backup(amount) {
+        logger.debug('inBuf-' + this.inBuf + ",bufPos-" + this.bufpos);
         this.inBuf += amount;
         if ((this.bufpos -= amount) < 0)
             this.bufpos += this.bufsize;
+        //this.tokenBegin = amount;
+        logger.debug('inBuf-' + this.inBuf + ",bufPos-" + this.bufpos);
     }
 
     readFromBuffer() {
+        logger.debug('reading from inBuf-' + this.inBuf);
         --this.inBuf;
         if (++this.bufpos == this.bufsize)
             this.bufpos = 0;
