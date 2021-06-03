@@ -32,8 +32,8 @@ export default class RJsonTokenMgrError {
                     continue;
                 default:
                     if ((ch = str.charAt(i)) < 0x20 || ch > 0x7e) {
-                        var s = "0000" + Integer.toString(ch, 16);
-                        retval += "\\u" + s.substring(s.length() - 4, s.length());
+                        var s = "0000" + ch.toString();
+                        retval += "\\u" + s.substring(s.length - 4, s.length);
                     } else {
                         retval += ch;
                     }

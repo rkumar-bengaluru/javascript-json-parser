@@ -12,7 +12,8 @@
     "test": "jest --verbose ",
     "char": "jest --verbose CharStream",
     "lexer": "jest --verbose LexerTest",
-    "str": "jest --verbose StringTest"
+    "str": "jest --verbose StringTest",
+    "comment": "jest --verbose Comment"
   },
   "repository": {
     "type": "git",

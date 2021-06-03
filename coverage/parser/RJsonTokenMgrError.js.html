@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.67% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/30</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.25% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/16</span>
+                <span class='fraction'>0/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">36.67% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/30</span>
+                <span class='fraction'>0/30</span>
             </div>
         
             
@@ -118,13 +118,10 @@
 <a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -148,88 +145,91 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default class RJsonTokenMgrError {
-    static addEscapes(str) {
+<span class="fstat-no" title="function not covered" >    st</span>atic addEscapes(str) {
         let i,ch;
-        let retval = "";
-        for (i = 0; i &lt; str.length; i++) {
-            switch (str.charAt(i)) {
-<span class="branch-0 cbranch-no" title="branch not covered" >                case 0:</span>
+        let retval = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; str.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            switch (str.charAt(i)) {</span>
+                case 0:
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-1 cbranch-no" title="branch not covered" >                case '\b':</span>
+                case '\b':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\b";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-2 cbranch-no" title="branch not covered" >                case '\t':</span>
+                case '\t':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\t";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-3 cbranch-no" title="branch not covered" >                case '\n':</span>
+                case '\n':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\n";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-4 cbranch-no" title="branch not covered" >                case '\f':</span>
+                case '\f':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\f";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-5 cbranch-no" title="branch not covered" >                case '\r':</span>
+                case '\r':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\r";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-6 cbranch-no" title="branch not covered" >                case '\"':</span>
+                case '\"':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\\"";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-7 cbranch-no" title="branch not covered" >                case '\'':</span>
+                case '\'':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\\'";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
-<span class="branch-8 cbranch-no" title="branch not covered" >                case '\\':</span>
+                case '\\':
 <span class="cstat-no" title="statement not covered" >                    retval += "\\\\";</span>
 <span class="cstat-no" title="statement not covered" >                    continue;</span>
                 default:
-                    <span class="missing-if-branch" title="if path not taken" >I</span>if ((ch = str.charAt(i)) &lt; 0x20 || ch &gt; 0x7e) {
-                        var s = <span class="cstat-no" title="statement not covered" >"0000" + Integer.toString(ch, 16);</span>
-<span class="cstat-no" title="statement not covered" >                        retval += "\\u" + s.substring(s.length() - 4, s.length());</span>
+<span class="cstat-no" title="statement not covered" >                    if ((ch = str.charAt(i)) &lt; 0x20 || ch &gt; 0x7e) {</span>
+                        var s = <span class="cstat-no" title="statement not covered" >"0000" + ch.toString();</span>
+<span class="cstat-no" title="statement not covered" >                        retval += "\\u" + s.substring(s.length - 4, s.length);</span>
                     } else {
-                        retval += ch;
+<span class="cstat-no" title="statement not covered" >                        retval += ch;</span>
                     }
-                    continue;
+<span class="cstat-no" title="statement not covered" >                    continue;</span>
             }
         }
-        return retval.toString();
+<span class="cstat-no" title="statement not covered" >        return retval.toString();</span>
     }
 &nbsp;
-    static LexicalError(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar) {
-        let code = curChar.charCodeAt();
-        return "Lexical error at line " +
+<span class="fstat-no" title="function not covered" >    st</span>atic LexicalError(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar) {
+        let code = <span class="cstat-no" title="statement not covered" >curChar.charCodeAt();</span>
+<span class="cstat-no" title="statement not covered" >        return "Lexical error at line " +</span>
             errorLine + ", column " +
             errorColumn + ".  Encountered: " +
-            (EOFSeen ? <span class="branch-0 cbranch-no" title="branch not covered" >"&lt;EOF&gt; " </span>: ("\"" + RJsonTokenMgrError.addEscapes(curChar) + "\"") + " (" + code + "), ") +
+            (EOFSeen ? "&lt;EOF&gt; " : ("\"" + RJsonTokenMgrError.addEscapes(curChar) + "\"") + " (" + code + "), ") +
             "after : \"" + RJsonTokenMgrError.addEscapes(errorAfter) + "\"";
     }
 &nbsp;
-    constructor(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar, reason) {
-        this.message = RJsonTokenMgrError.LexicalError(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar);
-        this.reason = reason;
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar, reason) {
+<span class="cstat-no" title="statement not covered" >        this.message = RJsonTokenMgrError.LexicalError(EOFSeen, lexState, errorLine, errorColumn, errorAfter, curChar);</span>
+<span class="cstat-no" title="statement not covered" >        this.reason = reason;</span>
     }
 }</pre></td></tr></table></pre>
 
@@ -238,7 +238,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jun 03 2021 11:56:19 GMT+0530 (India Standard Time)
+                at Thu Jun 03 2021 15:20:08 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

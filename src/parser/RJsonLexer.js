@@ -20,7 +20,7 @@ export default class RJsonLexer extends RJsonConstants {
         //     0o135, null, null, null, null, null, null, null, null, null, null, "\'", 
         //     "\"", null, null, null, null, null, ];
         this.strLiteralImages = [
-            "", null, null, null, null, 'null', '.', '{', '}', ':', '[',
+            "", null, null, null, null, 'null', ',', '{', '}', ':', '[',
             ']', null, null, null, null, null, null, null, null, null, null, "\'",
             "\"", null, null, null, null, null,];
     }
@@ -49,14 +49,16 @@ export default class RJsonLexer extends RJsonConstants {
                     this.input_stream.backup(curPos - this.matchedPos - 1); // possible backtracking.
                 }
                 logger.debug("curPos=" + curPos);
-                if ((this.matchedKind == RJsonConstants.C_SINGLE_COMMENT)
-                    || (this.matchedKind == RJsonConstants.C_MULTILINE_COMMENT)) {
+                if ((this.matchedKind == this.C_SINGLE_COMMENT)
+                    || (this.matchedKind == this.C_MULTILINE_COMMENT)) {
                     this.matchedToken = this.fillToken();
-                    logger.debug("getNextToken()::Matched" + matchedToken);
+                    logger.debug("getNextToken()::Matched" + this.matchedKind);
                     return matchedToken;
                 }
                 if (this.matchedKind == this.BRACE_OPEN || this.matchedKind == this.TRUE
-                    || this.matchedKind == this.NUMBER_INTEGER) {
+                    || this.matchedKind == this.NUMBER_INTEGER
+                    || this.matchedKind == this.NULL
+                    || this.matchedKind == this.COMMA) {
                     matchedToken = this.fillToken();
                     logger.debug("getNextToken()::Matched->" + matchedToken);
                     return matchedToken;
@@ -97,13 +99,13 @@ export default class RJsonLexer extends RJsonConstants {
 
     analyzeCurrentCharacter() {
         if (this.curChar == ' ' || this.curChar == '\t' || this.curChar == '\n' || this.curChar == '\r') {
-            consume_char();
+            this.consume_char();
             try {
-                curChar = input_stream.readChar();
+                this.curChar = this.input_stream.readChar();
             } catch (e) {
                 return 1;
             }
-            return analyzeCurrentCharacter();
+            return this.analyzeCurrentCharacter();
         }
         let code = this.curChar.charCodeAt();
         //logger.debug('analyzeCurrentCharacter()->' + code);
@@ -217,6 +219,7 @@ export default class RJsonLexer extends RJsonConstants {
     }
 
     moveChar(curPos, target) {
+        logger.debug("moveChar::curChar=" + this.curChar + ",target=" + target);
         var kind = 0x7fffffff;
         try {
             this.curChar = this.input_stream.readChar();
@@ -228,8 +231,8 @@ export default class RJsonLexer extends RJsonConstants {
             if (this.curChar == '\n' || this.curChar == '\r' || this.curChar == '\f') {
                 kind = this.C_SINGLE_COMMENT;
             }
-
-            if (code == 42) {
+            if (code == 42) { // '*'
+                
                 // lookahead for char '/'
                 try {
                     this.curChar = this.input_stream.readChar();
@@ -256,6 +259,7 @@ export default class RJsonLexer extends RJsonConstants {
             } catch (e) {
                 return curPos;
             }
+            code = this.curChar.charCodeAt();
         }
     }
 
@@ -317,7 +321,7 @@ export default class RJsonLexer extends RJsonConstants {
         switch (code) {
             case 76: // L
             case 108:// l
-                return this.moveChar03(active0, 0xc0000);
+                return this.moveChar03(active0, 5);
             case 85:// U
             case 117:// u
                 return this.moveChar03(active0, 2);
@@ -343,9 +347,11 @@ export default class RJsonLexer extends RJsonConstants {
                 break;
             case 76: // L
             case 108:// l
-                logger.debug('moveChar03->foundNull');
-                if ((active0 & 8) != 0)
+                
+                if ((active0 & 5) != 0) {
+                    logger.debug('moveChar03->foundNull-' + (active0 & 5));
                     return this.stopAtPos(3, this.NULL);
+                }
                 break;
             case 83: // S
             case 115:// s
