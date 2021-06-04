@@ -1,7 +1,6 @@
 import RJsonToken from './RJsonToken.js';
 import RJsonTokenMgrError from './RJsonTokenMgrError.js';
 import RJsonConstants from './RJsonConstants.js';
-import CharStream from '../io/CharStream.js';
 
 var logger = require('../logger/logger');
 
@@ -9,7 +8,7 @@ export default class RJsonLexer extends RJsonConstants {
 
     constructor(istream) {
         super();
-        this.input_stream = new CharStream(istream);
+        this.input_stream = istream;
         this.curChar = '';
         this.matchedKind = 0;
         this.matchedPos = 0;

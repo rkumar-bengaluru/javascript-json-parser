@@ -1,5 +1,6 @@
 import RJsonLexer from '../../src/parser/RJsonLexer.js';
 import StringReader from '../../src/io/StringReader.js';
+import CharStream from '../../src/io/CharStream.js';
 
 var logger = require('../../src/logger/logger');
 
@@ -18,7 +19,7 @@ test('testLargeJson()', () => {
     var jsonStr = properties + keyFeatures + ratings + marketplace + "}";
     logger.debug(jsonStr);
     var reader = new StringReader(jsonStr);
-    instance = new RJsonLexer(reader);
+    instance = new RJsonLexer(new CharStream(reader));
     var token = instance.getNextToken();
     expect(token.image).toBe("{");
 

@@ -4,6 +4,16 @@ export default class RJsonToken {
     constructor(ofkind,nimage) {
         this._kind = ofkind;
         this._image = nimage;
+        this._next = null;
+        this.specialToken = null;
+    }
+
+    set next(newNext) {
+        this._next = newNext;
+    }
+
+    get next() {
+        return this._next;
     }
 
     set beginLine(line) {

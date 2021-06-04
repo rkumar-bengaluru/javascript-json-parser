@@ -1,5 +1,6 @@
 import RJsonLexer from '../../src/parser/RJsonLexer.js';
 import StringReader from '../../src/io/StringReader.js';
+import CharStream from '../../src/io/CharStream.js';
 
 var logger = require('../../src/logger/logger');
 
@@ -8,13 +9,13 @@ var instance = null;
 beforeEach(() => {
     var jsonStr = "{\"name\":\"rupak\"}";
     var reader = new StringReader(jsonStr);
-    instance = new RJsonLexer(reader);
+    instance = new RJsonLexer(new CharStream(reader));
 });
 
 test('mapTest()', () => {
     var jsonStr = "[\"one\",\"two\",\"three\"]";
     var reader = new StringReader(jsonStr);
-    instance = new RJsonLexer(reader);
+    instance = new RJsonLexer(new CharStream(reader));
     var token = instance.getNextToken();
     expect(token.image).toBe("[");
     token = instance.getNextToken();
@@ -90,7 +91,7 @@ test('getNextToken()-boolean(true)', () => {
     try {
         var jsonStr = "{\"isBoolean\":true}";
         var reader = new StringReader(jsonStr);
-        instance = new RJsonLexer(reader);
+        instance = new RJsonLexer(new CharStream(reader));
 
         var token = instance.getNextToken();
         logger.debug("token->" + token);
@@ -125,7 +126,7 @@ test('getNextToken()-boolean(true)', () => {
     try {
         var jsonStr = "{\"isBoolean\":false}";
         var reader = new StringReader(jsonStr);
-        instance = new RJsonLexer(reader);
+        instance = new RJsonLexer(new CharStream(reader));
 
         var token = instance.getNextToken();
         logger.debug("token->" + token);
@@ -160,7 +161,7 @@ test('getNextToken()-number(12)', () => {
     try {
         var jsonStr = "{\"isNumber\":12}";
         var reader = new StringReader(jsonStr);
-        instance = new RJsonLexer(reader);
+        instance = new RJsonLexer(new CharStream(reader));
 
         var token = instance.getNextToken();
         logger.debug("token->" + token);
@@ -195,7 +196,7 @@ test('getNextToken()-number(12.243)', () => {
     try {
         var jsonStr = "{\"isNumber\":12.243}";
         var reader = new StringReader(jsonStr);
-        instance = new RJsonLexer(reader);
+        instance = new RJsonLexer(new CharStream(reader));
 
         var token = instance.getNextToken();
         logger.debug("token->" + token);
@@ -230,7 +231,7 @@ test('getNextToken()-null test', () => {
     try {
         var jsonStr = "{\"isNumber\":null}";
         var reader = new StringReader(jsonStr);
-        instance = new RJsonLexer(reader);
+        instance = new RJsonLexer(new CharStream(reader));
 
         var token = instance.getNextToken();
         logger.debug("token->" + token);
