@@ -20,6 +20,10 @@ export default class RJsonToken {
         this._beginLine = line;
     }
 
+    get beginLine() {
+        return this._beginLine;
+    }
+
     set endLine(line) {
         this._endLine = line;
     }
@@ -28,12 +32,16 @@ export default class RJsonToken {
         this._beginColumn = column;
     }
 
+    get beginColumn() {
+        return this._beginColumn;
+    }
+
     set endColumn(column) {
         this._endColumn = column;
     }
 
     get kind() {
-        return this.kind;
+        return this._kind;
     }
 
     set kind(newKind) {

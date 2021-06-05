@@ -5,11 +5,15 @@ export default class RJsonParserError extends Error {
         this.currentToken = _currentTokenVal;
         this.expectedTokenSequences = _expectedTokenSequencesVal;
         this.tokenImage = _tokenImageVal;
-        this.eol = "\n";
+        this.eol = "&";
+    }
+
+    toString() {
+        return "i am exception";
     }
 
     getMessage() {
-        let expected;
+        let expected = '';
         let maxSize, i, j = 0;
         for (i = 0; i < this.expectedTokenSequences.length; i++) {
             if (maxSize < this.expectedTokenSequences[i].length) {
@@ -25,7 +29,7 @@ export default class RJsonParserError extends Error {
         }
 
         let retval = "Encountered \"";
-        let tok = currentToken.next;
+        let tok = this.currentToken.next;
         for (i = 0; i < maxSize; i++) {
             if (i != 0) retval += " ";
             if (tok.kind == 0) {
@@ -39,7 +43,7 @@ export default class RJsonParserError extends Error {
             tok = tok.next;
         }
 
-        retval += "\" at line " + this.currentToken.next.beginLine + ", column " + this.currentToken.next.beginColumn;
+        retval += "\" at line " + this.currentToken.next.beginLine + ", column " + this.currentToken.next;
         retval += "." + this.eol;
         if (this.expectedTokenSequences.length == 1) {
             retval += "Was expecting:" + this.eol + "    ";

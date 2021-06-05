@@ -14,7 +14,8 @@
     "lexer": "jest --verbose LexerTest",
     "str": "jest --verbose StringTest",
     "comment": "jest --verbose Comment",
-    "file": "jest --verbose FileTest"
+    "file": "jest --verbose FileTest",
+    "parse": "jest --verbose RJsonParserTest"
   },
   "repository": {
     "type": "git",

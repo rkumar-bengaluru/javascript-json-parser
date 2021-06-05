@@ -33,7 +33,7 @@ export default class RJsonLexer extends RJsonConstants {
             try {
                 this.curChar = this.input_stream.beginToken();
             } catch (e) {
-                logger.debug(e.stack);
+                //logger.debug(e.stack);
                 this.matchedKind = 0;
                 matchedToken = this.fillToken();
                 return matchedToken;
@@ -44,6 +44,7 @@ export default class RJsonLexer extends RJsonConstants {
             curPos = this.analyzeCurrentCharacter();
             logger.debug("matchedKind()->" + this.matchedKind + ",curPos->" + curPos);
             if (this.matchedKind != 0x7fffffff) {
+               
                 if (this.matchedPos + 1 < curPos) {
                     this.input_stream.backup(curPos - this.matchedPos - 1); // possible backtracking.
                 }
@@ -79,6 +80,7 @@ export default class RJsonLexer extends RJsonConstants {
                 this.input_stream.readChar();
                 this.input_stream.backup(1);
             } catch (e1) {
+                logger.debug(e1.stack);
                 EOFSeen = true;
                 error_after = curPos <= 1 ? "" : this.input_stream.getImage();
                 if (this.curChar == '\n' || this.curChar == '\r') {
@@ -88,11 +90,14 @@ export default class RJsonLexer extends RJsonConstants {
                     error_column++;
                 }
             }
+            logger.debug('xxxxxxxxxxxx');
             if (!EOFSeen) {
+                logger.debug('xxxxxxxxxxxx');
                 this.input_stream.backup(1);
                 error_after = curPos <= 1 ? "" : this.input_stream.getImage();
             }
-            throw new RJsonTokenMgrError(EOFSeen, this.curLexState, error_line, error_column, error_after, this.curChar, RJsonConstants.LEXICAL_ERROR);
+            logger.debug('zzzzzzzzzzzzzzzz');
+            throw new RJsonTokenMgrError(EOFSeen, this.curLexState, error_line, error_column, error_after, this.curChar, this.LEXICAL_ERROR);
         }
     }
 
@@ -102,6 +107,8 @@ export default class RJsonLexer extends RJsonConstants {
             try {
                 this.curChar = this.input_stream.readChar();
             } catch (e) {
+                // hack for special characters after the last token.
+                this.matchedKind = 0;
                 return 1;
             }
             return this.analyzeCurrentCharacter();

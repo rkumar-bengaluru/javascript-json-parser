@@ -57,10 +57,10 @@ export default class CharStream {
     }
 
     readByte() {
-
+        
         if (++this.nextCharInd >= this.maxNextCharInd)
             this.fillBuff();
-        //logger.debug("nextCharInd=" + (this.nextCharInd) + ",nextChar=" + this.nextCharBuf[this.nextCharInd]);
+        logger.debug("nextCharInd=" + (this.nextCharInd) + ",this.maxNextCharInd=" + this.maxNextCharInd);
         return this.nextCharBuf[this.nextCharInd];
     }
 

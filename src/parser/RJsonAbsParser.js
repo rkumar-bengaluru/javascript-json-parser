@@ -3,10 +3,15 @@ import JsonBoolean from "../json/JsonBoolean";
 import JsonNumber from "../json/JsonNumber";
 import JsonNull from "../json/JsonNull";
 import RJsonConstants from "./RJsonConstants";
+import StringReader from "../io/StringReader";
+import CharStream from "../io/CharStream";
+import RJsonLexer from "./RJsonLexer";
+import RJsonToken from "./RJsonToken";
 
 export default class RJsonAbsParser extends RJsonConstants {
 
     constructor(rinput) {
+        super();
         this.input = rinput;
         this.reader = new StringReader(this.input);
         this.stream = new CharStream(this.reader);
@@ -100,10 +105,10 @@ export default class RJsonAbsParser extends RJsonConstants {
                 this.jj_consume_token(this.STRING_DOUBLE_EMPTY);
                 { if (true) return new JsonString(false, false, ""); }
                 break;
-            case STRING_DOUBLE_NONEMPTY:
+            case this.STRING_DOUBLE_NONEMPTY:
                 this.jj_consume_token(this.STRING_DOUBLE_NONEMPTY);
-                var image = token.image;
-                { if (true) return new JsonString(false, false, image.substring(1, image.length() - 1)); }
+                var image = this.token.image;
+                { if (true) return new JsonString(false, false, image); }
                 break;
             default:
                 this.jj_la1[11] = this.sjj_gen;
@@ -121,7 +126,7 @@ export default class RJsonAbsParser extends RJsonConstants {
             case this.STRING_SINGLE_NONEMPTY:
                 this.jj_consume_token(this.STRING_SINGLE_NONEMPTY);
                 var image = token.image;
-                { if (true) return new JsonString(false, false, image.substring(1, image.length() - 1)); }
+                { if (true) return new JsonString(false, false, image); }
                 break;
             default:
                 this.jj_la1[12] = this.jj_gen;
@@ -199,8 +204,8 @@ export default class RJsonAbsParser extends RJsonConstants {
                 }
                 break;
             case this.NUMBER_INTEGER:
-                t = this.jj_consume_token(NUMBER_INTEGER);
-                if (nativeNumbers) {
+                t = this.jj_consume_token(this.NUMBER_INTEGER);
+                if (this.nativeNumbers) {
                     { if (true) return new JsonNumber(false, false, t.image); }
                 } else {
                     { if (true) return new JsonNumber(false, false, t.image); }
