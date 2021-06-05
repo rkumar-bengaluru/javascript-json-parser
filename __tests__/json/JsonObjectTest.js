@@ -14,14 +14,6 @@ test('root test', () => {
     expect(instance.root).toBe(true);
 })
 
-test('root constructor', () => {
-    try {
-        var obj = new JsonObject();
-        throw new Error('this test case failed...');
-    } catch( error) {
-        expect(error.message).toBe('Can not construct abstract class.');
-    }
-})
 
 
 test('input', () => {

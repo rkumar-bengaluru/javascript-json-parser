@@ -38,10 +38,11 @@ export default class JsonList extends JsonObject {
     }
 
     formatJsonToHtml(appendable, currentLevel) {
+        let destination = "";
         if(this._root) {
             destination += "<div class=\"json-viewer\"><code class=\"js\" id=\"js\">";
         }
-        let destination = "";
+        
         let size = this._input.length;
         destination += "<a class=\"list-link\" href=\"javascript:void(0)\">[";
         destination += "<span style=\"color: #1d57d4;\"><i onClick=\"spanClicked(event);\" class=\"far fa-minus-square\"></i></span>";

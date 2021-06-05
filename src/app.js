@@ -1,27 +1,54 @@
 import RJsonParser from "./parser/RJsonParser"
-import JsonString from "./json/JsonString"
+
 import css from "./css/style.css";
 
-parse();
+format();
 
-function parse() {
+function formatInputString(jsonObj, textDiv) {
+    var appendable = {
+        destination: ""
+    }
+    jsonObj.formatJsonToString(appendable, -1);
+    textDiv.innerHTML = appendable.destination;
+}
+
+function formatHtml(jsonObj, jsonDiv) {
+    var appendable = {
+        destination: ""
+    }
+    jsonObj.formatJsonToHtml(appendable, -1);
+    jsonDiv.innerHTML = appendable.destination;
+}
+
+function init() {
     try {
-        let instance = new RJsonParser(document.getElementById('inputtextarea').innerHTML);
-        var appendable = {
-            destination: ""
-        }
-        var obj = instance.parse();
-        obj.formatJsonToString(appendable, -1);
+        console.log('reformatting.');
+        let textDiv = document.getElementById('inputtextarea');
+        let jsonDiv = document.getElementById('json');
+        let instance = new RJsonParser(textDiv.innerHTML);
         
-        
-        document.getElementById('inputtextarea').innerHTML = appendable.destination;
-        appendable.destination = "";
-        obj.formatJsonToHtml(appendable, -1);
-        console.log(appendable.destination);
-        
+        var jsonObj = instance.parse();
+        formatInputString(jsonObj, textDiv);
+        formatHtml(jsonObj, jsonDiv);
     } catch (e) {
-        console.error(e.stack);
-        document.getElementById('inputtextarea').innerHTML = e.message;
+        console.log(e.stack);
+        //document.getElementById('inputtextarea').innerHTML = e.message;
     }
 }
+
+function format() {
+    try {
+        init();
+        let textDiv = document.getElementById('inputtextarea');
+        textDiv.addEventListener('input', () => {
+            console.log('input changed...' + document.getElementById('inputtextarea').innerHTML);
+            //alert('-----------' + document.getElementById('inputtextarea').innerHTML);
+            init();
+        })
+    } catch (e) {
+        console.log(e.stack);
+        //document.getElementById('inputtextarea').innerHTML = e.message;
+    }
+}
+
 

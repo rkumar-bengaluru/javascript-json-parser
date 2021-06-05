@@ -7,8 +7,8 @@ var logger = require('../logger/logger');
 
 export default class RJsonParser extends RJsonAbsParser {
 
-    constructor(rinput) {
-        super(rinput);
+    constructor(rinput,startNow) {
+        super(rinput,startNow);
     }
 
     parse() {
@@ -22,7 +22,7 @@ export default class RJsonParser extends RJsonAbsParser {
     }
 
     anything() {
-        logger.debug("RJsonParser::anything()" + this.jj_nt.toString());
+        logger.debug("RJsonParser::anything()" + this.jj_nt);
         let x;
         switch (this.jj_nt.kind) {
             case this.BRACE_OPEN:
@@ -91,7 +91,7 @@ export default class RJsonParser extends RJsonAbsParser {
                 }
                 break;
             default:
-                this.jj_la1[4] = jj_gen;
+                this.jj_la1[4] = this.jj_gen;
         }
         this.jj_consume_token(this.BRACE_CLOSE);
         { if (true) return map; }

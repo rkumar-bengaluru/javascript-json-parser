@@ -10,8 +10,15 @@ import RJsonToken from "./RJsonToken";
 
 export default class RJsonAbsParser extends RJsonConstants {
 
-    constructor(rinput) {
+    constructor(rinput,startNow) {
         super();
+        
+        if(startNow === undefined) {
+            this.init(rinput);
+        }
+    }
+
+    init(rinput) {
         this.input = rinput;
         this.reader = new StringReader(this.input);
         this.stream = new CharStream(this.reader);

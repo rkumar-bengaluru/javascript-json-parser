@@ -50,17 +50,20 @@ export default class JsonMap extends JsonObject {
     }
 
     formatJsonToHtml(appendable, currentLevel) {
+        let destination = "";
+        logger.debug('formatting to html...' + this._root);
         if(this._root) {
             destination += "<div class=\"json-viewer\"><code class=\"js\" id=\"js\">";
         }
-        let destination = "";
+        logger.debug('formatting to html...');
+        
         let size = this._input.size;
         destination += "<a class=\"list-link\" href=\"javascript:void(0)\">{";
         destination += "<span style=\"color: #1d57d4;\"><i onClick=\"spanClicked(event);\" class=\"far fa-minus-square\"></i></span>";
         destination += "<span style=\"color: #1d57d4;\" class=\"hide\"><i onClick=\"spanClicked(event);\" class=\"fas fa-plus-square\"></i></span>";
         destination += "<span class=\"hide\"><span onClick=\"spanClicked(event);\" class=\"items-ph\">" + size + " items</span></span>";
         destination += "</a>";
-        let i,j;
+        let j;
         destination += "<ul data-level=\"" + ++currentLevel + "\" class=\"type-array\">";
         this._input.forEach(function(value, key) {
             destination += "<li>";
