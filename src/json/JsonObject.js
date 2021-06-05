@@ -1,9 +1,9 @@
 export default class JsonObject {
 
     constructor(root, isKey, input) {
-        if (this.constructor === JsonObject) {
-            throw new TypeError("Can not construct abstract class.");
-        }
+        // if (this.constructor === JsonObject) {
+        //     throw new TypeError("Can not construct abstract class.");
+        // }
 
         if (this.formatJsonToString === JsonObject.prototype.formatJsonToString) {
             // Error Type 4. Child has not implemented this abstract method.

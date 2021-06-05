@@ -24,7 +24,7 @@ test('parse()', () => {
     }
 });
 
-test('parseComplex()', () => {
+test('product()', () => {
     try {
         fs.readFile("./__tests__/parser/product.json", {encoding: 'utf8'},function (err, data) {
             if (err) {
@@ -43,5 +43,29 @@ test('parseComplex()', () => {
 
     } catch (e) {
         logger.debug(e.stack);
+        throw e;
+    }
+});
+
+test('product1()', () => {
+    try {
+        fs.readFile("./__tests__/parser/product1.json", {encoding: 'utf8'},function (err, data) {
+            if (err) {
+                logger.error(err);
+            }
+            logger.debug(data);
+            instance = new RJsonParser(data);
+            var obj = instance.parse();
+            logger.debug('----------------');
+            var appendable = {
+                destination: ""
+            }
+            obj.formatJsonToString(appendable, -1);
+            logger.debug(appendable.destination);
+        });
+
+    } catch (e) {
+        logger.debug(e.stack);
+        throw e;
     }
 });

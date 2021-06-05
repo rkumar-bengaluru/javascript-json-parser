@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/44</span>
+                <span class='fraction'>0/44</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>0/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/44</span>
+                <span class='fraction'>0/44</span>
             </div>
         
             
@@ -135,36 +135,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,37 +206,37 @@ import JsonObject from './JsonObject.js';
 &nbsp;
 export default class JsonList extends JsonObject {
     
-    constructor(root, isKey, input) {
-        super(root, isKey, input);
+<span class="fstat-no" title="function not covered" >    co</span>nstructor(root, isKey, input) {
+<span class="cstat-no" title="statement not covered" >        super(root, isKey, input);</span>
     }
 &nbsp;
-    add(jsonObject) {
-        this._input.push(jsonObject);
-        return this;
+<span class="fstat-no" title="function not covered" >    ad</span>d(jsonObject) {
+<span class="cstat-no" title="statement not covered" >        this._input.push(jsonObject);</span>
+<span class="cstat-no" title="statement not covered" >        return this;</span>
     }
 &nbsp;
-    formatJsonToString(appendable, currentLevel) {
-        ++currentLevel;
-        let tabs = '';
+<span class="fstat-no" title="function not covered" >    fo</span>rmatJsonToString(appendable, currentLevel) {
+<span class="cstat-no" title="statement not covered" >        ++currentLevel;</span>
+        let tabs = <span class="cstat-no" title="statement not covered" >'';</span>
         let i,j;
-        for (i = 0; i &lt; currentLevel; i++)
-            tabs += "\t";
-        let destination = "";
-        destination += "\n" + tabs + "[\n";
-        j = 0;
-        let size = this._input.length;
-        this._input.forEach(element =&gt; {
-            var cAppendable = {
+<span class="cstat-no" title="statement not covered" >        for (i = 0; i &lt; currentLevel; i++)</span>
+<span class="cstat-no" title="statement not covered" >            tabs += "\t";</span>
+        let destination = <span class="cstat-no" title="statement not covered" >"";</span>
+<span class="cstat-no" title="statement not covered" >        destination += "\n" + tabs + "[\n";</span>
+<span class="cstat-no" title="statement not covered" >        j = 0;</span>
+        let size = <span class="cstat-no" title="statement not covered" >this._input.length;</span>
+<span class="cstat-no" title="statement not covered" >        this._input.forEach(<span class="fstat-no" title="function not covered" >el</span>ement =&gt; {</span>
+            var cAppendable = <span class="cstat-no" title="statement not covered" >{</span>
                 destination : ""
             }
-            element.formatJsonToString(cAppendable,currentLevel);
-            destination += cAppendable.destination;
-            if(j != (size-1))
-                destination += ",\n";
-            j++;
+<span class="cstat-no" title="statement not covered" >            element.formatJsonToString(cAppendable,currentLevel);</span>
+<span class="cstat-no" title="statement not covered" >            destination += cAppendable.destination;</span>
+<span class="cstat-no" title="statement not covered" >            if(j != (size-1))</span>
+<span class="cstat-no" title="statement not covered" >                destination += ",\n";</span>
+<span class="cstat-no" title="statement not covered" >            j++;</span>
         });
-        destination += "\n" + tabs + "]";
-        appendable.destination += destination;
+<span class="cstat-no" title="statement not covered" >        destination += "\n" + tabs + "]";</span>
+<span class="cstat-no" title="statement not covered" >        appendable.destination += destination;</span>
         //console.log('destination-&gt;' + destination);
     }
 &nbsp;
@@ -280,7 +280,7 @@ export default class JsonList extends JsonObject {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Jun 05 2021 13:01:58 GMT+0530 (India Standard Time)
+                at Sat Jun 05 2021 15:24:45 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
