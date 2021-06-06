@@ -1,15 +1,14 @@
+var logger = require('../logger/logger');
+
 export default class RJsonParserError extends Error {
 
     constructor(_currentTokenVal, _expectedTokenSequencesVal, _tokenImageVal) {
         super();
+        this.name = "RJsonParserError"; 
         this.currentToken = _currentTokenVal;
         this.expectedTokenSequences = _expectedTokenSequencesVal;
         this.tokenImage = _tokenImageVal;
         this.eol = "&";
-    }
-
-    toString() {
-        return "i am exception";
     }
 
     getMessage() {
@@ -51,6 +50,8 @@ export default class RJsonParserError extends Error {
             retval += "Was expecting one of:" + this.eol + "    ";
         }
         retval += expected;
+        this.message = retval;
+        logger.debug(this.message);
         return retval;
     }
 

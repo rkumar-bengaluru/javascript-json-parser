@@ -52,10 +52,10 @@ export default class RJsonAbsParser extends RJsonConstants {
             case this.STRING_DOUBLE_NONEMPTY:
                 key = this.string();
                 break;
-            case SYMBOL:
+            case this.SYMBOL:
                 key = this.symbol();
                 break;
-            case NULL:
+            case this.NULL:
                 this.nullValue();
                 key = null;
                 break;

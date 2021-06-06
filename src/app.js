@@ -27,12 +27,15 @@ function formatHtml(jsonObj) {
 function init() {
     try {
         console.log('reformatting.');
+        document.getElementById("input-spinner").classList.toggle("hidden");
         var target = document.getElementById('inputtextarea');
         let instance = new RJsonParser(target.value);
+        target.value = 'loading';
         
         var jsonObj = instance.parse();
         formatInputString(jsonObj);
         formatHtml(jsonObj);
+        document.getElementById("input-spinner").classList.toggle("hidden");
     } catch (e) {
         console.log(e.stack);
         //document.getElementById('inputtextarea').innerHTML = e.message;

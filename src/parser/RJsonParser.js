@@ -12,6 +12,7 @@ export default class RJsonParser extends RJsonAbsParser {
     }
 
     parse() {
+       
         var toReturn = this.anything();
         toReturn.root = true;
         toReturn.rawInput = this.input;
@@ -19,6 +20,7 @@ export default class RJsonParser extends RJsonAbsParser {
             throw new Error("parser.expectedEOF");
         }
         return toReturn;
+       
     }
 
     anything() {
@@ -149,7 +151,7 @@ export default class RJsonParser extends RJsonAbsParser {
     }
 
     jj_consume_token(kind) {
-        
+      
         logger.debug("01-RJsonParser::jj_consume_token::this.jj_nt=" + this.jj_nt + ",cKind=" + kind + ",this.jj_nt.next=" + this.jj_nt.next);
         var oldToken = this.token;
         if ((this.token = this.jj_nt).next != null) {
@@ -167,9 +169,10 @@ export default class RJsonParser extends RJsonAbsParser {
         this.jj_nt = this.token;
         this.token = oldToken;
         this.jj_kind = kind;
-        logger.debug('-------------------');
-        throw this.generateParseException();
-        
+        //logger.debug('-------------------');
+        var parserError = this.generateParseException();
+        //logger.debug('-------------------' + e.message);
+        throw parserError;
     }
 
     generateParseException() {

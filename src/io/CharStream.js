@@ -173,7 +173,7 @@ export default class CharStream {
     getImage() {
         var response;
         //logger.debug("bufpos=" + this.bufpos + ",tokenBegin=" + this.tokenBegin);
-        //logger.debug("buffer=" + this.buffer[0] + "," + this.buffer[1] + "," + this.buffer[2] + "," + this.buffer[3] + "," + this.buffer[4]);
+        logger.debug("buffer=" + this.buffer[0] + "," + this.buffer[1] + "," + this.buffer[2] + "," + this.buffer[3] + "," + this.buffer[4]);
         if (this.bufpos >= this.tokenBegin) {
             response = new String(this.buffer, this.tokenBegin, this.bufpos - this.tokenBegin + 1);
             //logger.debug("response=" + response.toString());

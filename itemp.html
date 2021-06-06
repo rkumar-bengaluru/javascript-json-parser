@@ -52,10 +52,13 @@
          <div class="row justify-content-around border-bottom">
             <div class="col overflow-auto border" style="height: 500px; background-color: rgba(0,0,255,.1)">
                <form>
-                  <div class="form-group"> <label for="exampleFormControlTextarea1">Input JSON</label>
+                  <div class="form-group"> <label for="exampleFormControlTextarea1">Paste in JSON</label>
+                     <div id="input-spinner" class="spinner-border text-primary hidden" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                      <textarea class="form-control" id="inputtextarea" rows="25">
                         
-                     
+                        
                      </textarea>
                   </div>
                </form>
