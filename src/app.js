@@ -2,34 +2,37 @@ import RJsonParser from "./parser/RJsonParser"
 
 import css from "./css/style.css";
 
+var example = {"name":"sonoo","salary":600000.0,"age":27};
+
 format();
 
-function formatInputString(jsonObj, textDiv) {
+function formatInputString(jsonObj) {
     var appendable = {
         destination: ""
     }
     jsonObj.formatJsonToString(appendable, -1);
-    textDiv.innerHTML = appendable.destination;
+    console.log(appendable.destination);
+    document.getElementById('inputtextarea').value = appendable.destination;
 }
 
-function formatHtml(jsonObj, jsonDiv) {
+function formatHtml(jsonObj) {
     var appendable = {
         destination: ""
     }
     jsonObj.formatJsonToHtml(appendable, -1);
-    jsonDiv.innerHTML = appendable.destination;
+    console.log(appendable.destination);
+    document.getElementById('json').innerHTML = appendable.destination;
 }
 
 function init() {
     try {
         console.log('reformatting.');
-        let textDiv = document.getElementById('inputtextarea');
-        let jsonDiv = document.getElementById('json');
-        let instance = new RJsonParser(textDiv.innerHTML);
+        var target = document.getElementById('inputtextarea');
+        let instance = new RJsonParser(target.value);
         
         var jsonObj = instance.parse();
-        formatInputString(jsonObj, textDiv);
-        formatHtml(jsonObj, jsonDiv);
+        formatInputString(jsonObj);
+        formatHtml(jsonObj);
     } catch (e) {
         console.log(e.stack);
         //document.getElementById('inputtextarea').innerHTML = e.message;
@@ -38,10 +41,11 @@ function init() {
 
 function format() {
     try {
+        var target = document.getElementById('inputtextarea');
+        target.value = JSON.stringify(example);
         init();
-        let textDiv = document.getElementById('inputtextarea');
-        textDiv.addEventListener('input', () => {
-            console.log('input changed...' + document.getElementById('inputtextarea').innerHTML);
+        document.getElementById('loadjson').addEventListener('click', () => {
+            console.log('load json...' + document.getElementById('inputtextarea').value);
             //alert('-----------' + document.getElementById('inputtextarea').innerHTML);
             init();
         })
