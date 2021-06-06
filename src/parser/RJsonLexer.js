@@ -151,8 +151,9 @@ export default class RJsonLexer extends RJsonConstants {
     }
 
     isDigit() {
-        logger.debug("\"" + this.curChar + "\"");
+        
         let code = this.curChar.charCodeAt();
+        logger.debug("isDigit-\"" + code + "\"");
 
         if (code == 46) { // '.'
             return true;
@@ -165,7 +166,7 @@ export default class RJsonLexer extends RJsonConstants {
     }
 
     findNumber(startState, curPos) {
-        logger.debug("\"" + this.curChar + "\"");
+        logger.debug("findNumber=\"" + this.curChar + "\"");
         while (this.isDigit()) {
             ++curPos;
             try {
@@ -175,12 +176,12 @@ export default class RJsonLexer extends RJsonConstants {
             }
         }
         let code = this.curChar.charCodeAt();
-        logger.debug("\"" + this.curChar + "\"");
+        logger.debug("\"" + code + "\"");
         if (code == 44 || code == 125
             || this.curChar == '\r' || this.curChar == '\n' || this.curChar == ' '
             || this.curChar == '\t') {
             --curPos;
-            logger.debug("\"" + this.curChar + "\"");
+            logger.debug("\"" + code + "\"");
             this.matchedKind = this.NUMBER_INTEGER;
             this.matchedPos = curPos;
             this.input_stream.backup(1);
