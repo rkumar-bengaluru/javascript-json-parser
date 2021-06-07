@@ -144,15 +144,15 @@ export default class CharStream {
 
         switch (c) {
             case '\r':
-                this.tokenBegin++;
+                //this.tokenBegin++;
                 this.prevCharIsCR = true;
                 break;
             case '\n':
-                this.tokenBegin++;
+                //this.tokenBegin++;
                 this.prevCharIsLF = true;
                 break;
             case '\t':
-                this.tokenBegin++;
+                //this.tokenBegin++;
                 this.column--;
                 this.column += (this.tabSize - (this.column % this.tabSize));
                 break;

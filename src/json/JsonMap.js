@@ -63,7 +63,7 @@ export default class JsonMap extends JsonObject {
         destination += "<span style=\"color: #1d57d4;\" class=\"hide\"><i onClick=\"spanClicked(event);\" class=\"fas fa-plus-square\"></i></span>";
         destination += "<span class=\"hide\"><span onClick=\"spanClicked(event);\" class=\"items-ph\">" + size + " items</span></span>";
         destination += "</a>";
-        let j;
+        let j = 0;
         destination += "<ul data-level=\"" + ++currentLevel + "\" class=\"type-array\">";
         this._input.forEach(function(value, key) {
             destination += "<li>";
@@ -78,9 +78,9 @@ export default class JsonMap extends JsonObject {
             }
             value.formatJsonToHtml(valueAppendable,currentLevel);
             destination += valueAppendable.destination;
-           
+            logger.debug("j value " + j);
             if(j != (size-1))
-                destination += "<span class=\"type-comma\">" + "," + "</span>";
+                destination += "<span class=\"type-comma\">" + "," + "</span></li>";
             destination += "</li>";
             j++;  
         });
