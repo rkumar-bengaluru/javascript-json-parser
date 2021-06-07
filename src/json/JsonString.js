@@ -14,7 +14,7 @@ export default class JsonString extends JsonObject {
         var i = 0;
         var r = [];
         for(i=0;i<tmp.length;i++) {
-            if(tmp[i] != '\r' && tmp[i] != '\t' && tmp[i] != '\n' ) {
+            if(tmp[i] != '\r' && tmp[i] != '\t' && tmp[i] != '\n') {
                 r.push(tmp[i]);
             }
         }

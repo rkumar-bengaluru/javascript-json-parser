@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.61% </span>
+                <span class="strong">69.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>71/102</span>
+                <span class='fraction'>70/101</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">69.61% </span>
+                <span class="strong">69.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>71/102</span>
+                <span class='fraction'>70/101</span>
             </div>
         
             
@@ -262,9 +262,12 @@
 <a name='L203'></a><a href='#L203'>203</a>
 <a name='L204'></a><a href='#L204'>204</a>
 <a name='L205'></a><a href='#L205'>205</a>
-<a name='L206'></a><a href='#L206'>206</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">30x</span>
@@ -437,7 +440,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">148x</span>
-<span class="cline-any cline-yes">148x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">148x</span>
 <span class="cline-any cline-yes">148x</span>
 <span class="cline-any cline-yes">148x</span>
@@ -467,7 +473,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">318x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import String from '../io/String.js';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import IOString from './IOString.js';
 &nbsp;
 var logger = require('../logger/logger');
 &nbsp;
@@ -526,10 +532,10 @@ export default class CharStream {
     }
 &nbsp;
     readByte() {
-        
+&nbsp;
         if (++this.nextCharInd &gt;= this.maxNextCharInd)
             this.fillBuff();
-        logger.debug("nextCharInd=" + (this.nextCharInd) + ",this.maxNextCharInd=" + this.maxNextCharInd);
+        logger.debug("nextCharInd=" + (this.nextCharInd) + ",this.maxNextCharInd=" + this.maxNextCharInd + ",code=" + this.nextCharBuf[this.nextCharInd].charCodeAt());
         return this.nextCharBuf[this.nextCharInd];
     }
 &nbsp;
@@ -642,12 +648,15 @@ export default class CharStream {
     getImage() {
         var response;
         logger.debug("bufpos=" + this.bufpos + ",tokenBegin=" + this.tokenBegin);
-        logger.debug("buffer=" + this.buffer[0] + "," + this.buffer[1] );
+        //logger.debug("buffer=" + this.buffer[0].charCodeAt() + "," + this.buffer[1].charCodeAt() );
+        //logger.debug("buffer=" + this.buffer[2].charCodeAt() + "," + this.buffer[3].charCodeAt() );
+        //logger.debug("buffer=" + this.buffer[4].charCodeAt() + "," + this.buffer[5].charCodeAt() );
+        //logger.debug("buffer=" + this.buffer[6].charCodeAt() + "," + this.buffer[7].charCodeAt() );
         <span class="missing-if-branch" title="else path not taken" >E</span>if (this.bufpos &gt;= this.tokenBegin) {
-            response = new String(this.buffer, this.tokenBegin, this.bufpos - this.tokenBegin + 1);
+            response = new IOString(this.buffer, this.tokenBegin, this.bufpos - this.tokenBegin + 1);
             logger.debug("response=" + response.toString());
         } else {
-<span class="cstat-no" title="statement not covered" >            response = new String(this.buffer, this.tokenBegin, this.bufsize - this.tokenBegin).toString() + new String(this.buffer, 0, this.bufpos + 1).toString();</span>
+<span class="cstat-no" title="statement not covered" >            response = new IOString(this.buffer, this.tokenBegin, this.bufsize - this.tokenBegin).toString() + new IOString(this.buffer, 0, this.bufpos + 1).toString();</span>
 <span class="cstat-no" title="statement not covered" >            logger.debug("response=" + response.toString());</span>
         }
         return response.stringify();
@@ -679,7 +688,7 @@ export default class CharStream {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 07 2021 10:04:52 GMT+0530 (India Standard Time)
+                at Mon Jun 07 2021 12:41:56 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

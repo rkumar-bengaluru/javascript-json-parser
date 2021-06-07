@@ -16,7 +16,8 @@
     "comment": "jest --verbose Comment",
     "file": "jest --verbose FileTest",
     "parse": "jest --verbose RJsonParserTest",
-    "html": "jest --verbose RJsonHtmlTest"
+    "html": "jest --verbose RJsonHtmlTest",
+    "key": "jest --verbose key"
   },
   "repository": {
     "type": "git",

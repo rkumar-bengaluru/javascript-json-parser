@@ -1,4 +1,4 @@
-import String from '../io/String.js';
+import IOString from './IOString.js';
 
 var logger = require('../logger/logger');
 
@@ -57,10 +57,10 @@ export default class CharStream {
     }
 
     readByte() {
-        
+
         if (++this.nextCharInd >= this.maxNextCharInd)
             this.fillBuff();
-        logger.debug("nextCharInd=" + (this.nextCharInd) + ",this.maxNextCharInd=" + this.maxNextCharInd);
+        logger.debug("nextCharInd=" + (this.nextCharInd) + ",this.maxNextCharInd=" + this.maxNextCharInd + ",code=" + this.nextCharBuf[this.nextCharInd].charCodeAt());
         return this.nextCharBuf[this.nextCharInd];
     }
 
@@ -173,12 +173,15 @@ export default class CharStream {
     getImage() {
         var response;
         logger.debug("bufpos=" + this.bufpos + ",tokenBegin=" + this.tokenBegin);
-        logger.debug("buffer=" + this.buffer[0] + "," + this.buffer[1] );
+        //logger.debug("buffer=" + this.buffer[0].charCodeAt() + "," + this.buffer[1].charCodeAt() );
+        //logger.debug("buffer=" + this.buffer[2].charCodeAt() + "," + this.buffer[3].charCodeAt() );
+        //logger.debug("buffer=" + this.buffer[4].charCodeAt() + "," + this.buffer[5].charCodeAt() );
+        //logger.debug("buffer=" + this.buffer[6].charCodeAt() + "," + this.buffer[7].charCodeAt() );
         if (this.bufpos >= this.tokenBegin) {
-            response = new String(this.buffer, this.tokenBegin, this.bufpos - this.tokenBegin + 1);
+            response = new IOString(this.buffer, this.tokenBegin, this.bufpos - this.tokenBegin + 1);
             logger.debug("response=" + response.toString());
         } else {
-            response = new String(this.buffer, this.tokenBegin, this.bufsize - this.tokenBegin).toString() + new String(this.buffer, 0, this.bufpos + 1).toString();
+            response = new IOString(this.buffer, this.tokenBegin, this.bufsize - this.tokenBegin).toString() + new IOString(this.buffer, 0, this.bufpos + 1).toString();
             logger.debug("response=" + response.toString());
         }
         return response.stringify();
