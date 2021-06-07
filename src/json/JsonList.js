@@ -49,10 +49,10 @@ export default class JsonList extends JsonObject {
         destination += "<span style=\"color: #1d57d4;\" class=\"hide\"><i onClick=\"spanClicked(event);\" class=\"fas fa-plus-square\"></i></span>";
         destination += "<span class=\"hide\"><span onClick=\"spanClicked(event);\" class=\"items-ph\">" + size + " items</span></span>";
         destination += "</a>";
-        let i,j;
+        let j = 0;
         destination += "<ul data-level=\"" + ++currentLevel + "\" class=\"type-array\">";
         this._input.forEach(element => {
-            j++;
+           
             destination += "<li>";
             var cAppendable = {
                 destination : 0
@@ -62,6 +62,7 @@ export default class JsonList extends JsonObject {
             if(j != (size-1))
                 destination += "<span class=\"type-comma\">" + "," + "</span>";
             destination += "</li>";
+            j++;
         });
         destination += "</ul>";
         destination += "<span class=\"type-symbol\">]</span>";

@@ -2,7 +2,7 @@ import  JsonString  from '../../src/json/JsonString.js';
 
 var logger = require('../../src/logger/logger');
 
-const instance = new JsonString(false,false,"name");
+var instance = new JsonString(false,false,"name");
 
 var appendable = {
     destination : ""
@@ -10,6 +10,16 @@ var appendable = {
 
 test('input', () => {
     expect(instance.input).toBe("name");
+})
+
+test('cr test(\'\', 0)', () => {
+    appendable.destination = '';
+    var expected = "\"name\"";
+    var crinstance = new JsonString(false,false,"\rname");
+    crinstance.formatJsonToString(appendable,-1);
+    logger.info("actual->" + appendable.destination);
+    logger.info("expected->" + expected);
+    expect(appendable.destination).toBe(expected);
 })
 
 test('formatJsonToString(\'\', 0)', () => {

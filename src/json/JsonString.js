@@ -6,6 +6,20 @@ export default class JsonString extends JsonObject {
 
     constructor(root, isKey, input) {
         super(root, isKey, input);
+        this.removeSpecialChars();
+    }
+
+    removeSpecialChars() {
+        var tmp = this._input;
+        var i = 0;
+        var r = [];
+        for(i=0;i<tmp.length;i++) {
+            if(tmp[i] != '\r' && tmp[i] != '\t' && tmp[i] != '\n' ) {
+                r.push(tmp[i]);
+            }
+        }
+
+        this._input = r.join("");
     }
 
     formatJsonToString(appendable, currentLevel) {

@@ -80,7 +80,7 @@ export default class JsonMap extends JsonObject {
             destination += valueAppendable.destination;
             logger.debug("j value " + j);
             if(j != (size-1))
-                destination += "<span class=\"type-comma\">" + "," + "</span></li>";
+                destination += "<span class=\"type-comma\">" + "," + "</span>";
             destination += "</li>";
             j++;  
         });

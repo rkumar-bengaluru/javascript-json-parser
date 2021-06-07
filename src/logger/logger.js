@@ -1,8 +1,8 @@
 module.exports.debug = (msg) => {
-    console.log(msg);
+    //console.log(msg);
 }
 module.exports.info = (msg) => {
-    console.log(msg);
+    //console.log(msg);
 }
 
 // var appRoot = require('app-root-path');
