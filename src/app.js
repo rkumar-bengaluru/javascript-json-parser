@@ -2,7 +2,7 @@ import RJsonParser from "./parser/RJsonParser"
 
 import css from "./css/style.css";
 
-var example = {"name":"sonoo","salary":600000.0,"age":27};
+var example = { "store": { "book": [{ "category": "reference", "author": "Nigel Rees", "title": "Sayings of the Century", "price": 8.95 }, { "category": "fiction", "author": "Evelyn Waugh", "title": "Sword of Honour", "price": 12.99 }, { "category": "fiction", "author": "J. R. R. Tolkien", "title": "The Lord of the Rings", "isbn": "0-395-19395-8", "price": 22.99 }], "bicycle": { "color": "red", "price": 19.95 } } };
 
 format();
 
@@ -31,7 +31,7 @@ function init() {
         var target = document.getElementById('inputtextarea');
         let instance = new RJsonParser(target.value);
         target.value = 'loading';
-        
+
         var jsonObj = instance.parse();
         formatInputString(jsonObj);
         formatHtml(jsonObj);

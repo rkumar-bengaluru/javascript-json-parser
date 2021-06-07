@@ -104,6 +104,14 @@ body {
 	margin: 0 20px 20px
 }
 
+.htitle {
+	color: #fff;
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: -1px;
+	margin: 0 15px 15px
+}
+
 .subtitle {
 	color: #16a085;
 	font-size: 27px;
