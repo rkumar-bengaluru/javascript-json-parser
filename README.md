@@ -23,3 +23,12 @@ var jsonObj = instance.parse();
 jsonObj.formatJsonToString(appendable, -1);
 console.log(appendable.destination);
 ```
+Below is the output of the above program.
+```json
+{
+	"name" : "sonoo",
+	"salary" : 600000.0,
+	"age" : 27
+}
+```
+
