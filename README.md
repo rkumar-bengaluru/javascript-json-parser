@@ -63,3 +63,26 @@ npm run build
 npm run test
 ```
 
+## Using in Your Code.
+```html
+<script defer="defer" src="./dist/runtime.js"></script>
+<!--Your Javascript Code-->
+<script defer="defer" src="./yourapp.js"></script> 
+```
+yourapp.js
+```javascript
+import RJsonParser from "./parser/RJsonParser"
+
+function yourformatInputStringFunction() {
+    let instance = new RJsonParser(/*json string your div*/);
+    var jsonObj = instance.parse();
+
+    var appendable = {
+        destination: ""
+    }
+    jsonObj.formatJsonToString(appendable, -1);
+    console.log(appendable.destination);
+    document.getElementById('yourdestinationdiv').value = appendable.destination;
+}
+```
+
