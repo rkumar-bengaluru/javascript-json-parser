@@ -44,9 +44,24 @@ var jsonObj = instance.parse();
 jsonObj.formatJsonToHtml(appendable, -1);
 console.log(appendable.destination);
 ```
-Below is the output of the above program.
-
 See the **[DEMO LINK](https://rkumar-bengaluru.github.io/javascript-json-parser/)** for the formatted html example.
 
 Developers can choose to customize the output based on customized CSS. For this developers needs to change/override
 the 'formatJsonToHtml' methods.
+
+## Checkout & Build
+### Clone
+```
+git clonse https://github.com/rkumar-bengaluru/javascript-json-parser
+
+```
+### Build
+```
+npm run build
+
+```
+### Test
+```
+npm run test
+
+```
