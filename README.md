@@ -53,15 +53,13 @@ the 'formatJsonToHtml' methods.
 ### Clone
 ```
 git clonse https://github.com/rkumar-bengaluru/javascript-json-parser
-
 ```
 ### Build
 ```
 npm run build
-
 ```
 ### Test
 ```
 npm run test
-
 ```
+
