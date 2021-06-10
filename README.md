@@ -31,4 +31,22 @@ Below is the output of the above program.
 	"age" : 27
 }
 ```
+### Using the Parser (Formatted Html)
+```javascript
+import RJsonParser from "./parser/RJsonParser";
 
+var appendable = {
+        destination: ""
+}
+let instance = new RJsonParser("{\"name\":\"sonoo\",\"salary\":600000.0,\"age\":27}");
+var jsonObj = instance.parse();
+// parse to formatted string.
+jsonObj.formatJsonToHtml(appendable, -1);
+console.log(appendable.destination);
+```
+Below is the output of the above program.
+
+See the **[DEMO LINK](https://rkumar-bengaluru.github.io/javascript-json-parser/)** for the formatted html example.
+
+Developers can choose to customize the output based on customized CSS. For this developers needs to change/override
+the 'formatJsonToHtml' methods.
