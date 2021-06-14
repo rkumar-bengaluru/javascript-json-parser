@@ -163,9 +163,12 @@ export default class RJsonParser extends RJsonAbsParser {
         
         
         if (this.token.kind === kind) {
+            logger.debug("03-RJsonParser::jj_consume_token::matched(this.token.kind)" + this.token.kind + ",ckind=" + kind);
             this.jj_gen++;
             return this.token;
         }
+
+        
         this.jj_nt = this.token;
         this.token = oldToken;
         this.jj_kind = kind;

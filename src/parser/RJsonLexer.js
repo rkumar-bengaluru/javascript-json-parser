@@ -33,7 +33,7 @@ export default class RJsonLexer extends RJsonConstants {
             try {
                 this.curChar = this.input_stream.beginToken();
             } catch (e) {
-                //logger.debug(e.stack);
+                logger.debug(e.stack);
                 this.matchedKind = 0;
                 matchedToken = this.fillToken();
                 return matchedToken;
