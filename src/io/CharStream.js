@@ -125,7 +125,8 @@ export default class CharStream {
     }
 
     checkSpecial(c) {
-        throw new Error("Implementation to be done....");
+        //throw new Error("Implementation to be done....");
+        return c;
     }
 
     updateLineColumn(c) {

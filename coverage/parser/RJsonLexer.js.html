@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.6% </span>
+                <span class="strong">74.8% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>185/248</span>
+                <span class='fraction'>190/254</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.6% </span>
+                <span class="strong">74.8% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>185/248</span>
+                <span class='fraction'>190/254</span>
             </div>
         
             
@@ -496,11 +496,16 @@
 <a name='L437'></a><a href='#L437'>437</a>
 <a name='L438'></a><a href='#L438'>438</a>
 <a name='L439'></a><a href='#L439'>439</a>
-<a name='L440'></a><a href='#L440'>440</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L440'></a><a href='#L440'>440</a>
+<a name='L441'></a><a href='#L441'>441</a>
+<a name='L442'></a><a href='#L442'>442</a>
+<a name='L443'></a><a href='#L443'>443</a>
+<a name='L444'></a><a href='#L444'>444</a>
+<a name='L445'></a><a href='#L445'>445</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -604,6 +609,7 @@
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
+<span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -612,13 +618,14 @@
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">314x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">314x</span>
 <span class="cline-any cline-yes">314x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">26x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">111x</span>
 <span class="cline-any cline-yes">111x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -771,7 +778,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">124x</span>
 <span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-yes">124x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">124x</span>
@@ -1043,6 +1053,7 @@ export default class RJsonLexer extends RJsonConstants {
             this.consume_char();
             try {
                 this.curChar = this.input_stream.readChar();
+                logger.debug('$$analyzeCurrentCharacter()-&gt;' + code);
             } catch (e) {
                 // hack for special characters after the last token.
                 this.matchedKind = 0;
@@ -1051,13 +1062,14 @@ export default class RJsonLexer extends RJsonConstants {
             return this.analyzeCurrentCharacter();
         }
         let code = this.curChar.charCodeAt();
-        //logger.debug('analyzeCurrentCharacter()-&gt;' + code);
+        logger.debug('analyzeCurrentCharacter()-&gt;' + code);
         switch (code) {
             case 123: // '{'
                 return this.stopAtPos(0, this.BRACE_OPEN);
             case 125: // '}'
                 return this.stopAtPos(0, this.BRACE_CLOSE);
             case 34: // '"'
+                logger.debug('case 34()-&gt;' + code);
                 return this.moveChar01(8);
 <span class="branch-3 cbranch-no" title="branch not covered" >            case 39: // '\''</span>
 <span class="cstat-no" title="statement not covered" >                return this.moveChar01(4);</span>
@@ -1209,8 +1221,11 @@ export default class RJsonLexer extends RJsonConstants {
 &nbsp;
     moveChar01(active0) {
         try {
+            logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
             this.curChar = this.input_stream.readChar();
+            logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
         } catch (e) {
+<span class="cstat-no" title="statement not covered" >            logger.debug(e.stack);</span>
 <span class="cstat-no" title="statement not covered" >            return 1;</span>
         }
         let code = this.curChar.charCodeAt();
@@ -1272,7 +1287,7 @@ export default class RJsonLexer extends RJsonConstants {
 <span class="branch-4 cbranch-no" title="branch not covered" >            default:</span>
 <span class="cstat-no" title="statement not covered" >                break;</span>
         }
-<span class="cstat-no" title="statement not covered" >        return -1;</span>
+<span class="cstat-no" title="statement not covered" >        return this.findStringLiteral(1, active0);</span>
     }
 &nbsp;
     moveChar03(old0, active0) {
@@ -1381,7 +1396,7 @@ export default class RJsonLexer extends RJsonConstants {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 08 2021 10:07:26 GMT+0530 (India Standard Time)
+                at Mon Jun 14 2021 13:02:03 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

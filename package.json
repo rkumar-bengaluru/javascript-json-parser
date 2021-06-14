@@ -17,7 +17,8 @@
     "file": "jest --verbose FileTest",
     "parse": "jest --verbose RJsonParserTest",
     "html": "jest --verbose RJsonHtmlTest",
-    "key": "jest --verbose key"
+    "key": "jest --verbose key",
+    "ld": "jest --verbose LD"
   },
   "repository": {
     "type": "git",
