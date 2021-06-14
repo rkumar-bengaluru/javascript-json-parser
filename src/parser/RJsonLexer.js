@@ -106,7 +106,6 @@ export default class RJsonLexer extends RJsonConstants {
             this.consume_char();
             try {
                 this.curChar = this.input_stream.readChar();
-                logger.debug('$$analyzeCurrentCharacter()->' + code);
             } catch (e) {
                 // hack for special characters after the last token.
                 this.matchedKind = 0;
@@ -115,7 +114,7 @@ export default class RJsonLexer extends RJsonConstants {
             return this.analyzeCurrentCharacter();
         }
         let code = this.curChar.charCodeAt();
-        logger.debug('analyzeCurrentCharacter()->' + code);
+        //logger.debug('analyzeCurrentCharacter()->' + code);
         switch (code) {
             case 123: // '{'
                 return this.stopAtPos(0, this.BRACE_OPEN);
@@ -274,9 +273,9 @@ export default class RJsonLexer extends RJsonConstants {
 
     moveChar01(active0) {
         try {
-            logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
+            //logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
             this.curChar = this.input_stream.readChar();
-            logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
+            //logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
         } catch (e) {
             logger.debug(e.stack);
             return 1;
@@ -329,7 +328,7 @@ export default class RJsonLexer extends RJsonConstants {
             return 2;
         }
         let code = this.curChar.charCodeAt();
-        logger.debug("moveChar02::curChar=" + this.curChar + ",code=" + code);
+        //logger.debug("moveChar02::curChar=" + this.curChar + ",code=" + code);
         switch (code) {
             case 76: // L
             case 108:// l

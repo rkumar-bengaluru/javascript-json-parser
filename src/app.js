@@ -29,16 +29,19 @@ function init() {
         console.log('reformatting.');
         document.getElementById("input-spinner").classList.toggle("hidden");
         var target = document.getElementById('inputtextarea');
+        console.log('parsing ' + target.value);
         let instance = new RJsonParser(target.value);
         target.value = 'loading';
-
+        console.log('parsing json...');
         var jsonObj = instance.parse();
+        console.log('parsing json done...');
         formatInputString(jsonObj);
         formatHtml(jsonObj);
         document.getElementById("input-spinner").classList.toggle("hidden");
     } catch (e) {
+        console.log('exception');
         console.log(e.stack);
-        //document.getElementById('inputtextarea').innerHTML = e.message;
+        document.getElementById('inputtextarea').innerHTML = e.message;
     }
 }
 

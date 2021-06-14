@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.8% </span>
+                <span class="strong">74.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>190/254</span>
+                <span class='fraction'>185/249</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.8% </span>
+                <span class="strong">74.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>190/254</span>
+                <span class='fraction'>185/249</span>
             </div>
         
             
@@ -500,8 +500,7 @@
 <a name='L441'></a><a href='#L441'>441</a>
 <a name='L442'></a><a href='#L442'>442</a>
 <a name='L443'></a><a href='#L443'>443</a>
-<a name='L444'></a><a href='#L444'>444</a>
-<a name='L445'></a><a href='#L445'>445</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L444'></a><a href='#L444'>444</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -609,7 +608,6 @@
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
 <span class="cline-any cline-yes">117x</span>
-<span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -618,7 +616,7 @@
 <span class="cline-any cline-yes">115x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">314x</span>
-<span class="cline-any cline-yes">314x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">314x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">26x</span>
@@ -777,9 +775,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">124x</span>
-<span class="cline-any cline-yes">124x</span>
-<span class="cline-any cline-yes">124x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -832,7 +830,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -1053,7 +1051,6 @@ export default class RJsonLexer extends RJsonConstants {
             this.consume_char();
             try {
                 this.curChar = this.input_stream.readChar();
-                logger.debug('$$analyzeCurrentCharacter()-&gt;' + code);
             } catch (e) {
                 // hack for special characters after the last token.
                 this.matchedKind = 0;
@@ -1062,7 +1059,7 @@ export default class RJsonLexer extends RJsonConstants {
             return this.analyzeCurrentCharacter();
         }
         let code = this.curChar.charCodeAt();
-        logger.debug('analyzeCurrentCharacter()-&gt;' + code);
+        //logger.debug('analyzeCurrentCharacter()-&gt;' + code);
         switch (code) {
             case 123: // '{'
                 return this.stopAtPos(0, this.BRACE_OPEN);
@@ -1221,9 +1218,9 @@ export default class RJsonLexer extends RJsonConstants {
 &nbsp;
     moveChar01(active0) {
         try {
-            logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
+            //logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
             this.curChar = this.input_stream.readChar();
-            logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
+            //logger.debug("@moveChar01::curChar=" + this.curChar + ",code=" + code);
         } catch (e) {
 <span class="cstat-no" title="statement not covered" >            logger.debug(e.stack);</span>
 <span class="cstat-no" title="statement not covered" >            return 1;</span>
@@ -1276,7 +1273,7 @@ export default class RJsonLexer extends RJsonConstants {
 <span class="cstat-no" title="statement not covered" >            return 2;</span>
         }
         let code = this.curChar.charCodeAt();
-        logger.debug("moveChar02::curChar=" + this.curChar + ",code=" + code);
+        //logger.debug("moveChar02::curChar=" + this.curChar + ",code=" + code);
         switch (code) {
 <span class="branch-0 cbranch-no" title="branch not covered" >            case 76: </span>// L
             case 108:// l
@@ -1396,7 +1393,7 @@ export default class RJsonLexer extends RJsonConstants {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Mon Jun 14 2021 13:09:48 GMT+0530 (India Standard Time)
+                at Mon Jun 14 2021 13:40:31 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
