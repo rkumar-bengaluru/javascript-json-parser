@@ -1,0 +1,56 @@
+{
+   "@context":"http://schema.org/",
+   "@type":"Product",
+   "name":"Yonex GR 303 (Pack of 2) Badminton Racket",
+   "image":[
+      "https://www.sportsuncle.com/image/cache/catalog/images/yonex/gr303-2-1200x1200.webp",
+      "https://www.sportsuncle.com/image/cache/catalog/images/yonex/gr303-2-1200x1200.webp"
+   ],
+   "description":"Yonex GR 303 (Pack of 2) Badminton Racket - Made up of SteelLightweight and DurablePackage Contains - 2 RacketsTo increase your performance levels, Yonex has made this badminton racquet which ensures that you never lose those important matches. Buy Online",
+   "productID":"590",
+   "sku":"590",
+   "mpn":"590",
+   "brand":{
+      "@type":"Thing",
+      "name":"Yonex"
+   },
+   "aggregateRating":{
+      "@type":"AggregateRating",
+      "ratingValue":"5",
+      "reviewCount":"2"
+   },
+   "offers":{
+      "@type":"Offer",
+      "priceCurrency":"INR",
+      "price":"1150",
+      "priceValidUntil":"2023-12-06",
+      "availability":"http://schema.org/OutOfStock",
+      "url":"https://www.sportsuncle.com/yonex-gr-303-pack-of-2-badminton-racket.html"
+   },
+   "review":[
+      {
+         "@type":"Review",
+         "author":"Alka ",
+         "datePublished":"2017-02-23",
+         "description":"i loved the fact i could get two rackets in around 1k.  delivery was fast and on time.",
+         "reviewRating":{
+            "@type":"Rating",
+            "bestRating":"5",
+            "ratingValue":"5",
+            "worstRating":"1"
+         }
+      },
+      {
+         "@type":"Review",
+         "author":"Fakhrudeen  ",
+         "datePublished":"2018-05-02",
+         "description":"Good",
+         "reviewRating":{
+            "@type":"Rating",
+            "bestRating":"5",
+            "ratingValue":"4",
+            "worstRating":"1"
+         }
+      }
+   ]
+}
