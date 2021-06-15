@@ -1,0 +1,16 @@
+{
+    "@context": "http://schema.org/",
+    "@type": "AggregateRating",
+    "reviewCount": "1",
+    "ratingValue": "5.0",
+    "itemReviewed": {
+        "@type": "Product",
+        "name": "SG Sunny Tonny Icon English Willow Cricket Bat",
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "7499.0",
+            "highPrice": "7499.0",
+            "priceCurrency": "INR"
+        }
+    }
+}

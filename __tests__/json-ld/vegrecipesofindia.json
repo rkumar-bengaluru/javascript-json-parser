@@ -1,0 +1,711 @@
+{
+    "@context":"https://schema.org",
+    "@graph":[
+       {
+          "@type":"Organization",
+          "@id":"https://www.vegrecipesofindia.com/#organization",
+          "name":"Dassana's Veg Recipes",
+          "url":"https://www.vegrecipesofindia.com/",
+          "sameAs":[
+             "https://www.facebook.com/dassanasvegrecipes",
+             "https://www.instagram.com/dassanasvegrecipes/",
+             "https://www.youtube.com/c/DassanasVegRecipes",
+             "https://www.pinterest.com/dassanasvegrecipes/_created/",
+             "https://twitter.com/DassanasRecipes"
+          ],
+          "logo":{
+             "@type":"ImageObject",
+             "@id":"https://www.vegrecipesofindia.com/#logo",
+             "inLanguage":"en-US",
+             "url":"https://www.vegrecipesofindia.com/wp-content/uploads/2021/02/DVR-logomark-green.jpg",
+             "contentUrl":"https://www.vegrecipesofindia.com/wp-content/uploads/2021/02/DVR-logomark-green.jpg",
+             "width":342,
+             "height":342,
+             "caption":"Dassana's Veg Recipes"
+          },
+          "image":{
+             "@id":"https://www.vegrecipesofindia.com/#logo"
+          }
+       },
+       {
+          "@type":"WebSite",
+          "@id":"https://www.vegrecipesofindia.com/#website",
+          "url":"https://www.vegrecipesofindia.com/",
+          "name":"Dassana&#039;s Veg Recipes",
+          "description":"",
+          "publisher":{
+             "@id":"https://www.vegrecipesofindia.com/#organization"
+          },
+          "potentialAction":[
+             {
+                "@type":"SearchAction",
+                "target":"https://www.vegrecipesofindia.com/?s={search_term_string}",
+                "query-input":"required name=search_term_string"
+             }
+          ],
+          "inLanguage":"en-US"
+       },
+       {
+          "@type":"ImageObject",
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#primaryimage",
+          "inLanguage":"en-US",
+          "url":"https://www.vegrecipesofindia.com/wp-content/uploads/2018/12/veg-burger-recipe-1.jpg",
+          "contentUrl":"https://www.vegrecipesofindia.com/wp-content/uploads/2018/12/veg-burger-recipe-1.jpg",
+          "width":600,
+          "height":405,
+          "caption":"veg burger recipe"
+       },
+       {
+          "@type":[
+             "WebPage",
+             "FAQPage"
+          ],
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#webpage",
+          "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/",
+          "name":"Burger Recipe | Veggie Burger &raquo; Dassana&#039;s Veg Recipes",
+          "isPartOf":{
+             "@id":"https://www.vegrecipesofindia.com/#website"
+          },
+          "primaryImageOfPage":{
+             "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#primaryimage"
+          },
+          "datePublished":"2020-12-28T18:42:00+00:00",
+          "dateModified":"2020-12-28T19:31:01+00:00",
+          "description":"Burger Recipe with mix veggie patties, spiced mayo dressing and cucumber, tomato, onion slices. Veggie burgers are an all time favorite.",
+          "breadcrumb":{
+             "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#breadcrumb"
+          },
+          "mainEntity":[
+             {
+                "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609080000797"
+             },
+             {
+                "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609080686519"
+             },
+             {
+                "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609081305990"
+             },
+             {
+                "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609081665433"
+             }
+          ],
+          "inLanguage":"en-US",
+          "potentialAction":[
+             {
+                "@type":"ReadAction",
+                "target":[
+                   "https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/"
+                ]
+             }
+          ]
+       },
+       {
+          "@type":"BreadcrumbList",
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#breadcrumb",
+          "itemListElement":[
+             {
+                "@type":"ListItem",
+                "position":1,
+                "item":{
+                   "@type":"WebPage",
+                   "@id":"https://www.vegrecipesofindia.com/",
+                   "url":"https://www.vegrecipesofindia.com/",
+                   "name":"Home"
+                }
+             },
+             {
+                "@type":"ListItem",
+                "position":2,
+                "item":{
+                   "@type":"WebPage",
+                   "@id":"https://www.vegrecipesofindia.com/recipes/",
+                   "url":"https://www.vegrecipesofindia.com/recipes/",
+                   "name":"Recipes"
+                }
+             },
+             {
+                "@type":"ListItem",
+                "position":3,
+                "item":{
+                   "@type":"WebPage",
+                   "@id":"https://www.vegrecipesofindia.com/recipes/world-recipes/",
+                   "url":"https://www.vegrecipesofindia.com/recipes/world-recipes/",
+                   "name":"World Recipes"
+                }
+             },
+             {
+                "@type":"ListItem",
+                "position":4,
+                "item":{
+                   "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#webpage"
+                }
+             }
+          ]
+       },
+       {
+          "@type":"Article",
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#article",
+          "isPartOf":{
+             "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#webpage"
+          },
+          "author":{
+             "@id":"https://www.vegrecipesofindia.com/#/schema/person/f547a6bf6124f411c27c1557e8d748a1"
+          },
+          "headline":"Burger Recipe | Veggie Burger",
+          "datePublished":"2020-12-28T18:42:00+00:00",
+          "dateModified":"2020-12-28T19:31:01+00:00",
+          "wordCount":4069,
+          "publisher":{
+             "@id":"https://www.vegrecipesofindia.com/#organization"
+          },
+          "image":{
+             "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#primaryimage"
+          },
+          "thumbnailUrl":"https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+          "keywords":[
+             "bachelor",
+             "kids"
+          ],
+          "articleSection":[
+             "American Recipes",
+             "Snacks Recipes",
+             "Street Food Recipes",
+             "Videos",
+             "World Recipes"
+          ],
+          "inLanguage":"en-US"
+       },
+       {
+          "@type":"Person",
+          "@id":"https://www.vegrecipesofindia.com/#/schema/person/f547a6bf6124f411c27c1557e8d748a1",
+          "name":"Dassana Amit",
+          "image":{
+             "@type":"ImageObject",
+             "@id":"https://www.vegrecipesofindia.com/#personlogo",
+             "inLanguage":"en-US",
+             "url":"https://secure.gravatar.com/avatar/1f1e0a18cf458d170463061bfd17da5c?s=96&d=mm&r=g",
+             "contentUrl":"https://secure.gravatar.com/avatar/1f1e0a18cf458d170463061bfd17da5c?s=96&d=mm&r=g",
+             "caption":"Dassana Amit"
+          },
+          "description":"Welcome to Dassana's Veg Recipes. I share vegetarian recipes from India &amp; around the World. Having been cooking for decades and with a professional background in cooking &amp; baking, I help you to make your cooking journey easier with my tried and tested recipes showcased with step by step photos &amp; plenty of tips &amp; suggestions.",
+          "sameAs":[
+             "https://www.vegrecipesofindia.com/about",
+             "https://www.facebook.com/dassanasvegrecipes",
+             "https://www.instagram.com/dassanasvegrecipes/",
+             "https://www.pinterest.com/dassanaamit/",
+             "https://twitter.com/DassanasRecipes",
+             "https://www.youtube.com/c/DassanasVegRecipes"
+          ],
+          "url":"https://www.vegrecipesofindia.com/author/shirdibaba/"
+       },
+       {
+          "@type":"Question",
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609080000797",
+          "position":1,
+          "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609080000797",
+          "name":"How do I keep my veggie burger from falling apart?",
+          "answerCount":1,
+          "acceptedAnswer":{
+             "@type":"Answer",
+             "text":"A binding ingredients has to included in your veggie burger so that they do not fall apart. Usually eggs are used as a binder. In my burger recipe, breadcrumbs and potatoes play the role of a binder. The breadcrumbs absorb moisture if any from the cooked vegetables and also help in binding the ingredients together. Rice flour, roasted/toasted chickpea flour or gram flour, oats are some more options.  ",
+             "inLanguage":"en-US"
+          },
+          "inLanguage":"en-US"
+       },
+       {
+          "@type":"Question",
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609080686519",
+          "position":2,
+          "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609080686519",
+          "name":"What is the best way to cook a veggie burger?",
+          "answerCount":1,
+          "acceptedAnswer":{
+             "@type":"Answer",
+             "text":"Pan frying or shallow frying are two simple and effective ways. I have pan fried 4 burger patties with about 4 tablespoons oil. Simply spread the oil and place the patties on the hot layer of oil. Flip and fry until golden. Shallow frying will give the patties a more crisp texture. ",
+             "inLanguage":"en-US"
+          },
+          "inLanguage":"en-US"
+       },
+       {
+          "@type":"Question",
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609081305990",
+          "position":3,
+          "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609081305990",
+          "name":"What vegetables are in a veggie burger?",
+          "answerCount":1,
+          "acceptedAnswer":{
+             "@type":"Answer",
+             "text":"Veggie like carrots, cauliflower, potatoes, sweet potatoes, beets, pumpkin, spinach, green peas, sweet corn, broccoli, french beans are some vegetables that taste awesome in a veggie burger. Edible fungi like button mushrooms are another great option. ",
+             "inLanguage":"en-US"
+          },
+          "inLanguage":"en-US"
+       },
+       {
+          "@type":"Question",
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609081665433",
+          "position":4,
+          "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#faq-question-1609081665433",
+          "name":"Are veggie burgers healthy?",
+          "answerCount":1,
+          "acceptedAnswer":{
+             "@type":"Answer",
+             "text":"Veggie burgers are healthy when you make them with whole grain burger buns and use a eggfree/vegan mayo made with nuts or seeds or nut-milk. Having said that, the vegetable patties are healthy as they are made with vegetables or beans or lentils and if not deep-fried. ",
+             "inLanguage":"en-US"
+          },
+          "inLanguage":"en-US"
+       },
+       {
+          "@context":"http://schema.org/",
+          "@type":"Recipe",
+          "name":"Burger Recipe | Veggie Burger",
+          "author":{
+             "@type":"Person",
+             "name":"Dassana Amit"
+          },
+          "description":"This Burger Recipe\u00a0covers everything needed to make delightful veggie burgers from scratch, including how to prepare delicious homemade vegetable patties, a spiced mayonnaise dressing with fresh veggie toppings.",
+          "datePublished":"2020-12-29T00:12:00+00:00",
+          "image":[
+             "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1.jpg",
+             "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1-500x500.jpg",
+             "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1-500x375.jpg",
+             "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1-480x270.jpg"
+          ],
+          "video":{
+             "name":"Veg Burger",
+             "description":"This homemade veg burger is simply delicious to taste. The burger buns are stuffed with mix vegetable patties, spiced mayonnaise dressing and cucumber, tomato, onion slices.",
+             "thumbnailUrl":"https://content.jwplatform.com/thumbs/ZbwRuCdu-720.jpg",
+             "contentUrl":"https://content.jwplatform.com/videos/ZbwRuCdu.mp4",
+             "uploadDate":"2020-05-24T00:00:00.000Z",
+             "@type":"VideoObject"
+          },
+          "recipeYield":[
+             "4",
+             "4 veggie burger"
+          ],
+          "prepTime":"PT30M",
+          "cookTime":"PT20M",
+          "totalTime":"PT50M",
+          "recipeIngredient":[
+             "3  potatoes ((medium to large), 300 grams)",
+             "1 grams carrot ((medium to large), 100 to 125)",
+             "8 to 9 grams french beans (- 40 grams)",
+             "\u2153 to \u00bd cup peas (- fresh or frozen)",
+             "\u00bd cup finely chopped onions (or 1 medium sized onion)",
+             "1 teaspoon chopped garlic (or \u00bd teaspoon garlic paste)",
+             "2 teaspoons chopped ginger (or 1 teaspoon ginger paste or \u00be inch ginger )",
+             "1 teaspoon chopped green chilies (or \u00bd teaspoon green chili paste or 1 to 2 chillies)",
+             "2 tablespoons chopped coriander leaves ((cilantro) or fresh parsley leaves)",
+             "\u00bd teaspoon coriander powder ((ground coriander))",
+             "\u00bd teaspoon cumin powder ((ground cumin))",
+             "\u00bd teaspoon red chili powder (or cayenne pepper)",
+             "\u00bd teaspoon Garam Masala Powder",
+             "\u215b teaspoon turmeric powder ((ground turmeric))",
+             "5 to 6 tablespoons bread crumbs ( or add as required)",
+             "salt (as required)",
+             "4 to 6 tablespoons oil",
+             "3 tablespoons maize flour ((polenta or fine cornmeal)- substitute corn starch instead)",
+             "3 tablespoons rice flour (- substitute all purpose flour)",
+             "2 tablespoons gram flour ((besan) or chickpea flour - substitute all purpose flour)",
+             "\u00bd cup water",
+             "\u00bd  cup bread crumbs (or crushed oats, semolina or corn flakes)",
+             "1  tomato ((small to medium) - thinly sliced)",
+             "1  cucumber ((small to medium) - thinly sliced)",
+             "1  onion ((small to medium) - thinly sliced)",
+             "4 to 5  lettuce leaves (- rinsed, drained and chopped)",
+             "1 tablespoon butter (or oil - as required for toasting buns)",
+             "4  whole wheat burger buns (- whole wheat or plain or multi grain)",
+             "3 tablespoon Vegan Eggless Mayonnaise (or vegan mayonnaise)",
+             "\u00bd teaspoon mustard seeds (- crushed or powdered in a small spice grinder or mortar-pestle)",
+             "\u00bd teaspoon crushed black pepper",
+             "\u00bc to \u00bd teaspoon sugar (or add as required)",
+             "\u215b teaspoon salt (or 2 to 3 pinches of salt)",
+             "\u00bd to 1 tablespoon lemon juice (or add as required)",
+             "\u00bd teaspoon apple cider vinegar (or white vinegar)",
+             "1 tablespoon extra virgin olive oil (or olive oil)"
+          ],
+          "recipeInstructions":[
+             {
+                "@type":"HowToSection",
+                "name":"Preparing breadcrumbs",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"Break 6 to 7 slices of breads and add in a mixer or dry grinder. Grind to a semi-fine consistency and do not make it floury or powdery.",
+                      "name":"Break 6 to 7 slices of breads and add in a mixer or dry grinder. Grind to a semi-fine consistency and do not make it floury or powdery.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-0-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Take the bread crumbs in a plate or bowl. Keep aside. Skip this part if you have breadcrumbs.",
+                      "name":"Take the bread crumbs in a plate or bowl. Keep aside. Skip this part if you have breadcrumbs.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-0-1"
+                   }
+                ]
+             },
+             {
+                "@type":"HowToSection",
+                "name":"Preparing veggies",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"Now rinse and steam or boil 3 medium to large potatoes, 1 medium carrot, 8 to 9 french beans and \u2153 cup peas till they are completely cooked. You can cook or steam the vegetables in a stove-top pressure cooker, Instant Pot or a pan. I have listed the methods below.",
+                      "name":"Now rinse and steam or boil 3 medium to large potatoes, 1 medium carrot, 8 to 9 french beans and \u2153 cup peas till they are completely cooked. You can cook or steam the vegetables in a stove-top pressure cooker, Instant Pot or a pan. I have listed the methods below.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"1: Stove-top pressure cooker: Peel and chop potatoes, carrots and beans. Place them with the green peas in a pan or bowl. Add 2 cups water in a 3 litre pressure cooker. Place a small trivet inside. Place the bowl with the veggies on the trivet. Pressure cook for 10 to 12 minutes on medium-heat. Let the pressure fall naturally in the cooker and then only remove the lid.",
+                      "name":"1: Stove-top pressure cooker: Peel and chop potatoes, carrots and beans. Place them with the green peas in a pan or bowl. Add 2 cups water in a 3 litre pressure cooker. Place a small trivet inside. Place the bowl with the veggies on the trivet. Pressure cook for 10 to 12 minutes on medium-heat. Let the pressure fall naturally in the cooker and then only remove the lid.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-1"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"2: Instant pot cooking: Pour 1.5 cups water in the steel insert of 6 quart IP. Keep a trivet inside the steel insert. Place the whole potatoes, carrots, beans in a steamer pan or on the trivet. Take green peas in a small bowl and place it on the steamer pan or on the trivet. Pressure cook for 10 to 12 minutes until veggies are tender. Let the pressure release naturally.",
+                      "name":"2: Instant pot cooking: Pour 1.5 cups water in the steel insert of 6 quart IP. Keep a trivet inside the steel insert. Place the whole potatoes, carrots, beans in a steamer pan or on the trivet. Take green peas in a small bowl and place it on the steamer pan or on the trivet. Pressure cook for 10 to 12 minutes until veggies are tender. Let the pressure release naturally.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-2"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"3: Cooking in a pan: Peel and chop potatoes, carrots in small cubes. Chop the beans to small pieces. Place the chopped veggies and green peas in a pan. Add water just about covering the vegetables. Cover and simmer on medium-low flame until veggies are fork tender.",
+                      "name":"3: Cooking in a pan: Peel and chop potatoes, carrots in small cubes. Chop the beans to small pieces. Place the chopped veggies and green peas in a pan. Add water just about covering the vegetables. Cover and simmer on medium-low flame until veggies are fork tender.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-3"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Peel and roughly chop the potatoes when warm. Also peel the cooked carrots and finely chop them. Finely chop the french beans too.",
+                      "name":"Peel and roughly chop the potatoes when warm. Also peel the cooked carrots and finely chop them. Finely chop the french beans too.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-4"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Then mash the potatoes with a potato masher.",
+                      "name":"Then mash the potatoes with a potato masher.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-5"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"When the mashed potatoes cools down completely, add the chopped carrots and beans. Also add the steamed peas.",
+                      "name":"When the mashed potatoes cools down completely, add the chopped carrots and beans. Also add the steamed peas.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-6"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Mix everything well and keep aside.",
+                      "name":"Mix everything well and keep aside.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-7"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Then finely chop the onion and crush garlic, ginger and green chilies in a mortar-pestle. Set aside. You can crush them together or separately.",
+                      "name":"Then finely chop the onion and crush garlic, ginger and green chilies in a mortar-pestle. Set aside. You can crush them together or separately.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-1-8"
+                   }
+                ]
+             },
+             {
+                "@type":"HowToSection",
+                "name":"Making vegetable patty mixture",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"Heat 1 teaspoon oil in a pan. Add the ginger-garlic-green-chili paste. Saut\u00e9 for some seconds till the raw aroma of ginger and garlic goes away.",
+                      "name":"Heat 1 teaspoon oil in a pan. Add the ginger-garlic-green-chili paste. Saut\u00e9 for some seconds till the raw aroma of ginger and garlic goes away.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Add the chopped onions. Stir and saute till the onion turns translucent or light brown.",
+                      "name":"Add the chopped onions. Stir and saute till the onion turns translucent or light brown.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-1"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Add coriander powder, cumin powder, garam masala powder, red chili powder or cayenne pepper and turmeric powder.",
+                      "name":"Add coriander powder, cumin powder, garam masala powder, red chili powder or cayenne pepper and turmeric powder.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-2"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Stir and mix the spices with the rest of the mixture.",
+                      "name":"Stir and mix the spices with the rest of the mixture.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-3"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Switch off the flame and then add the chopped coriander leaves or parsley.",
+                      "name":"Switch off the flame and then add the chopped coriander leaves or parsley.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-4"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Stir very well and add this sauteed onion mixture to the mashed veggies.",
+                      "name":"Stir very well and add this sauteed onion mixture to the mashed veggies.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-5"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Add salt and bread crumbs. Begin to mix very well.",
+                      "name":"Add salt and bread crumbs. Begin to mix very well.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-6"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Keep the veggie patty mixture aside. Check the seasonings and add more of the ground spices and salt if needed.",
+                      "name":"Keep the veggie patty mixture aside. Check the seasonings and add more of the ground spices and salt if needed.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-7"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside.",
+                      "name":"Make the veggie patties as same as the size of the burger buns. Keep aside. If the mixture looks soft or crumbles, then do add some more breadcrumbs and mix everything again very well. Cover the veggie patties and set aside.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-2-8"
+                   }
+                ]
+             },
+             {
+                "@type":"HowToSection",
+                "name":"Preparing mayo dressing and toppings",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"Take mayonnaise in a small mixing bowl.",
+                      "name":"Take mayonnaise in a small mixing bowl.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-3-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Add ground mustard seed and freshly crushed black pepper",
+                      "name":"Add ground mustard seed and freshly crushed black pepper",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-3-1"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Add lemon juice. You can also lemon juice as per your taste.",
+                      "name":"Add lemon juice. You can also lemon juice as per your taste.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-3-2"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Add apple cider vinegar or white vinegar and extra virgin olive oil or olive oil.",
+                      "name":"Add apple cider vinegar or white vinegar and extra virgin olive oil or olive oil.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-3-3"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Season with sugar. Also add salt",
+                      "name":"Season with sugar. Also add salt",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-3-4"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Whisk the dressing very well. Keep aside.",
+                      "name":"Whisk the dressing very well. Keep aside.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-3-5"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Also chop onion, tomato and cucumber in thin slices. Shred or chop some 4 to 5 small lettuce leaves or cabbage leaves.",
+                      "name":"Also chop onion, tomato and cucumber in thin slices. Shred or chop some 4 to 5 small lettuce leaves or cabbage leaves.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-3-6"
+                   }
+                ]
+             },
+             {
+                "@type":"HowToSection",
+                "name":"Making batter",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"In a medium sized mixing bowl take add makki ka atta, polenta or cornmeal , rice flour and gram flour (besan) or chickpea flour. Instead of gram flour &amp; rice flour, you can also use 2 tbsp of all purpose flour.",
+                      "name":"In a medium sized mixing bowl take add makki ka atta, polenta or cornmeal , rice flour and gram flour (besan) or chickpea flour. Instead of gram flour &amp; rice flour, you can also use 2 tbsp of all purpose flour.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-4-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Add water. Stir and mix everything to a smooth batter without any lumps. The batter is of medium consistency. Keep aside.",
+                      "name":"Add water. Stir and mix everything to a smooth batter without any lumps. The batter is of medium consistency. Keep aside.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-4-1"
+                   }
+                ]
+             },
+             {
+                "@type":"HowToSection",
+                "name":"Pan frying patties",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"Heat 2 to 3 tablespoons oil for pan frying the patties in a bowl. When the oil becomes medium hot, dip the patty in the batter.",
+                      "name":"Heat 2 to 3 tablespoons oil for pan frying the patties in a bowl. When the oil becomes medium hot, dip the patty in the batter.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Coat evenly with the batter.",
+                      "name":"Coat evenly with the batter.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-1"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Place the batter coated vegetable patty on the breadcrumbs. Dredge the patty evenly with the breadcrumbs. You can repeat the breading method twice for more crispiness.",
+                      "name":"Place the batter coated vegetable patty on the breadcrumbs. Dredge the patty evenly with the breadcrumbs. You can repeat the breading method twice for more crispiness.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-2"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Place the breaded veggie patty in the medium hot oil. Bread another veggie patty in the same way and place it also in the pan. Depending on the size of your pan, you can fry from 2 to 4 patties. The veggie mixture makes 4 regular burger sized patties.",
+                      "name":"Place the breaded veggie patty in the medium hot oil. Bread another veggie patty in the same way and place it also in the pan. Depending on the size of your pan, you can fry from 2 to 4 patties. The veggie mixture makes 4 regular burger sized patties.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-3"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"2 to 3 tablespoons oil works perfectly for frying two patties. For 4 veggie patties, you can add 4 to 6 tablespoons oil.",
+                      "name":"2 to 3 tablespoons oil works perfectly for frying two patties. For 4 veggie patties, you can add 4 to 6 tablespoons oil.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-4"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"When the base is lightly browned or browned, then flip the patties.",
+                      "name":"When the base is lightly browned or browned, then flip the patties.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-5"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Flip a couple of times more till the patties are pan fried evenly and the crust becomes crisp and golden.",
+                      "name":"Flip a couple of times more till the patties are pan fried evenly and the crust becomes crisp and golden.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-6"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Drain the veggie patties on kitchen paper towels.",
+                      "name":"Drain the veggie patties on kitchen paper towels.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-5-7"
+                   }
+                ]
+             },
+             {
+                "@type":"HowToSection",
+                "name":"Assembling veggie burger",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"Slice the burger buns in equal halves.",
+                      "name":"Slice the burger buns in equal halves.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Spread some butter on the burger bun slices.",
+                      "name":"Spread some butter on the burger bun slices.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-1"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Heat a small pan and toast the butter side.",
+                      "name":"Heat a small pan and toast the butter side.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-2"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"The buttered side should become lightly crisp and golden. Toast all the&nbsp;burger buns this way.",
+                      "name":"The buttered side should become lightly crisp and golden. Toast all the&nbsp;burger buns this way.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-3"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Now spread the mayonnaise dressing on the crisp side.",
+                      "name":"Now spread the mayonnaise dressing on the crisp side.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-4"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Place the vegetable patty.",
+                      "name":"Place the vegetable patty.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-5"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Top up with sliced veggies like onion slices, tomato slices or cucumber slices.",
+                      "name":"Top up with sliced veggies like onion slices, tomato slices or cucumber slices.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-6"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Spread some mayonnaise dressing on the second halve of the burger bun and top up with some shredded or chopped lettuce or cabbage leaves.",
+                      "name":"Spread some mayonnaise dressing on the second halve of the burger bun and top up with some shredded or chopped lettuce or cabbage leaves.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-7"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Place the burger buns on top of each other.",
+                      "name":"Place the burger buns on top of each other.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-8"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Your veggie burger is ready. Make all veg burgers this way.",
+                      "name":"Your veggie burger is ready. Make all veg burgers this way.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-6-9"
+                   }
+                ]
+             },
+             {
+                "@type":"HowToSection",
+                "name":"Serving suggestions",
+                "itemListElement":[
+                   {
+                      "@type":"HowToStep",
+                      "text":"Once your veggie burgers are assembled, serve them immediately with tomato ketchup, mustard sauce and some\u00a0French Fries\u00a0or\u00a0Potato Wedges.",
+                      "name":"Once your veggie burgers are assembled, serve them immediately with tomato ketchup, mustard sauce and some\u00a0French Fries\u00a0or\u00a0Potato Wedges.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-7-0"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"If you don\u2019t have tomatoes and cucumbers, sliced avocado or\u00a0Guacamole\u00a0works as a great topping as well.",
+                      "name":"If you don\u2019t have tomatoes and cucumbers, sliced avocado or\u00a0Guacamole\u00a0works as a great topping as well.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-7-1"
+                   },
+                   {
+                      "@type":"HowToStep",
+                      "text":"Or you can use grated carrots or\u00a0coleslaw\u00a0as a topping alternative. These veggie burgers are great snacks, but they are\u00a0also filling enough to be a tasty lunch too. This burger recipe\u00a0makes four regular sized veggie burgers.",
+                      "name":"Or you can use grated carrots or\u00a0coleslaw\u00a0as a topping alternative. These veggie burgers are great snacks, but they are\u00a0also filling enough to be a tasty lunch too. This burger recipe\u00a0makes four regular sized veggie burgers.",
+                      "url":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#wprm-recipe-139650-step-7-2"
+                   }
+                ]
+             }
+          ],
+          "aggregateRating":{
+             "@type":"AggregateRating",
+             "ratingValue":"4.9",
+             "ratingCount":"48"
+          },
+          "recipeCategory":[
+             "Snacks"
+          ],
+          "recipeCuisine":[
+             "World"
+          ],
+          "suitableForDiet":[
+             "https://schema.org/VegetarianDiet"
+          ],
+          "keywords":"burger recipe, veggie burger",
+          "nutrition":{
+             "@type":"NutritionInformation",
+             "calories":"511 kcal",
+             "carbohydrateContent":"81 g",
+             "proteinContent":"14 g",
+             "fatContent":"15 g",
+             "saturatedFatContent":"4 g",
+             "cholesterolContent":"8 mg",
+             "sodiumContent":"1024 mg",
+             "fiberContent":"11 g",
+             "sugarContent":"15 g",
+             "servingSize":"1 serving"
+          },
+          "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#recipe",
+          "isPartOf":{
+             "@id":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#article"
+          },
+          "mainEntityOfPage":"https://www.vegrecipesofindia.com/veg-burger-recipe-veggie-burger/#webpage"
+       }
+    ]
+ }

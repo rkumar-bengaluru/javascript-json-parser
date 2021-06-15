@@ -49,3 +49,7 @@ test('unicode.json', () => {
     const data = fs.readFileSync('./__tests__/bugs/arc.json',{encoding:'utf8'});
     testParse(data);
 });
+test('pro-zig2.json', () => {
+    const data = fs.readFileSync('./__tests__/bugs/pro-zig2.json',{encoding:'utf8'});
+    testParse(data);
+});

@@ -1,0 +1,35 @@
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Online JSON Formatter and Validator",
+    "logo": "https://www.vlocalshop.in/icons/logo.svg",
+    "image": "https://www.vlocalshop.in/icons/logo.svg",
+    "url": "https://www.vlocalshop.in/product/jsonformatter/",
+    "description": "Online JSON Formatter and JSON Validator will format JSON data, beautifies and debugs JSON data with advanced formatting and validation algorithms and helps to validate, convert JSON to XML, JSON to CSV",
+    "isPartOf": {
+        "@type": "Website",
+        "name": "Virual Local Shop",
+        "url": "https://www.vlocalshop.in"
+    },
+    "operatingSystem": "Web",
+    "applicationCategory": "Utility Software",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.3",
+        "ratingCount": "20",
+        "reviewCount": "3"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "https://www.vlocalshop.in/product/jsonformatter/",
+        "price": "0"
+        
+    },
+   "brand": {
+        "@type": "Brand",
+        "name": "vlocalshop"
+    },
+    "@vlocal": {
+        "KEYWORDS": "Online JSON Formatter and JSON Validator will format JSON data, beautifies and debugs JSON data with advanced formatting and validation algorithms and helps to validate, convert JSON to XML, JSON to CSV"
+    }
+}

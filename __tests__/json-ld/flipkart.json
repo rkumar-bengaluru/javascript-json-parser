@@ -1,0 +1,71 @@
+[
+    {
+        "@context": "http://schema.org",
+        "@type": "Product",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": 4.3,
+            "reviewCount": 5
+        },
+        "brand": {
+            "@type": "Thing",
+            "name": "apacs"
+        },
+        "image": "http://rukmini1.flixcart.com/image/128/128/racquet/r/j/r/z-ziggler-83-g2-unstrung-1-apacs-badminton-racquet-z-ziggler-original-imaefc8ys78vkunm.jpeg?q=70",
+        "name": "apacs Z Ziggler Maroon, Black Unstrung Badminton Racquet"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "item": {
+                    "@id": "https://www.flipkart.com/?otracker=product_breadCrumbs_Home",
+                    "name": "Home"
+                },
+                "position": 1
+            },
+            {
+                "@type": "ListItem",
+                "item": {
+                    "@id": "https://www.flipkart.com/sports/pr?sid=abc&marketplace=FLIPKART&otracker=product_breadCrumbs_Sports",
+                    "name": "Sports"
+                },
+                "position": 2
+            },
+            {
+                "@type": "ListItem",
+                "item": {
+                    "@id": "https://www.flipkart.com/sports/badminton/pr?sid=abc,egs&marketplace=FLIPKART&otracker=product_breadCrumbs_Badminton",
+                    "name": "Badminton"
+                },
+                "position": 3
+            },
+            {
+                "@type": "ListItem",
+                "item": {
+                    "@id": "https://www.flipkart.com/sports/badminton/badminton-racquet/pr?sid=abc,egs,5wq&marketplace=FLIPKART&otracker=product_breadCrumbs_Badminton+Racquet",
+                    "name": "Badminton Racquet"
+                },
+                "position": 4
+            },
+            {
+                "@type": "ListItem",
+                "item": {
+                    "@id": "https://www.flipkart.com/sports/badminton/badminton-racquet/apacs~brand/pr?sid=abc,egs,5wq&marketplace=FLIPKART&otracker=product_breadCrumbs_apacs+Badminton+Racquet",
+                    "name": "apacs Badminton Racquet"
+                },
+                "position": 5
+            },
+            {
+                "@type": "ListItem",
+                "item": {
+                    "@id": "https://www.flipkart.com/apacs-z-ziggler-maroon-black-unstrung-badminton-racquet/p/itm7ef8c2ff66362?otracker=product_breadCrumbs_apacs+Z+Ziggler+Maroon%2C+Black+Unstrung+Badminton+Racquet+%28Pack+of%3A+1%2C+83+g%29",
+                    "name": "apacs Z Ziggler Maroon, Black Unstrung Badminton Racquet (Pack of: 1, 83 g)"
+                },
+                "position": 6
+            }
+        ]
+    }
+]

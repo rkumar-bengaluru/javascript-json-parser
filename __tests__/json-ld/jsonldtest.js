@@ -25,12 +25,17 @@ function testParse(data) {
     }
 }
 
-test('pro-zig.json', () => {
-    const data = fs.readFileSync('./__tests__/json-ld/pro-zig.json',{encoding:'utf8'});
+test('prokick.json', () => {
+    const data = fs.readFileSync('./__tests__/json-ld/prokick.json',{encoding:'utf8'});
     testParse(data);
 });
 
-test('pro-zig2.json', () => {
-    const data = fs.readFileSync('./__tests__/json-ld/pro-zig2.json',{encoding:'utf8'});
+test('flipkart.json', () => {
+    const data = fs.readFileSync('./__tests__/json-ld/flipkart.json',{encoding:'utf8'});
+    testParse(data);
+});
+
+test('sportsuncle.json', () => {
+    const data = fs.readFileSync('./__tests__/json-ld/sportsuncle.json',{encoding:'utf8'});
     testParse(data);
 });
