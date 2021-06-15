@@ -7,12 +7,12 @@ var logger = require('../logger/logger');
 
 export default class RJsonParser extends RJsonAbsParser {
 
-    constructor(rinput,startNow) {
-        super(rinput,startNow);
+    constructor(rinput, startNow) {
+        super(rinput, startNow);
     }
 
     parse() {
-       
+
         var toReturn = this.anything();
         toReturn.root = true;
         toReturn.rawInput = this.input;
@@ -20,7 +20,7 @@ export default class RJsonParser extends RJsonAbsParser {
             throw new Error("parser.expectedEOF");
         }
         return toReturn;
-       
+
     }
 
     anything() {
@@ -43,6 +43,8 @@ export default class RJsonParser extends RJsonAbsParser {
             case this.STRING_SINGLE_NONEMPTY:
             case this.STRING_DOUBLE_NONEMPTY:
                 x = this.value();
+                break;
+            case this.BRACKET_CLOSE:
                 break;
             default:
                 this.jj_la1[0] = this.jj_gen;
@@ -83,8 +85,12 @@ export default class RJsonParser extends RJsonAbsParser {
                             this.jj_la1[3] = this.jj_gen;
                             break label_1;
                     }
+                    logger.debug('^^^^^^^^->' + this.jj_nt.kind);
                     this.jj_consume_token(this.COMMA);
+                    logger.debug('^^^^^^^^->' + this.jj_nt.kind);
                     key = this.objectKey();
+                    if (!key)
+                        break;
                     this.jj_consume_token(this.COLON);
                     value = this.anything();
                     value.key = true;
@@ -129,8 +135,12 @@ export default class RJsonParser extends RJsonAbsParser {
                             this.jj_la1[5] = this.jj_gen;
                             break label_2;
                     }
+                    logger.debug('^^^^^^^^->' + this.jj_nt.kind);
                     this.jj_consume_token(this.COMMA);
+                    logger.debug('^^^^^^^^->' + this.jj_nt.kind);
                     value = this.anything();
+                    if(!value)
+                        break;
                     list.add(value);
                     value = null;
                 }
@@ -140,10 +150,10 @@ export default class RJsonParser extends RJsonAbsParser {
                 ;
         }
         this.jj_consume_token(this.BRACKET_CLOSE);
-        {if (true) return list;}
+        { if (true) return list; }
     }
 
-    
+
 
     ensureEOF() {
         this.jj_consume_token(0);
@@ -151,24 +161,24 @@ export default class RJsonParser extends RJsonAbsParser {
     }
 
     jj_consume_token(kind) {
-      
+
         logger.debug("01-RJsonParser::jj_consume_token::this.jj_nt=" + this.jj_nt + ",cKind=" + kind + ",this.jj_nt.next=" + this.jj_nt.next);
         var oldToken = this.token;
         if ((this.token = this.jj_nt).next != null) {
             this.jj_nt = this.jj_nt.next;
         } else {
             this.jj_nt = this.jj_nt.next = this.lexer.getNextToken();
-            logger.debug("02-RJsonParser::jj_consume_token::this.jj_nt=" + this.jj_nt + ",cKind=" + kind+ ",this.jj_nt.next=" + this.jj_nt.next);
+            logger.debug("02-RJsonParser::jj_consume_token::this.jj_nt=" + this.jj_nt + ",cKind=" + kind + ",this.jj_nt.next=" + this.jj_nt.next);
         }
-        
-        
+        logger.debug('token.kind=' + this.token.kind);
+
         if (this.token.kind === kind) {
             logger.debug("03-RJsonParser::jj_consume_token::matched(this.token.kind)" + this.token.kind + ",ckind=" + kind);
             this.jj_gen++;
             return this.token;
         }
 
-        
+
         this.jj_nt = this.token;
         this.token = oldToken;
         this.jj_kind = kind;
@@ -208,8 +218,8 @@ export default class RJsonParser extends RJsonAbsParser {
         for (l = 0; l < jj_expentries.size; l++) {
             exptokseq[l] = jj_expentries[l];
         }
-        
-        var e =  new RJsonParserError(this.token, exptokseq, this.tokenImage);
+
+        var e = new RJsonParserError(this.token, exptokseq, this.tokenImage);
         logger.debug('generateParseException ::' + e.getMessage());
         return e;
     }

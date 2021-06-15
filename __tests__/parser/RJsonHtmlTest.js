@@ -24,48 +24,30 @@ test('parse()', () => {
     }
 });
 
-test('product()', () => {
+function testParse(data) {
     try {
-        fs.readFile("./__tests__/parser/product.json", {encoding: 'utf8'},function (err, data) {
-            if (err) {
-                logger.error(err);
-            }
-            logger.debug(data);
-            instance = new RJsonParser(data);
-            var obj = instance.parse();
-            logger.debug('----------------');
-            var appendable = {
-                destination: ""
-            }
-            obj.formatJsonToHtml(appendable, -1);
-            logger.debug(appendable.destination);
-        });
-
+        instance = new RJsonParser(data);
+        var obj = instance.parse();
+        logger.debug('----------------');
+        var appendable = {
+            destination: ""
+        }
+        obj.formatJsonToString(appendable, -1);
+        logger.debug(appendable.destination);
     } catch (e) {
-        logger.debug(e.stack);
+        logger.debug('caught exception' + e.stack);
         throw e;
     }
+}
+
+test('product()', () => {
+    const data = fs.readFileSync('./__tests__/parser/product.json',{encoding:'utf8'});
+    testParse(data);
+
+    
 });
 
 test('product1()', () => {
-    try {
-        fs.readFile("./__tests__/parser/product1.json", {encoding: 'utf8'},function (err, data) {
-            if (err) {
-                logger.error(err);
-            }
-            logger.debug(data);
-            instance = new RJsonParser(data);
-            var obj = instance.parse();
-            logger.debug('----------------');
-            var appendable = {
-                destination: ""
-            }
-            obj.formatJsonToHtml(appendable, -1);
-            logger.debug(appendable.destination);
-        });
-
-    } catch (e) {
-        logger.debug(e.stack);
-        throw e;
-    }
+    const data = fs.readFileSync('./__tests__/parser/product1.json',{encoding:'utf8'});
+    testParse(data);
 });

@@ -79,12 +79,14 @@ export default class RJsonAbsParser extends RJsonConstants {
                 }
                 key = o;
                 break;
+            case this.BRACE_CLOSE:
+                break;
             default:
                 this.jj_la1[2] = this.jj_gen;
                 this.jj_consume_token(-1);
                 throw new Error();
         }
-        { if (true) { key.key = true; return key; } }
+        { if (true) { if(key) key.key = true; return key; } }
     }
 
     string() {

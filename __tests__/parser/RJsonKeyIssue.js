@@ -30,10 +30,6 @@ function testParse(data) {
 }
 
 test('product4.json', () => {
-    fs.readFile("./__tests__/parser/product4.json", { encoding: 'utf8' }, function (err, data) {
-        if (err) {
-            logger.error(err);
-        }
-        testParse(data);
-    });
+    const data = fs.readFileSync('./__tests__/parser/product4.json',{encoding:'utf8'});
+    testParse(data);
 });
