@@ -1,0 +1,120 @@
+{
+    "id":3021377142865,
+    "title":"Apacs Z-Ziggler Grey Unstrung Badminton Racquet",
+    "handle":"apacs-ziggler-racquet",
+   
+    "created_at":"2019-06-09T22:12:07+05:30",
+    "vendor":"APACS",
+    "type":"BADMINTON",
+    "tags":[
+       "badminton",
+       "Badminton Racket",
+       "Badminton Rackets",
+       "Badminton Racquet",
+       "Badminton Racquets",
+       "Brand_APACS",
+       "Customize Badminton String",
+       "Intermediate",
+       "racket",
+       "Shuttle",
+       "Shuttle Badminton Racket",
+       "Shuttle Bat",
+       "Shuttle Racket",
+       "Shuttlecock Racket",
+       "sports equipment",
+       "Unstrung",
+       "Ziggler"
+    ],
+    "price":179000,
+    "price_min":179000,
+    "price_max":179000,
+    "available":true,
+    "price_varies":false,
+    "compare_at_price":799900,
+    "compare_at_price_min":799900,
+    "compare_at_price_max":799900,
+    "compare_at_price_varies":false,
+    "variants":[
+       {
+          "id":23226365411409,
+          "title":"Default Title",
+          "option1":"Default Title",
+          "option2":null,
+          "option3":null,
+          "sku":"APACS-ZIGGLER-RACQUET",
+          "requires_shipping":true,
+          "taxable":true,
+          "featured_image":null,
+          "available":true,
+          "name":"Apacs Z-Ziggler Grey Unstrung Badminton Racquet",
+          "public_title":null,
+          "options":[
+             "Default Title"
+          ],
+          "price":179000,
+          "weight":0,
+          "compare_at_price":799900,
+          "inventory_management":"shopify",
+          "barcode":""
+       }
+    ],
+    "images":[
+       "\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/61J3FpbjmLL._SL1500.jpg?v=1575744668",
+       "\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/614wpzVJNML._SL1500.jpg?v=1601569095",
+       "\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/619FuGM4X7L._SL1500.jpg?v=1601569095"
+    ],
+    "featured_image":"\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/61J3FpbjmLL._SL1500.jpg?v=1575744668",
+    "options":[
+       "Title"
+    ],
+    "media":[
+       {
+          "alt":"Apacs Z-Ziggler Grey Unstrung Badminton Racquet - Best Price online Prokicksports.com",
+          "id":1510949224529,
+          "position":1,
+          "preview_image":{
+             "aspect_ratio":1.0,
+             "height":1500,
+             "width":1500,
+             "src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/61J3FpbjmLL._SL1500.jpg?v=1569189558"
+          },
+          "aspect_ratio":1.0,
+          "height":1500,
+          "media_type":"image",
+          "src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/61J3FpbjmLL._SL1500.jpg?v=1569189558",
+          "width":1500
+       },
+       {
+          "alt":"Apacs Z-Ziggler Grey Unstrung Badminton Racquet - Best Price online Prokicksports.com",
+          "id":1510949257297,
+          "position":2,
+          "preview_image":{
+             "aspect_ratio":1.0,
+             "height":1500,
+             "width":1500,
+             "src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/614wpzVJNML._SL1500.jpg?v=1569189558"
+          },
+          "aspect_ratio":1.0,
+          "height":1500,
+          "media_type":"image",
+          "src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/614wpzVJNML._SL1500.jpg?v=1569189558",
+          "width":1500
+       },
+       {
+          "alt":"Apacs Z-Ziggler Grey Unstrung Badminton Racquet - Best Price online Prokicksports.com",
+          "id":1510949290065,
+          "position":3,
+          "preview_image":{
+             "aspect_ratio":1.0,
+             "height":1500,
+             "width":1500,
+             "src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/619FuGM4X7L._SL1500.jpg?v=1569189558"
+          },
+          "aspect_ratio":1.0,
+          "height":1500,
+          "media_type":"image",
+          "src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0099\/8224\/6993\/products\/619FuGM4X7L._SL1500.jpg?v=1569189558",
+          "width":1500
+       }
+    ]
+ }

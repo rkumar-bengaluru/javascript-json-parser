@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -102,23 +102,7 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">71408x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">16x</span>
@@ -131,7 +115,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -140,66 +123,83 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span></td><td class="text"><pre class="prettyprint lang-js">// module.exports.debug = (msg) =&gt; {
-//     //console.log(msg);
-// }
-// module.exports.info = (msg) =&gt; {
-//    //console.log(msg);
-// }
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports.debug = (msg) =&gt; {
+    //console.log(msg);
+}
+module.exports.info = (msg) =&gt; {
+   //console.log(msg);
+}
 &nbsp;
-var appRoot = require('app-root-path');
-var winston = require('winston');
+// var appRoot = require('app-root-path');
+// var winston = require('winston');
 &nbsp;
-const logFormat = winston.format.combine(
-		 winston.format.colorize(),
-		 winston.format.timestamp(),
-		 winston.format.align(),
-		 winston.format.printf(
-		  info =&gt; `${info.timestamp} ${info.level}: ${info.message}`,
-		),);
+// const logFormat = winston.format.combine(
+// 		 winston.format.colorize(),
+// 		 winston.format.timestamp(),
+// 		 winston.format.align(),
+// 		 winston.format.printf(
+// 		  info =&gt; `${info.timestamp} ${info.level}: ${info.message}`,
+// 		),);
 &nbsp;
-// define the custom settings for each transport (file, console)
-var options = {
-  console: {
-    level: 'debug',
-    handleExceptions: true,
-    json: false,
-    colorize: true
-  }
-};
+// // define the custom settings for each transport (file, console)
+// var options = {
+//   console: {
+//     level: 'debug',
+//     handleExceptions: true,
+//     json: false,
+//     colorize: true
+//   }
+// };
 &nbsp;
-// instantiate a new Winston Logger with the settings defined above
-let logger = winston.createLogger({
-	  format: logFormat,
-	  transports: [
-	    new (winston.transports.Console)(options.console)
-	  ],
-	  exitOnError: false, // do not exit on handled exceptions
-	});
+// // instantiate a new Winston Logger with the settings defined above
+// let logger = winston.createLogger({
+// 	  format: logFormat,
+// 	  transports: [
+// 	    new (winston.transports.Console)(options.console)
+// 	  ],
+// 	  exitOnError: false, // do not exit on handled exceptions
+// 	});
 &nbsp;
-// create a stream object with a 'write' function that will be used by `morgan`
-logger.stream = {
-  write: <span class="fstat-no" title="function not covered" >fu</span>nction(message, encoding) {
-    // use the 'info' log level so the output will be picked up by both transports (file and console)
-<span class="cstat-no" title="statement not covered" >    logger.info(message);</span>
-  },
-};
+// // create a stream object with a 'write' function that will be used by `morgan`
+// logger.stream = {
+//   write: function(message, encoding) {
+//     // use the 'info' log level so the output will be picked up by both transports (file and console)
+//     logger.info(message);
+//   },
+// };
 &nbsp;
-module.exports = logger;</pre></td></tr></table></pre>
+// module.exports = logger;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jun 15 2021 13:55:10 GMT+0530 (India Standard Time)
+                at Tue Jun 15 2021 17:02:21 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

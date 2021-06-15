@@ -50,7 +50,8 @@ export default class RJsonLexer extends RJsonConstants {
                 }
                 logger.debug("curPos=" + curPos);
                 if ((this.matchedKind == this.C_SINGLE_COMMENT)
-                    || (this.matchedKind == this.C_MULTILINE_COMMENT)) {
+                    || (this.matchedKind == this.C_MULTILINE_COMMENT) ) {
+                        logger.debug("this.matchedKind=" + this.matchedKind);
                     this.matchedToken = this.fillToken();
                     logger.debug("getNextToken()::Matched" + this.matchedKind);
                     return matchedToken;
@@ -58,7 +59,9 @@ export default class RJsonLexer extends RJsonConstants {
                 if (this.matchedKind == this.BRACE_OPEN || this.matchedKind == this.TRUE
                     || this.matchedKind == this.NUMBER_INTEGER
                     || this.matchedKind == this.NULL
-                    || this.matchedKind == this.COMMA) {
+                    || this.matchedKind == this.COMMA 
+                    || this.matchedKind == this.STRING_DOUBLE_EMPTY
+                    || this.matchedKind == this.STRING_DOUBLE_EMPTY) {
                     matchedToken = this.fillToken();
                     logger.debug("getNextToken()::Matched->" + matchedToken);
                     return matchedToken;

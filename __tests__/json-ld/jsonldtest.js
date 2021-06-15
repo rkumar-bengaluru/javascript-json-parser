@@ -29,3 +29,8 @@ test('pro-zig.json', () => {
     const data = fs.readFileSync('./__tests__/json-ld/pro-zig.json',{encoding:'utf8'});
     testParse(data);
 });
+
+test('pro-zig2.json', () => {
+    const data = fs.readFileSync('./__tests__/json-ld/pro-zig2.json',{encoding:'utf8'});
+    testParse(data);
+});
