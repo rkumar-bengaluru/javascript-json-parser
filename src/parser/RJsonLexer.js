@@ -207,6 +207,14 @@ export default class RJsonLexer extends RJsonConstants {
                 case 34: // '"'
                     kind = this.STRING_DOUBLE_NONEMPTY;
                     break;
+                case 92: // '\escape char
+                    // check if the next char is '"', then it is escape sequence. consume the next token.
+                    try {
+                        this.curChar = this.input_stream.readChar();
+                    } catch (e) {
+                        return 1;
+                    }
+                    break;
                 default:
                     break;
             }

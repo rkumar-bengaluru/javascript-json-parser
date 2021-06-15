@@ -1,0 +1,33 @@
+{
+    "@context":"https://schema.org",
+    "@id":"https:\/\/prokicksports.com\/products\/apacs-ziggler-racquet",
+    "@type":"Product",
+    "sku":"APACS-ZIGGLER-RACQUET",
+    "mpn":"APACS-ZIGGLER-RACQUET",
+    "brand":{
+       "@type":"Brand",
+       "name":"APACS"
+    },
+    "description":"Apacs Z-Ziggler Grey Unstrung Badminton Racquet\n\n   \n\n\nDelivery\n3-7 days\n\n\nWeight\nAvg 85 gms\n\n\nStrung\nNo\n\n\nStringing Advice\n25-38 lbs\n\n\nCover Included\n\n\nYes(Apacs black full Cover)\n\n\n\n\n\n \n The Apacs Z- Ziggler racket has a very similar looks as the yonex voltric z-force II badminton racket. Z ziggler is designed to give you faster sharper smashes and at the same time let you enjoy the precise drop shot and netting play.\nThe racket was developed with the new \"triple speed system frame\" which combines exceptional power and great handling, and overall improve execution with power and more control. Designed with compact frame, which increases the speed in the swing, and overall improve execution with power and more control.\nExtra slim shaft is more aerodynamic and reduces air resistance making your shot stronger and more intense shot. The racket is a medium flex racket that will deliver more power even for beginners, as it will have a kind of sling shot effect.\nThe Apacs z ziggler is fast racket and is developed to suit power based players who want more control or those seeking to produce instant power for smashes. This racket is very well balanced and awesome to play with. Apacs Z- Ziggler specifications frame material: Hi modulus graphite, triple speed system, aero+box, compact frame shaft material: Hi modulus graphite, extra slim shaft flex.\n \nShaft Diameter: 6.4 mm\nWeight : 85 g(4U)\nGrip : G2\nBCP :290 mm (Head Heavy)\nFlex : Medium\nLength :675 mm\nGrommet System - 76 Holes\n",
+    "url":"https:\/\/prokicksports.com\/products\/apacs-ziggler-racquet",
+    "name":"Apacs Z-Ziggler Grey Unstrung Badminton Racquet",
+    "image":"https://cdn.shopify.com/s/files/1/0099/8224/6993/products/61J3FpbjmLL._SL1500.jpg?v=1575744668",
+    "offers":[
+       {
+          "@type":"Offer",
+          "availability":"https://schema.org/InStock",
+          "priceCurrency":"INR",
+          "price":"1790.00",
+          "priceValidUntil":"2022-06-15",
+          "itemCondition":"https://schema.org/NewCondition",
+          "url":"https:\/\/prokicksports.com\/products\/apacs-ziggler-racquet\/products\/apacs-ziggler-racquet?variant=23226365411409",
+          "image":"https://cdn.shopify.com/s/files/1/0099/8224/6993/products/61J3FpbjmLL._SL1500.jpg?v=1575744668",
+          "mpn":"APACS-ZIGGLER-RACQUET",
+          "sku":"APACS-ZIGGLER-RACQUET",
+          "seller":{
+             "@type":"Organization",
+             "name":"Prokicksports"
+          }
+       }
+    ]
+ }
