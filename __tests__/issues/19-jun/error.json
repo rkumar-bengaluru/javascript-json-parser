@@ -1,0 +1,102 @@
+{
+    "@context": "https://schema.org",
+    "@id": "https://www.vlocalshop.in/product/12MKKTTZJ2",
+    "@type": "Product",
+    "productID": "12MKKTTZJ2",
+    "name": "Apacs™  Turbo Power 996 Unstrung Graphite Badminton Racquet, 30 LBS Mega Tension (with Full Cover) - Yellow/Black",
+    "sku": "12MKKTTZJ2",
+    "mpn": "12MKKTTZJ2",
+    "brand": {
+        "@type": "Brand",
+        "name": "Apacs"
+    },
+    "description": "Turbo Power, a legendary racket known for it high tension capacity upto 30 LBS (Highest in the industry) and extreme durability from Apacs. Turbo Power is developed with Carbon Nanotube material which increases the impact and bending strength of frame and shaft. Further, the base graphite material of racket is 24T Japan high grade graphite material.This badminton racket is developed with new concept known as Triple Speed System Frame which gives additional power and strength to racket frame helps in better playing characteristics.Racket is developed with high degree of frame aerodynamics offers less air resistance and helps in better racket speed. With better head speed player can place fast drive shots and effective cross corner shots with pin point accuracy.Racket is medium flex racket offers optimized shuttle hold so that player will get best possible repulsion and power.This racket is suitable for intermediate badminton players with all round type of playing skills , Playing who love to play powerful smash with effective control shots with like this racket most.Frame shape of Turbo Power is isometric which offers enlarge sweet spot area results into powerful shots delivery even if shuttle hits to off center.",
+    "manufacturer": "Apacs",
+    "category": " > Sports & Fitness > badminton > apacs > racquet",
+    "logo": "https://www.vlocalshop.in/catalog/12MKKTTZJ2/01.jpg",
+    "offers": {
+        "@type": "Offer",
+        "url": "https://www.vlocalshop.in/product/12MKKTTZJ2",
+        "priceCurrency": "INR",
+        "price": "1499",
+        "priceValidUntil": "2030-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+    },
+    "images": [
+        "https://www.vlocalshop.in/catalog/12MKKTTZJ2/01.jpg",
+        "https://www.vlocalshop.in/catalog/12MKKTTZJ2/02.jpg",
+        "https://www.vlocalshop.in/catalog/12MKKTTZJ2/03.jpg",
+        "https://www.vlocalshop.in/catalog/12MKKTTZJ2/04.jpg",
+        "https://www.vlocalshop.in/catalog/12MKKTTZJ2/05.jpg"
+    ],
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.3",
+        "ratingCount": 20,
+        "reviewCount": 3
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "author": "vLocal Customer",
+            "datePublished": "19/03/2021",
+            "reviewBody": "Excelleent racket",
+            "name": "Awesome Product",
+            "reviewRating": {
+                "@type": "Rating",
+                "bestRating": "5",
+                "ratingValue": "5",
+                "worstRating": "1"
+            }
+        },
+        {
+            "@type": "Review",
+            "author": "vLocal Customer",
+            "datePublished": "19/03/2021",
+            "reviewBody": "light weight racket good handling Grip size is good for average hands you don't mind price this price is good for this racket",
+            "name": "...Best racquet in the world",
+            "reviewRating": {
+                "@type": "Rating",
+                "bestRating": "5",
+                "ratingValue": "4",
+                "worstRating": "1"
+            }
+        },
+        {
+            "@type": "Review",
+            "author": "vLocal Customer",
+            "datePublished": "10/01/2021",
+            "reviewBody": "Good Buy will buy again",
+            "name": "Will buy again...",
+            "reviewRating": {
+                "@type": "Rating",
+                "bestRating": "5",
+                "ratingValue": "3",
+                "worstRating": "1"
+            }
+        }
+    ],
+    "vlocal": {
+        "COO": "Singapore",
+        "Status": "ACTIVE",
+        "MOQ": 1,
+        "TAX": 12,
+        "HSN": "ABCDEFGHIJKLMNOPQRSTU",
+        "MRP": 4299,
+        "keyFeatures": [
+            "Know Your Racket: 30 LBS | 285+-3 | 85-87 g | Flex: Medium",
+            "Fused Carbon Nano Tubes: Turbo Power is developed with Carbon Nanotube material which increases the impact and bending strength of frame and shaft. Further, the base graphite material of racket is 24T Japan high grade graphite material.",
+            "Ultra High Modulus Graphite: The racket is made of ultra high modulus carbon graphite material which has higher strength and rigidity properties. It avoids frame deformation and twisting, provides you a more stable and accurate attack point.",
+            "Extra Slim Shaft: Extra Slim Shaft design provides great strength and better control. Flex Power has made the design of 7.0mm diameter extra-slim shaft with unique elastic mix and craftwork, which effectively balance the rebound and anti-torsion performance, precisely transmitting power and reflecting the player’s intention.In Box: 1 x Unstrung Badminton Racket, 1 x Full Cover",
+            "Special Features-Isometric head frame; New Power Speed Frame; Reinforced Structure Frame; 76 Grommets system"
+        ],
+        "KEYWORDS": "Apacs Turbo Power 996 Unstrung Graphite Badminton Racquet, 30 LBS Mega Tension (with Full Cover) ",
+        "MARKET": {
+            "amazon": "B07Z62VB08MHQ9XRKCKZ",
+            "amazonPrice": "₹ 1598",
+            "flipkart": "itme?pid=t",
+            "flipkartPrice": "₹ 1550"
+        }
+    }
+}
