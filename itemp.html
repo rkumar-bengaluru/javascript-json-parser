@@ -44,6 +44,10 @@
    <link href="./dist/app.css" rel="stylesheet">
    <script defer="defer" src="./dist/runtime.js"></script>
    <script defer="defer" src="./dist/app.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.min.css"
+      integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw=="
+      crossorigin="anonymous" />
+
 </head>
 
 <body>
@@ -94,15 +98,15 @@
       </div>
       <div class="row justify-content-around border-bottom">
          <div class="col overflow-auto border" style="height: 500px; background-color: rgba(0,0,255,.1)">
-            <form>
-               <div class="form-group"> <label for="exampleFormControlTextarea1">Paste in JSON & Click Load Json</label>
+            
+                <label for="exampleFormControlTextarea1">Paste in JSON & Click Load Json</label>
                   <div id="input-spinner" class="spinner-border text-primary hidden" role="status">
                      <span class="sr-only">Loading...</span>
                   </div>
-                  <textarea class="form-control" id="inputtextarea" rows="25">
+                  <textarea class="form-control" id="inputtextarea">
                      </textarea>
-               </div>
-            </form>
+               
+            
          </div>
          <div class="col overflow-auto border" style="height: 500px; background-color: rgba(0,0,255,.1)">
             <div id="json" style="background-color:white">
@@ -394,6 +398,9 @@
    <script async src="./dist/lib/json.js"></script>
    <script src="./dist/lib/highlight.pack.min.js"></script>
    <script src="./lib/clipboard.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.60.0/codemirror.min.js"
+      integrity="sha512-hc0zo04EIwTzKLvp2eycDTeIUuvoGYYmFIjYx7DmfgQeZPC5N27sPG2wEQPq8d8fCTwuguLrI1ffatqxyTbHJw=="
+      crossorigin="anonymous"></script>
    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-191905399-1');</script>
 </body>
 
