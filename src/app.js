@@ -61,10 +61,10 @@ function init() {
     }
 }
 
-function onTextEditorChange(cm, evt) {
-    console.log('onTextEditorChange(cm, evt)');
-    init();
-}
+// function onTextEditorChange(cm, evt) {
+//     console.log('onTextEditorChange(cm, evt)');
+//     init();
+// }
 
 function format() {
     try {
