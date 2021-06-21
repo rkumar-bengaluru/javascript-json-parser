@@ -34,7 +34,7 @@ function initCm() {
     });
    
     editor.setValue('loading...');
-    editor.setSize(700, 500);
+    editor.setSize(600, 500);
    
 }
 
