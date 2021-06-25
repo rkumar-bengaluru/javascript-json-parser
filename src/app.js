@@ -30,7 +30,9 @@ function initCm() {
     var editorEl = document.getElementById("inputtextarea");
     editor = CodeMirror.fromTextArea(editorEl, {
         lineNumbers: true,
-        styleSelectedText: true
+        lineWrapping: true,
+        mode: "text/typescript",
+        matchBrackets: true
     });
    
     editor.setValue('loading...');
@@ -42,7 +44,8 @@ function init() {
     try {
         console.log('reformatting.');
         document.getElementById("input-spinner").classList.toggle("hidden");
-        
+        document.getElementById("error-display").classList.toggle("hidden");
+
         //var target = document.getElementById('inputtextarea');
         console.log('parsing ' + editor.getValue());
         let instance = new RJsonParser(editor.getValue());
@@ -56,8 +59,9 @@ function init() {
     } catch (e) {
         console.log('exception');
         console.log(e.stack);
-        editor.setValue('error loading json...');
-        //document.getElementById('inputtextarea').innerHTML = e.message;
+        document.getElementById("error-display").classList.toggle("hidden");
+        document.getElementById('error-display').innerHTML = 'error loading json...';
+        document.getElementById("input-spinner").classList.toggle("hidden");
     }
 }
 

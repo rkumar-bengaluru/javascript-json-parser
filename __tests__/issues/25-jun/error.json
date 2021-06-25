@@ -1,0 +1,38 @@
+{
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": "SF Almandus 10000 English Willow Cricket Bat",
+    "image": [
+        "https://www.sportsuncle.com/image/cache/catalog/images/sf/sf-alm-01-01-1200x1200.jpg",
+        "https://www.sportsuncle.com/image/cache/catalog/images/sf/sf-alm-01-04-1200x1200.jpg",
+        "https://www.sportsuncle.com/image/cache/catalog/images/sf/sf-alm-01-01-1200x1200.jpg",
+        "https://www.sportsuncle.com/image/cache/catalog/images/sf/SF-ALMANDUS-10000-ENGLISH-WILLOW-CRICKET-BAT-1000x1000-1200x1200.jpg"
+    ],
+    "description": "BUY NOW SF Almandus 10000 English Willow Cricket Bat, Size - SH at lowest price on Sportsuncle. Free Shipping all over India. Best Store to buy Genuine and New products.BUY NOW SF Almandus 10000 English Willow Cricket Bat at lowest price on Sportsuncle. F",
+    "productID": "1282",
+    "sku": "1282",
+    "mpn": "1282",
+    "brand": {
+        "@type": "Thing",
+        "name": "SF Cricket"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "1"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": "7990",
+        "priceValidUntil": "2023-12-06",
+        "availability": "http://schema.org/InStock",
+        "url": "https://www.sportsuncle.com/sf-almandus10000-english-willow-cricket-bat.html"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "author": "Abhishek Narang",
+            "datePublished": "2020-02-16",
+            "description": "Mammoth, this bat is great, received an 1140gm bat and what a great punch and balance, wonderful with 8 grains.
+That's the quality of the genuine product, which can get only on sportsuncle", "reviewRating": {"@type": "Rating","bestRating": "5","ratingValue": "5","worstRating": "1"}}]}
