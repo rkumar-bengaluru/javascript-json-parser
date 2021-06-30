@@ -39,3 +39,8 @@ test('sportsuncle.json', () => {
     const data = fs.readFileSync('./__tests__/json-ld/sportsuncle.json',{encoding:'utf8'});
     testParse(data);
 });
+
+test('1001.json', () => {
+    const data = fs.readFileSync('./__tests__/json-ld/1001.json',{encoding:'utf8'});
+    testParse(data);
+});

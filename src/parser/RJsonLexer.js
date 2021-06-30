@@ -381,7 +381,7 @@ export default class RJsonLexer extends RJsonConstants {
             default:
                 break;
         }
-        return -1;
+        return this.findStringLiteral(2, active0);
     }
 
     moveChar04(old0, active0) {

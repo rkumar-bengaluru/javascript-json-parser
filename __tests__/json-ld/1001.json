@@ -1,0 +1,7 @@
+{
+    "@context": "https://schema.org",
+    "@id": "https://www.vlocalshop.in/product/2001",
+    "@type": "Product",
+    "productID": 10001,
+    "name": "Ultra-light 77 grams"
+}
