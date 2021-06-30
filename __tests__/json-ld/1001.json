@@ -3,5 +3,52 @@
     "@id": "https://www.vlocalshop.in/product/2001",
     "@type": "Product",
     "productID": 10001,
-    "name": "Ultra-light 77 grams"
+    "name": "Yonex Nanoray Light 18i Graphite Badminton Racquet (77g, 30 lbs Tension)",
+    "description": "Yonex nanoscience achieves precise control over racquet functions at the molecular level, creating ultra-lightweight racquets that are thinner, stronger and more stable than an ordinary racquet for maximum power and speed from swing energy.",
+    "sku": 10001,
+    "mpn": 10001,
+    "brand": "Yonex",
+    "manufacturer": "APACS",
+    "category": " > Sports & Fitness > badminton > apacs > shuttle",
+    "logo": "",
+    "image": "",
+    "offers": {
+        "@type": "Offer",
+        "url": "https://www.vlocalshop.in/product/2001",
+        "priceCurrency": "INR",
+        "price": "1659",
+        "priceValidUntil": "2030-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+    },
+    "images": [],
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 3.1,
+        "ratingCount": 13,
+        "reviewCount": 2
+    },
+    "review": [],
+    "vlocal": {
+        "COO": "Thailand",
+        "Status": "Active",
+        "MOQ": 1,
+        "TAX": 12,
+        "HSN": 9506,
+        "MRP": "2790",
+        "keyFeatures": [
+            "NANOSCIENCE technology - With streamlined aerodynamic NANOSCIENCE technology built into the shaft for a stiff flex and unparalleled repulsion power, the NANORAY 68 Light is engineered for lightning-fast shots",
+            "Ultra-light 77 grams - Speedy shots & great maneuverability without sacrificing on power | High tension support 30 lbs string tension - more power and better control. Head Size: 6.5 sq. in.",
+            "Isometric head - Bigger sweet spot | Built-in T-Joint | Carbon Graphite shaft - strong construction and light weight",
+            "Specifications : Frame Material - Carbon Graphite | Shaft Material - Carbon Graphite | String Tension - 30 lbs | Weight - 5U (75-79.9 grams) | Grip Size - G4 (3.5 inches) | Balance Type - Head Light | Head Shape - Isometric Head Shape | Pre-Strung - Strung | Age - Adult",
+            "In-Box Content : 1 Badminton Racquet"
+        ],
+        "KEYWORDS": "Yonex nanoscience achieves precise control over racquet functions at the molecular level, creating ultra-lightweight racquets that are thinner, stronger and more stable than an ordinary racquet for maximum power and speed from swing energy.",
+        "MARKET": {
+            "amazon": "NA",
+            "amazonPrice": "NA",
+            "flipkart": "NA",
+            "flipkartPrice": "NA"
+        }
+    }
 }
