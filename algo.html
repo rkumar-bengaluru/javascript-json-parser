@@ -59,7 +59,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top"> <a class="ml-auto"
             href="https://www.vlocalshop.in" target="_blank"> <img src="./icons/logo.svg" alt="LocalShop"> </a>
         <div class="container">
-            <p class="font-weight-light text-white ml-auto">{JSON Formatter and Validator}</p> <button
+            <p class="font-weight-light text-white ml-auto">&lt;Online JavaScript Editor&#62;</p> <button
                 class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
                     class="navbar-toggler-icon"></span> </button>
@@ -82,7 +82,7 @@
         </div>
         <div class="row justify-content-around border-bottom">
             <div class="col overflow-auto border" style="height:600px;background-color:rgba(0,0,255,.1)"> <label
-                    for="exampleFormControlTextarea1">Paste in JSON & Click Load Json</label>
+                    for="exampleFormControlTextarea1">Write the JavaScript below & Click Run</label>
                 <div id="input-spinner" class="spinner-border text-primary hidden" role="status"> <span
                         class="sr-only">Loading...</span> </div>
                 <div id="error-display" class="hidden"></div>
@@ -99,6 +99,8 @@ sayHello();
                 </textarea>
             </div>
             <div class="col overflow-auto border" style="height:600px;background-color:rgba(0,0,255,.1)">
+                <label
+                    for="exampleFormControlTextarea1">Console Log</label>
                 <div id="log_area" style="background-color:#fff"> </div>
                 <div id="results_area" style="background-color:#fff"> </div>
             </div>
@@ -177,32 +179,19 @@ sayHello();
             extraKeys: { "Ctrl-Q": "toggleComment" }
         });
 
-        function switchConsole() {
-            if (typeof console != "undefined")
-                if (typeof console.log != 'undefined')
-                    console.olog = console.log;
-                else
-                    console.olog = function () { };
-            console.log('switching...');
-            console.log = function (message) {
-                alert(message);
-                console.olog(message);
-                document.getElementById('log_area').append('<p>' + message + '</p>');
-            };
-            console.error = console.debug = console.info = console.log
-        }
+
 
         function create_iframe_results() {
-
-            var i = document.createElement('IFRAME');
-            i.id = 'result';
-            i.className = 'beauty-input';
-            i.style.height = '100%';
-            //  i.style.width = '97%';
-            i.style.width = '100%';
-            var parent = document.getElementById('results_area');
-            parent.appendChild(i);
-            switchConsole();
+            if (!document.getElementById('result')) {
+                var i = document.createElement('IFRAME');
+                i.id = 'result';
+                i.className = 'beauty-input';
+                i.style.height = '300px';
+                //  i.style.width = '97%';
+                i.style.width = '100%';
+                var parent = document.getElementById('results_area');
+                parent.appendChild(i);
+            }
             // TODO:
             //onFocus="$('#label_result').css('opacity','0.25');" onBlur="$('#label_result').css('opacity','0.5');"
         }
@@ -230,10 +219,11 @@ sayHello();
                 if (code_normalized.indexOf('<script') == -1) {
                     code_without_script_tag = true;
                 }
+                var console_log = 'console.log = function(m){document.write("<span>" + m + "</span><br>")};';
                 if (code_without_script_tag == true) {
-                    code = '<script>\n' + code + '\n</' + 'script>\n';
+                    code = '<script>\n' + console_log + code + '\n</' + 'script>\n';
                     //    document.getElementById('js_code').value = code; // update textarea
-                    editor.setValue(code); // update textarea
+
                 }
                 if (code_normalized.indexOf('onerror') == -1) { // code is without its own error handling, then add one
                     code = '<script>\n' +
@@ -242,6 +232,8 @@ sayHello();
                         '};\n</' + 'script>\n' + code;
 
                 }
+
+
                 doc.open();
                 doc.write(code); // look mum, no eval
                 doc.close();
@@ -257,6 +249,7 @@ sayHello();
                 //     });
                 //document.getElementById('scriptresponse').innerHTML = JSON.stringify(s1);
             } catch (e) {
+                console.log(e.stack);
                 document.getElementById('scriptresponse').innerHTML = e.stack;
             }
         })
