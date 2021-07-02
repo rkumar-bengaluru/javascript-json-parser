@@ -181,22 +181,19 @@ sayHello();
                 console.log('no Of Line - ' + noOfLines);
                 var f = '';
                 for (var i = 0; i < noOfLines; i++) {
-                    // if (!lines[i].includes('function')
-                    //     && !lines[i].startsWith('{')
-                    //     && !lines[i].startsWith('}')) {
-                    //     f += lines[i];
-                    // }
-                    f += lines[i];
+                    if (lines[i].includes('require(\"fs\")')) {
+                        console.log(lines[i]);
+                        document.getElementById('scriptresponse').innerHTML = 'fs module not allowed.';
+                        return;
+                    }
                 }
                 console.log('function -' + f);
-                //var f = new Function('console.log(\'hello to browser\');return (2)')();
-                //var s1 = new Function(f)();
-                fetch('http://localhost:3000/api/runjs/run?js='+encodeURIComponent(editor.getValue()))
+                fetch('http://localhost:3000/api/runjs/run?js=' + encodeURIComponent(editor.getValue()))
                     .then(data => data.json())
                     .then(response => {
                         console.log(response);
                         var logs = '';
-                        for(var i = 0; i < response.context.logs.length;i++) {
+                        for (var i = 0; i < response.context.logs.length; i++) {
                             logs += '<span>' + response.context.logs[i] + '</span><br>';
                         }
                         document.getElementById('scriptresponse').innerHTML = logs;
