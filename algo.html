@@ -99,7 +99,8 @@ sayHello();
                 </textarea>
             </div>
             <div class="col overflow-auto border" style="height:600px;background-color:rgba(0,0,255,.1)">
-                <div id="scriptresponse" style="background-color:#fff"> formatting... </div>
+                <div id="log_area" style="background-color:#fff"> </div>
+                <div id="results_area" style="background-color:#fff"> </div>
             </div>
         </div>
 
@@ -167,12 +168,45 @@ sayHello();
     <script src="./lib/clipboard.min.js"></script>
     <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-191905399-1")</script>
     <script>
+
+
         var editor = CodeMirror.fromTextArea(document.getElementById("inputtextarea"), {
             lineNumbers: true,
             matchBrackets: true,
             continueComments: "Enter",
             extraKeys: { "Ctrl-Q": "toggleComment" }
         });
+
+        function switchConsole() {
+            if (typeof console != "undefined")
+                if (typeof console.log != 'undefined')
+                    console.olog = console.log;
+                else
+                    console.olog = function () { };
+            console.log('switching...');
+            console.log = function (message) {
+                alert(message);
+                console.olog(message);
+                document.getElementById('log_area').append('<p>' + message + '</p>');
+            };
+            console.error = console.debug = console.info = console.log
+        }
+
+        function create_iframe_results() {
+
+            var i = document.createElement('IFRAME');
+            i.id = 'result';
+            i.className = 'beauty-input';
+            i.style.height = '100%';
+            //  i.style.width = '97%';
+            i.style.width = '100%';
+            var parent = document.getElementById('results_area');
+            parent.appendChild(i);
+            switchConsole();
+            // TODO:
+            //onFocus="$('#label_result').css('opacity','0.25');" onBlur="$('#label_result').css('opacity','0.5');"
+        }
+
         document.getElementById('runscript').addEventListener('click', () => {
             console.log('res2 - ');
             try {
@@ -188,22 +222,48 @@ sayHello();
                     }
                 }
                 console.log('function -' + f);
-                fetch('http://localhost:3000/api/runjs/run?js=' + encodeURIComponent(editor.getValue()))
-                    .then(data => data.json())
-                    .then(response => {
-                        console.log(response);
-                        var logs = '';
-                        for (var i = 0; i < response.context.logs.length; i++) {
-                            logs += '<span>' + response.context.logs[i] + '</span><br>';
-                        }
-                        document.getElementById('scriptresponse').innerHTML = logs;
-                    });
+                var code = editor.getValue();
+                create_iframe_results();
+                var doc = document.getElementById('result').contentDocument;
+                var code_normalized = code.toLowerCase();
+                code_without_script_tag = false;
+                if (code_normalized.indexOf('<script') == -1) {
+                    code_without_script_tag = true;
+                }
+                if (code_without_script_tag == true) {
+                    code = '<script>\n' + code + '\n</' + 'script>\n';
+                    //    document.getElementById('js_code').value = code; // update textarea
+                    editor.setValue(code); // update textarea
+                }
+                if (code_normalized.indexOf('onerror') == -1) { // code is without its own error handling, then add one
+                    code = '<script>\n' +
+                        'window.onerror = function(message, url, linenumber) {' +
+                        '  parent.alert_message("error", "<b>JavaScript error:</b> " + message + " on line " + linenumber);' +
+                        '};\n</' + 'script>\n' + code;
+
+                }
+                doc.open();
+                doc.write(code); // look mum, no eval
+                doc.close();
+                // fetch('http://localhost:3000/api/runjs/run?js=' + encodeURIComponent(editor.getValue()))
+                //     .then(data => data.json())
+                //     .then(response => {
+                //         console.log(response);
+                //         var logs = '';
+                //         for (var i = 0; i < response.context.logs.length; i++) {
+                //             logs += '<span>' + response.context.logs[i] + '</span><br>';
+                //         }
+                //         document.getElementById('scriptresponse').innerHTML = logs;
+                //     });
                 //document.getElementById('scriptresponse').innerHTML = JSON.stringify(s1);
             } catch (e) {
                 document.getElementById('scriptresponse').innerHTML = e.stack;
             }
         })
+
+
     </script>
+
 </body>
 <script>var snippets = document.querySelectorAll(".json-viewer"); console.log(snippets), [].forEach.call(snippets, (function (t) { console.log(t.firstChild), t.firstChild.insertAdjacentHTML("beforebegin", '<button class="btn" data-clipboard-snippet><img class="clippy" width="13" src="https://www.vlocalshop.in/icons/clippy.svg" alt="Copy to clipboard"></button>') })); var clipboardSnippets = new ClipboardJS("[data-clipboard-snippet]", { target: function (t) { return document.getElementById("inputtextarea") } }); clipboardSnippets.on("success", (function (t) { t.clearSelection(), showTooltip(t.trigger, "Copied!") })), clipboardSnippets.on("error", (function (t) { showTooltip(t.trigger, fallbackMessage(t.action)) })); for (var btns = document.querySelectorAll(".btn"), i = 0; i < btns.length; i++)btns[i].addEventListener("mouseleave", clearTooltip), btns[i].addEventListener("blur", clearTooltip); function clearTooltip(t) { t.currentTarget.setAttribute("class", "btn"), t.currentTarget.removeAttribute("aria-label") } function showTooltip(t, e) { t.setAttribute("class", "btn tooltipped tooltipped-s"), t.setAttribute("aria-label", e) } function fallbackMessage(t) { var e = "cut" === t ? "X" : "C"; return /iPhone|iPad/i.test(navigator.userAgent) ? "No support :(" : /Mac/i.test(navigator.userAgent) ? "Press ⌘-" + e + " to " + t : "Press Ctrl-" + e + " to " + t } hljs.initHighlightingOnLoad()</script>
 <script>$(".carousel .carousel-item").each((function () { var i = $(this).next(); i.length || (i = $(this).siblings(":first")), i.children(":first-child").clone().appendTo($(this)); for (var s = 0; s < 3; s++)(i = i.next()).length || (i = $(this).siblings(":first")), i.children(":first-child").clone().appendTo($(this)) }))</script>
