@@ -52,7 +52,7 @@
     <style>
         .beauty-input {
             font-size: large;
-            background-color: #080b0c;
+            background-color: #0d1314;
             color: red;
         }
     </style>
@@ -63,13 +63,11 @@
         itemtype="http://schema.org/ImageObject">
         <link itemprop="url" href="./icons/logo.png">
     </span> <noscript> You need to enable JavaScript to run this app. </noscript>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top"> <a class="ml-auto"
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top"> <a class="ml-auto"
             href="https://www.vlocalshop.in" target="_blank"> <img src="./icons/logo.svg" alt="LocalShop"> </a>
         <div class="container">
-            <p class="font-weight-light text-white ml-auto">&lt;Online JavaScript Editor&#62;</p> <button
-                class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <span
-                    class="navbar-toggler-icon"></span> </button>
+            <p class="font-weight-light text-white ml-auto">JavaScript Editor</p>
+            <div class="text-white ml-auto">"Learn JavaScript Coding Online. Simple, light and fast!"</div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"> <a class="nav-link ml-2 mr-2"
@@ -94,20 +92,68 @@
                         class="sr-only">Loading...</span> </div>
                 <div id="error-display" class="hidden"></div>
                 <textarea class="form-control" id="inputtextarea" name="inputtextarea">
-function sayHello() {
-  var i = 0;
-  for(i =0; i < 10;i++) {
-      console.log('value at i - ' + i);
+/*
+ * Build a max heap out of the array. A heap is a specialized tree like
+ * data structure that satisfies the heap property. The heap property
+ * for max heap is the following: "if P is a parent node of C, then the
+ * key (the value) of node P is greater than the key of node C"
+ * Source: https://en.wikipedia.org/wiki/Heap_(data_structure)
+ */
+/* eslint no-extend-native: ["off", { "exceptions": ["Object"] }] */
+Array.prototype.heapify = function (index, heapSize) {
+  let largest = index
+  const leftIndex = 2 * index + 1
+  const rightIndex = 2 * index + 2
+
+  if (leftIndex < heapSize && this[leftIndex] > this[largest]) {
+    largest = leftIndex
   }
-  return i;
+
+  if (rightIndex < heapSize && this[rightIndex] > this[largest]) {
+    largest = rightIndex
+  }
+
+  if (largest !== index) {
+    const temp = this[largest]
+    this[largest] = this[index]
+    this[index] = temp
+
+    this.heapify(largest, heapSize)
+  }
 }
 
-sayHello();
+/*
+ * Heap sort sorts an array by building a heap from the array and
+ * utilizing the heap property.
+ * For more information see: https://en.wikipedia.org/wiki/Heapsort
+ */
+function heapSort (items) {
+  const length = items.length
+
+  for (let i = Math.floor(length / 2) - 1; i > -1; i--) {
+    items.heapify(i, length)
+  }
+  for (let j = length - 1; j > 0; j--) {
+    const tmp = items[0]
+    items[0] = items[j]
+    items[j] = tmp
+    items.heapify(0, j)
+  }
+  return items
+}
+// Implementation of heapSort
+
+const ar = [5, 6, 7, 8, 1, 2, 12, 14]
+// Array before Sort
+console.log(ar)
+heapSort(ar)
+// Array after sort
+console.log(ar)                   
                 </textarea>
             </div>
             <div class="col overflow-auto border" style="height:600px;background-color:rgba(0,0,255,.1)">
                 <label for="exampleFormControlTextarea1">Console Log</label>
-                <div id="log_area" style="background-color:#fff"> </div>
+                <div id="error_area" style="background-color:#fff"> </div>
                 <div id="results_area" style="background-color:#fff"> </div>
             </div>
         </div>
@@ -177,6 +223,12 @@ sayHello();
     <script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-191905399-1")</script>
     <script>
 
+        function alert_message(alert_type, msg) { // alert_type = block, error, success, info
+
+            var msg = '<a class="close" href="javascript:;" onClick="document.getElementById(\'error_area\').innerHTML = \'\'");">&times;</a>' + msg;
+            document.getElementById('error_area').innerHTML = msg; // better than .html(msg) because malformed html was causing error
+
+        }
 
         var editor = CodeMirror.fromTextArea(document.getElementById("inputtextarea"), {
             lineNumbers: true,
@@ -185,35 +237,31 @@ sayHello();
             extraKeys: { "Ctrl-Q": "toggleComment" }
         });
 
-
+        function removeAllChildNodes(parent) {
+            parent.innerHTML = '';
+        }
 
         function create_iframe_results() {
-            if (!document.getElementById('result')) {
-                var i = document.createElement('IFRAME');
-                i.id = 'result';
-                i.className = 'beauty-input';
-                i.style.height = '300px';
-                i.style.color = 'red';
-                //  i.style.width = '97%';
-                i.style.width = '100%';
-                var parent = document.getElementById('results_area');
-                
-                parent.appendChild(i);
-                var body = i.contentWindow.document.querySelector('body');
-                console.log(body)
-                body.style.color = 'white';
-                body.style.fontSize = '20px';
-                body.style.lineHeight = '20px';
-                i.append(body);
-               
+            if (document.getElementById('result')) {
+                document.getElementById('result').remove();
             }
-            // TODO:
-            //onFocus="$('#label_result').css('opacity','0.25');" onBlur="$('#label_result').css('opacity','0.5');"
+
+            var i = document.createElement('IFRAME');
+            i.id = 'result';
+            i.className = 'beauty-input';
+            i.style.height = '300px';
+            i.style.color = 'red';
+            //  i.style.width = '97%';
+            i.style.width = '100%';
+            var parent = document.getElementById('results_area');
+            parent.appendChild(i);
+
         }
 
         document.getElementById('runscript').addEventListener('click', () => {
             console.log('res2 - ');
             try {
+                document.getElementById('error_area').innerHTML = '';
                 var lines = editor.getValue().split('\n');
                 var noOfLines = editor.lineCount();
                 console.log('no Of Line - ' + noOfLines);
@@ -234,9 +282,10 @@ sayHello();
                 if (code_normalized.indexOf('<script') == -1) {
                     code_without_script_tag = true;
                 }
-                var startscript = '<script>document.write(\'starting execution of the script...\');document.write(\'<br/>\');' + '\n</' + 'script>';
-                var endscript = '<script>document.write(\'end execution of the script...\');document.write(\'<br/>\');' + '\n</' + 'script>';
-                var console_log = 'console.log = function(m){document.write("<span>" + m + "</span><br>")};';
+                //var startscript = '<script>document.write(\'starting execution of the script...\');document.write(\'<br/>\');' + '\n</' + 'script>';
+                var startscript = '' + '<script>document.write("<span>starting execution of the script...</span>");document.write(\'<br/>\');' + '\n</' + 'script>';
+                var endscript = '<script>document.write("<span>end execution of the script...</span>");document.write(\'<br/>\');' + '\n</' + 'script>';
+                var console_log = 'console.log = function(m){document.write("<span>" + ">>> " + m + "</span><br>")};';
                 if (code_without_script_tag == true) {
                     code = startscript + '<script>\n' + console_log + code + '\n</' + 'script>\n' + endscript;
                     //    document.getElementById('js_code').value = code; // update textarea
@@ -250,24 +299,17 @@ sayHello();
 
                 }
 
-
+                delete code_normalized;
                 doc.open();
                 doc.write(code); // look mum, no eval
                 doc.close();
-                // fetch('http://localhost:3000/api/runjs/run?js=' + encodeURIComponent(editor.getValue()))
-                //     .then(data => data.json())
-                //     .then(response => {
-                //         console.log(response);
-                //         var logs = '';
-                //         for (var i = 0; i < response.context.logs.length; i++) {
-                //             logs += '<span>' + response.context.logs[i] + '</span><br>';
-                //         }
-                //         document.getElementById('scriptresponse').innerHTML = logs;
-                //     });
-                //document.getElementById('scriptresponse').innerHTML = JSON.stringify(s1);
+                var spans = doc.getElementsByTagName('SPAN');
+                for (var i = 0; i < spans.length; i++) {
+                    spans[i].style.color = "white";
+                }
             } catch (e) {
                 console.log(e.stack);
-                document.getElementById('scriptresponse').innerHTML = e.stack;
+                document.getElementById('error_area').innerHTML = e.stack;
             }
         })
 
