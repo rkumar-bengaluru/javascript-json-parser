@@ -49,6 +49,13 @@
     <script src="./lib/continuecomment.js"></script>
     <script src="./lib/comment.js"></script>
     <script src="./lib/javascript.js"></script>
+    <style>
+        .beauty-input {
+            font-size: large;
+            background-color: #080b0c;
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -99,8 +106,7 @@ sayHello();
                 </textarea>
             </div>
             <div class="col overflow-auto border" style="height:600px;background-color:rgba(0,0,255,.1)">
-                <label
-                    for="exampleFormControlTextarea1">Console Log</label>
+                <label for="exampleFormControlTextarea1">Console Log</label>
                 <div id="log_area" style="background-color:#fff"> </div>
                 <div id="results_area" style="background-color:#fff"> </div>
             </div>
@@ -187,10 +193,19 @@ sayHello();
                 i.id = 'result';
                 i.className = 'beauty-input';
                 i.style.height = '300px';
+                i.style.color = 'red';
                 //  i.style.width = '97%';
                 i.style.width = '100%';
                 var parent = document.getElementById('results_area');
+                
                 parent.appendChild(i);
+                var body = i.contentWindow.document.querySelector('body');
+                console.log(body)
+                body.style.color = 'white';
+                body.style.fontSize = '20px';
+                body.style.lineHeight = '20px';
+                i.append(body);
+               
             }
             // TODO:
             //onFocus="$('#label_result').css('opacity','0.25');" onBlur="$('#label_result').css('opacity','0.5');"
@@ -219,9 +234,11 @@ sayHello();
                 if (code_normalized.indexOf('<script') == -1) {
                     code_without_script_tag = true;
                 }
+                var startscript = '<script>document.write(\'starting execution of the script...\');document.write(\'<br/>\');' + '\n</' + 'script>';
+                var endscript = '<script>document.write(\'end execution of the script...\');document.write(\'<br/>\');' + '\n</' + 'script>';
                 var console_log = 'console.log = function(m){document.write("<span>" + m + "</span><br>")};';
                 if (code_without_script_tag == true) {
-                    code = '<script>\n' + console_log + code + '\n</' + 'script>\n';
+                    code = startscript + '<script>\n' + console_log + code + '\n</' + 'script>\n' + endscript;
                     //    document.getElementById('js_code').value = code; // update textarea
 
                 }
