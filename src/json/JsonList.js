@@ -2,7 +2,7 @@
 import JsonObject from './JsonObject.js';
 
 export default class JsonList extends JsonObject {
-    
+
     constructor(root, isKey, input) {
         super(root, isKey, input);
     }
@@ -11,11 +11,31 @@ export default class JsonList extends JsonObject {
         this._input.push(jsonObject);
         return this;
     }
-
+    
+    toUnformattedString(appendable, currentLevel) {
+        ++currentLevel;
+        let j;
+        let destination = "";
+        destination += "[";
+        j = 0;
+        let size = this._input.length;
+        this._input.forEach(element => {
+            var cAppendable = {
+                destination: ""
+            }
+            element.formatJsonToString(cAppendable, currentLevel);
+            destination += cAppendable.destination;
+            if (j != (size - 1))
+                destination += ",";
+            j++;
+        });
+        destination += "]";
+        appendable.destination += destination;
+    }
     formatJsonToString(appendable, currentLevel) {
         ++currentLevel;
         let tabs = '';
-        let i,j;
+        let i, j;
         for (i = 0; i < currentLevel; i++)
             tabs += "\t";
         let destination = "";
@@ -24,11 +44,11 @@ export default class JsonList extends JsonObject {
         let size = this._input.length;
         this._input.forEach(element => {
             var cAppendable = {
-                destination : ""
+                destination: ""
             }
-            element.formatJsonToString(cAppendable,currentLevel);
+            element.formatJsonToString(cAppendable, currentLevel);
             destination += cAppendable.destination;
-            if(j != (size-1))
+            if (j != (size - 1))
                 destination += ",\n";
             j++;
         });
@@ -39,10 +59,10 @@ export default class JsonList extends JsonObject {
 
     formatJsonToHtml(appendable, currentLevel) {
         let destination = "";
-        if(this._root) {
+        if (this._root) {
             destination += "<div class=\"json-viewer\"><code class=\"js\" id=\"js\">";
         }
-        
+
         let size = this._input.length;
         destination += "<a class=\"list-link\" href=\"javascript:void(0)\">[";
         destination += "<span style=\"color: #1d57d4;\"><i onClick=\"spanClicked(event);\" class=\"far fa-minus-square\"></i></span>";
@@ -52,21 +72,21 @@ export default class JsonList extends JsonObject {
         let j = 0;
         destination += "<ul data-level=\"" + ++currentLevel + "\" class=\"type-array\">";
         this._input.forEach(element => {
-           
+
             destination += "<li>";
             var cAppendable = {
-                destination : 0
+                destination: 0
             }
-            element.formatJsonToHtml(cAppendable,currentLevel);
+            element.formatJsonToHtml(cAppendable, currentLevel);
             destination += cAppendable.destination;
-            if(j != (size-1))
+            if (j != (size - 1))
                 destination += "<span class=\"type-comma\">" + "," + "</span>";
             destination += "</li>";
             j++;
         });
         destination += "</ul>";
         destination += "<span class=\"type-symbol\">]</span>";
-        if(this._root) {
+        if (this._root) {
             destination += "</code></div>";
         }
 

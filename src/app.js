@@ -12,7 +12,7 @@ function formatInputString(jsonObj) {
         destination: ""
     }
     jsonObj.formatJsonToString(appendable, -1);
-    console.log(appendable.destination);
+    //console.log(appendable.destination);
     editor.setValue(appendable.destination);
     //document.getElementById('inputtextarea').value = appendable.destination;
 }
@@ -22,7 +22,7 @@ function formatHtml(jsonObj) {
         destination: ""
     }
     jsonObj.formatJsonToHtml(appendable, -1);
-    console.log(appendable.destination);
+    //console.log(appendable.destination);
     document.getElementById('json').innerHTML = appendable.destination;
 }
 
@@ -40,24 +40,37 @@ function initCm() {
    
 }
 
+function compress(jsonObj) {
+    var appendable = {
+        destination: ""
+    }
+    jsonObj.toUnformattedString(appendable, -1);
+    //console.log(appendable.destination);
+    document.getElementById('json').innerHTML = appendable.destination;
+}
+
 function init() {
     try {
-        console.log('reformatting.');
+        //console.log('reformatting.');
         document.getElementById("input-spinner").classList.toggle("hidden");
         document.getElementById("error-display").classList.toggle("hidden");
 
         //var target = document.getElementById('inputtextarea');
-        console.log('parsing ' + editor.getValue());
+        //console.log('parsing ' + editor.getValue());
         let instance = new RJsonParser(editor.getValue());
         //target.value = 'loading';
-        console.log('parsing json...');
+        //console.log('parsing json...');
         var jsonObj = instance.parse();
-        console.log('parsing json done...');
+        //console.log('parsing json done...');
         formatInputString(jsonObj);
         formatHtml(jsonObj);
         document.getElementById("input-spinner").classList.toggle("hidden");
+        //console.log('adding eventlistener to compressjson');
+        document.getElementById('compressjson').addEventListener('click', () => {
+            compress(jsonObj);
+        });
     } catch (e) {
-        console.log('exception');
+        //console.log('exception');
         console.log(e.stack);
         document.getElementById("error-display").classList.toggle("hidden");
         document.getElementById('error-display').innerHTML = 'error loading json...';
@@ -86,6 +99,7 @@ function format() {
             //alert('-----------' + document.getElementById('inputtextarea').innerHTML);
             init();
         })
+        
     } catch (e) {
         console.log(e.stack);
         //document.getElementById('inputtextarea').innerHTML = e.message;

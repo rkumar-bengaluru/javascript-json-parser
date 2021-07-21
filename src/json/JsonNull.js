@@ -7,6 +7,10 @@ export default class JsonBoolean extends JsonObject {
         super(root, isKey, input);
     }
 
+    toUnformattedString(appendable, currentLevel) {
+        appendable.destination = null;
+    }
+
     formatJsonToString(appendable, currentLevel) {
         //console.log('destination->' + destination);
         appendable.destination = null;

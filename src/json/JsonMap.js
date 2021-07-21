@@ -13,6 +13,38 @@ export default class JsonMap extends JsonObject {
         logger.debug('map size ->' + this._input.size);
         return this;
     }
+
+    toUnformattedString(appendable, currentLevel) {
+        ++currentLevel;
+        let j;
+        let destination = "";
+        destination += "{";
+        j = 0;
+        let size = this._input.size;
+        logger.info('size of the map ' + this._input.size);
+
+        this._input.forEach(function(value, key) {
+            var keyAppendable = {
+                destination : ""
+            }
+            var valueAppendable = {
+                destination : ""
+            }
+         
+            key.formatJsonToString(keyAppendable,currentLevel);
+            destination += keyAppendable.destination;
+            destination += " : ";
+            
+            value.keyValue = true;
+            value.formatJsonToString(valueAppendable,currentLevel);
+            destination += valueAppendable.destination;
+            if(j != (size-1))
+                destination += ",";
+            j++;  
+        });
+        destination += "}";
+        appendable.destination += destination;
+    }
     
     formatJsonToString(appendable, currentLevel) {
         ++currentLevel;

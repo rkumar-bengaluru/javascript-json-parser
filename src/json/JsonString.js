@@ -22,6 +22,22 @@ export default class JsonString extends JsonObject {
         this._input = r.join("");
     }
 
+    toUnformattedString(appendable, currentLevel) {
+        ++currentLevel;
+        let destination = "";
+        let i;
+        logger.debug('appendable->' + appendable);
+        if (this._isKey) {
+            destination += "\"" + this._input + "\"";
+        } else if (this._keyValue) {    
+            destination += "\"" + this._input + "\"";
+        } else {
+            destination += "\"" + this._input + "\"";
+        }
+        logger.debug('destination->' + destination);
+        appendable.destination = destination;
+    }
+
     formatJsonToString(appendable, currentLevel) {
         ++currentLevel;
         let destination = "";
